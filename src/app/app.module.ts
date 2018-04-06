@@ -4,12 +4,18 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
+import { MidleNavComponent } from './midle-nav/midle-nav.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    TopNavComponent,
+    MidleNavComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule
