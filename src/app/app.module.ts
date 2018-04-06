@@ -15,7 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HeaderComponent,
     TopNavComponent,
     MidleNavComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule

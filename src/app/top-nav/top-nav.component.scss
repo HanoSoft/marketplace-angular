@@ -15,7 +15,7 @@
 }
 .topBar {
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #35404f;
   font-size: 13px;
 }
 .topBar ul {
@@ -25,7 +25,9 @@
   line-height: 42px;
 }
 .topBar a {
-  color: #878c94;text-decoration:none;
+  font-size: medium;
+  color: #35404f;
+  text-decoration:none;
 }
 .text-primary {
   color: #0cd4d2;
@@ -54,12 +56,12 @@
   position: absolute;
   top: 42px;
   left: auto;
-  min-width: 10px;
+  min-width: 200px;
   right: 4px;
   border-radius: 0px;
   border: solid 0px;
   margin-right: -4px;
-  padding: 0;
+  padding:0;
   list-style-type: none;
   z-index: 9999;
   -webkit-transition: all 0.1s ease-in-out;
@@ -89,15 +91,17 @@
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: #878c94;
-  font-size:15px;
+  color: #000000;
+  font-size:17px;
   white-space: nowrap;
 }
 .topBar .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  color: #00BCD4;
+  color: #ffffff;
   text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: #C60D5C;
 }
+
+/*panier cart*/
 .cart-items::-webkit-scrollbar {
   width: 6px;
   background-color: #ECECEC;
@@ -137,6 +141,7 @@
   background-color: transparent;
   display: inline;
 }
+
 .topBar ul.topBarNav li ul.cart .cart-items .items li .product-details {
   position: relative;
   margin-left: 60px;
@@ -158,4 +163,13 @@
   padding: 10px 20px;
   margin: 0;
   background-color: transparent;
+}
+.user{
+  background: #35404f;
+}
+.user a{
+  color: #ffffff;
+}
+.icon-size-24{
+  font-size: 20px;
 }
