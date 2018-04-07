@@ -1,5 +1,3 @@
-
-
 .navbar-default {
   -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -7,11 +5,20 @@
   background-color: #ffffff;
   margin-bottom: 0;
   border: none;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: large;
+color:#000000;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   color: #0cd4d2;
   background-color: transparent;
+  font-size: 23px;
+  -webkit-transition: font-size 0.3s ease;
+  -moz-transition: font-size 0.3s ease;
+  -o-transition: font-size 0.3s ease;
+  -ms-transition: font-size 0.3s ease;
+  transition: font-size 0.3s ease;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:after {
   border-top:solid 2px #0cd4d2;
