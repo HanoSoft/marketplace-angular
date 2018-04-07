@@ -1,96 +1,57 @@
-.navbar-default {
-  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background-color: #ffffff;
-  margin-bottom: 0;
-  border: none;
-  font-family: 'Do Hyeon', sans-serif;
-  font-size: large;
-color:#000000;
+#menu {
+  font-family: 'Merriweather Sans', sans-serif;
+  opacity: 0.9;
 }
-
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #0cd4d2;
-  background-color: transparent;
-  font-size: 23px;
+#menu-list-item{
+  height: 70px;
+}
+#menu-list-item ul li a
+{
+  font-size: 15px;
   -webkit-transition: font-size 0.3s ease;
   -moz-transition: font-size 0.3s ease;
   -o-transition: font-size 0.3s ease;
   -ms-transition: font-size 0.3s ease;
   transition: font-size 0.3s ease;
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:after {
-  border-top:solid 2px #0cd4d2;
-
+#menu-list-item ul li a:hover{
+  font-size: 20px;
 }
-.navbar-default .dropdown-menu {
-  padding: 0;
-  font-size: 14px;
-  background-color: #ffffff;
-  color: #878c94;
-  border: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-  -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -ms-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
+#menu.navbar-default .navbar-brand {
+  color: rgba(0, 0, 0, 1);
 }
-
-.dropdown-menu > li > a {
-  display: block;
-  padding: 6px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: #878c94;
-  white-space: nowrap;
+#menu.navbar-default {
+  font-size: 18px;
+  background-color: rgba(249, 249, 249, 1);
+  border-top-width: 2px;
+  border-color:#56AED4 ;
 }
-.dropdown-menu > li > a:hover{
-  color: #0cd4d2;
+#menu.navbar-default .navbar-nav>li>a {
+  color: #000;
+  background-color: rgba(248, 248, 248, 0);
 }
-
-
-/***********************
-     megaDropMenu
-////////////////////////////*/
-
-.navbar-default .container{
-  position:relative;
+#menu.navbar-default .navbar-nav>li>a:hover,
+#menu.navbar-default .navbar-nav>li>a:focus {
+  color: rgba(245, 245, 245, 1);
+  background-color: rgba(86, 174, 212, 1);
 }
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu {
-  position: static;
+#menu.navbar-default .navbar-nav>.active>a,
+#menu.navbar-default .navbar-nav>.active>a:hover,
+#menu.navbar-default .navbar-nav>.active>a:focus {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(86, 174, 212, 1);
 }
-
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu{
-  width: 100%;
+#menu.navbar-default .navbar-toggle {
+  border-color: #56aed4;
 }
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li:first-child{
-  padding: 20px 0px 5px 15px;
-  font-size: 16px;
-  text-transform: uppercase;
-  /* text-align: center; */
-  color: #0cd4d2;
+#menu.navbar-default .navbar-toggle:hover,
+#menu.navbar-default .navbar-toggle:focus {
+  background-color: #56aed4;
 }
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a{
-  display:block;color:#878c94;font-size: 14px;text-decoration:none;padding:8px 15px;
+#menu.navbar-default .navbar-toggle .icon-bar {
+  background-color: #56aed4;
 }
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu li ul li a:hover{
-  color: #00BCD4;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.02);
-}
-
-.navbar-default .navbar-collapse li.dropdown.megaDropMenu .dropdown-menu img{
-  display: block;
-  max-width: 100%;
-  padding: 20px;
+#menu.navbar-default .navbar-toggle:hover .icon-bar,
+#menu.navbar-default .navbar-toggle:focus .icon-bar {
+  background-color: #f9f9f9;
 }
