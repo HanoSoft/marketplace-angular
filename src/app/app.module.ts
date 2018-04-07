@@ -7,7 +7,12 @@ import { HeaderComponent } from './header/header.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { MidleNavComponent } from './midle-nav/midle-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
+const appRoutes: Routes = [
+    { path: 'home', component: HomeComponent}
+];
 
 @NgModule({
   declarations: [
@@ -16,9 +21,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     TopNavComponent,
     MidleNavComponent,
     NavbarComponent,
+    HomeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
