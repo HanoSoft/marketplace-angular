@@ -11,6 +11,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrandService} from './services/brand.service';
+import { BrandListComponent } from './brand-list/brand-list.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent}
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     MidleNavComponent,
     NavbarComponent,
     HomeComponent,
+    BrandListComponent,
   ],
   imports: [
     BrowserModule,
