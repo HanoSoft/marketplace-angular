@@ -9,6 +9,8 @@ import { MidleNavComponent } from './midle-nav/midle-nav.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from '@angular/common/http';
+import {BrandService} from './services/brand.service';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent}
@@ -25,9 +27,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-      RouterModule.forRoot(appRoutes),
+      HttpClientModule,
+      RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+      BrandService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
