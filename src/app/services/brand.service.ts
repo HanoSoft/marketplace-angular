@@ -11,7 +11,7 @@ export class BrandService {
       this.brandSubject.next(this.brands.slice());
   }
   public getBrands () {
-      this.httpClient.get<any[]>('http://brands').subscribe(
+      this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/brands').subscribe(
           (response) => {this.brands = response;
           this.emitBrandSubject();
           },
