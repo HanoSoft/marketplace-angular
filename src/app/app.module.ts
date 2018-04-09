@@ -13,6 +13,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrandService} from './services/brand.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthNavComponent } from './auth-nav/auth-nav.component';
+import { BrandListComponent } from './brand-list/brand-list.component';
+import { BrandComponent } from './brand/brand.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -29,11 +33,15 @@ const appRoutes: Routes = [
     HomeComponent,
     AuthComponent,
     AuthNavComponent,
+    BrandListComponent,
+    BrandComponent,
   ],
   imports: [
     BrowserModule,
-      HttpClientModule,
-      RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+      FormsModule,
+      ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
       BrandService
