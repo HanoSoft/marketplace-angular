@@ -2,6 +2,6 @@
     <div class="row">
         <app-brand *ngFor="let brand of brands; let i = index;" [brandName]="brand.brand_name"
                    [id]="brand.id" [description]="brand.description"  [image]="brand.brand_image.name"
-                   [logo]="brand.logo.name"  ></app-brand>
+                   [logo]="brand.logo.name"  [categories]="brand.categories" ></app-brand>
     </div>
 </div>

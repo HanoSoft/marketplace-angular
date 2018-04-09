@@ -1,0 +1,121 @@
+.accueil_vente__liste_arbo a:hover {
+  color: rebeccapurple;
+}
+.accueil_vente__liste_arbo a.tous_produits {
+  color: #f71073;
+}
+.accueil_vente__liste_arbo a {
+  display: block;
+  padding: 10px 0;
+  width: 230px;
+}
+.accueil_vente__liste_arbo a span {
+  font-size: 25px;
+  margin-top: -8px;
+  position: absolute;
+  right: 25px;
+  transition: all 0.3s ease 0s;
+  color: #f71073;
+}
+.accueil_vente__liste_arbo a {
+  display: block;
+  padding: 10px 0;
+  width: 230px;
+}
+a {
+  text-decoration: none;
+  color: #4c4c4c;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+}
+a {
+  background-color: transparent;
+}
+.accueil_vente__liste_arbo li {
+  margin: 0 15px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.accueil_vente_logo {
+  padding: 5px 0;
+}
+ol, ul {
+  list-style: none;
+}
+.accueil_vente__arbo {
+  width: 30%;
+  margin-left: 65%;
+  padding-bottom: 5px;
+  background-color: #fff;
+  position: relative;
+  -moz-box-shadow: 0 1px 2px 0 #d9d9d9;
+  -webkit-box-shadow: 0 1px 2px 0 #d9d9d9;
+  box-shadow: 0 1px 2px 0 #d9d9d9;
+}
+.accueil_vente_picture {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  top: 0;
+}
+a {
+  text-decoration: none;
+  color: #4c4c4c;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+}
+a {
+  background-color: transparent;
+}
+.accueil_vente__bloc_visuel {
+  height: 500px;
+  width: 940px;
+  border: 1px solid #ededed;
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  display: table-cell;
+  vertical-align: middle;
+}
+.pave_940 .pave_m {
+  background: #fff;
+  border-top: none;
+  border-bottom: none;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.pave_940 {
+  width: 940px;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+.accueil_vente_picture {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  top: 0;
+}

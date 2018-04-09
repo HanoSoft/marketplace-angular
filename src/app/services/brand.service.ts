@@ -18,4 +18,10 @@ export class BrandService {
           (error) => {console.log('Erreur ! :' + error); }
       );
   }
+    getBrand (id: number) {
+        const brand = this.brands.find((brandObject) => {
+            return brandObject.id === id; });
+        console.log('ok' + id);
+        return brand;
+    }
 }
