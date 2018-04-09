@@ -1,7 +1,9 @@
-<div class="col-md-4 wrp-product-2"><img src="assets/images/scha.jpg" alt="Lorem Ipsum"/>
+<div class="col-md-4 wrp-product-2">
+    <img [src]="url+image" alt="Lorem Ipsum"/>
     <div class="add-to-cart"> <i class="ion-android-add"></i><span>Visualiser</span></div>
     <div class="wrp-row">
-        <h3>FA</h3>
-        <p>Achetez Fa - Shampooing - Douche - Extreme Cool - Flacon 250 ml - Lot de 6 ✓ Livraison & retours gratuits possibles</p>
-    </div><a href="#"></a>
+        <h3>{{brandName}}</h3>
+        <p [innerHTML]="description"></p>
+    </div>
+    <a href="#"></a>
 </div>
