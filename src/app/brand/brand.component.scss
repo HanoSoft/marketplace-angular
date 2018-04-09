@@ -1,88 +1,73 @@
-
-@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-
-.wrp-product-2 {
-  color: #000000;
-  font-size: 16px;
-
+.row{
+  padding-top: 10px;
 }
 
-.wrp-product-2:hover{
-  box-shadow: 0px 10px 25px -2px rgba(0,0,0,0.36);
+/* cards */
 
+.card *:hover{
+  text-decoration: none;
 }
-.wrp-product-2 * {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.wrp-product-2 img {
-  max-width: 100%;
-  vertical-align: top;
-  position: relative;
-}
-.wrp-product-2 .add-to-cart {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 10px;
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  opacity: 0;
-  background-color: #409ad5;
-  -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-  padding: 5px
-}
-.wrp-product-2 .add-to-cart i {
-  display: inline-block;
-  margin-right: 10px;
-  width: 40px;
-  line-height: 40px;
+
+.card .thumbnail{
+  padding: 0;
+  border: none;
   text-align: center;
-  background-color: #164666;
-  color: #ffffff;
-  font-size: 1.4em;
-}
-.wrp-product-2 .wrp-row {
-  padding: 20px;
-}
-.wrp-product-2 h3{
-  color: #F61073;
-}
-.wrp-product-2 p {
-  margin: 0;
-}
-.wrp-product-2 h3 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-.wrp-product-2 p {
-  font-size: 0.9em;
-  letter-spacing: 1px;
-  font-weight: 400;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0.5px 1px 0px rgba(0,0,0,0.75);
 }
 
-.wrp-product-2 a {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.card .thumbnail .caption{
+  margin: -20px 20px 20px 20px;
+  padding: 19px 29px 19px 29px;
+  position: relative;
+  background-color: white;
 }
-.wrp-product-2:hover .add-to-cart {
-  opacity: 1;
-  -webkit-transform: rotateX(0deg);
-  transform: rotateX(0deg);
+
+.card .thumbnail .caption h3 small{
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  display: block;
+  padding: 5px;
 }
-.wrp-product-2:hover .add-to-cart i{
-  background-color: #F61073;
+
+.card .thumbnail .caption h3{
+  font-family: 'Raleway',sans-serif;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.card .thumbnail .caption hr{
+  border-top: 1px solid #333;
+  margin: 20px 40px;
+}
+
+.card .thumbnail .caption p{
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.card .thumbnail .caption a{
+  border-radius: 0;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card .thumbnail .caption a:hover{
+  background-color: #CD075C;
+  border-color: black;
+  color: white;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
