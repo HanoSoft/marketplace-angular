@@ -1,9 +1,20 @@
-<div class="col-md-4 wrp-product-2">
-    <img [src]="url+image" alt="Lorem Ipsum"/>
-    <div class="add-to-cart"> <i class="ion-android-add"></i><span>Visualiser</span></div>
-    <div class="wrp-row">
-        <h3>{{brandName}}</h3>
-        <p [innerHTML]="description"></p>
-    </div>
-    <a href="#"></a>
-</div>
+        <div class="col-xs-12 col-sm-6 col-md-4 card">
+            <a href="#">
+                <div class="thumbnail">
+                    <img [src]="url+image" alt="Lorem Ipsum"/>
+                    <div class="caption">
+                        <h3>
+                            <img [src]="url+logo" alt="Lorem Ipsum" width="100"/>
+
+                        </h3>
+                        <hr>
+                        <p [innerHTML]="description"></p>
+                        <a href="#" class="col-lg-12 btn btn-default" role="button">
+                            Afficher
+                            <i class="fa fa-chevron-right" style="float:right;margin-left:3px;  margin-top: 5px;">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+            </a>
+        </div>
