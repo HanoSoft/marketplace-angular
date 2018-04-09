@@ -11,9 +11,11 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrandService} from './services/brand.service';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent}
+    { path: 'home', component: HomeComponent},
+    { path: 'auth', component: AuthComponent}
 ];
 
 @NgModule({
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
     MidleNavComponent,
     NavbarComponent,
     HomeComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
