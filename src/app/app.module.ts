@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BrandService} from './services/brand.service';
 import { AuthComponent } from './auth/auth.component';
+import { AuthNavComponent } from './auth-nav/auth-nav.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeComponent,
     AuthComponent,
+    AuthNavComponent,
   ],
   imports: [
     BrowserModule,
