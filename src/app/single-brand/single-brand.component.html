@@ -1,0 +1,19 @@
+<div class="container" align="center">
+  <div class="pave_940">
+    <div class="pave_m">
+      <div class="accueil_vente__bloc_visuel" [style.background-image]="'url(' + url+brand.brand_image.name+ ')'" >
+        <a class="accueil_vente_picture" href="#"></a>
+        <div class="accueil_vente__arbo">
+          <ul class="accueil_vente__liste_arbo">
+            <li class="accueil_vente_logo">
+              <img id="cph_middle_SaleContainer_ctl00_ImgLogo" src="" alt="">
+            </li>
+            <li *ngFor="let category of brand.categories; let i = index;">
+              <a href="#">{{ category.name }}<span>›</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

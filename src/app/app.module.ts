@@ -16,14 +16,14 @@ import { AuthNavComponent } from './auth-nav/auth-nav.component';
 import { BrandListComponent } from './brand-list/brand-list.component';
 import { BrandComponent } from './brand/brand.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BrandCategComponent } from './brand-categ/brand-categ.component';
+import { SingleBrandComponent } from './single-brand/single-brand.component';
 
 
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent},
     { path: 'auth', component: AuthComponent},
-    { path: 'home/:id', component: BrandCategComponent}
+    { path: 'home/:id', component: SingleBrandComponent}
 ];
 
 @NgModule({
@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     AuthNavComponent,
     BrandListComponent,
     BrandComponent,
-    BrandCategComponent,
+    SingleBrandComponent,
   ],
   imports: [
     BrowserModule,
