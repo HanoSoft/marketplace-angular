@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
     <div class="row">
 
@@ -7,3 +8,13 @@
                    [logo]="brand.logo.name"  ></app-brand>
     </div>
 </div>
+=======
+<div class="container" style="margin-top: 200px;">
+    <app-brand *ngFor="let brand of brands; let i = index;" [brandName]="brand.brand_name"
+               [id]="brand.id" [description]="brand.description"  [image]="brand.brand_image.name"
+               [logo]="brand.logo.name"  [categories]="brand.categories" >
+    </app-brand>
+
+</div>
+
+>>>>>>> d93d140fea70d9cbf68b110b21855d85d594850f

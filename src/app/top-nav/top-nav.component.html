@@ -1,105 +1,167 @@
-<nav class="topBar">
-  <div class="container">
-    <ul class="list-inline pull-left hidden-sm hidden-xs">
-      <li><span class="text-primary">Vous avez des questions? </span> Appeler +555 558 7885</li>
-    </ul>
-    <ul class="topBarNav pull-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <i class="fa fa-usd mr-5"></i>EUR<i class="fa fa-angle-down ml-5"></i>
-        </a>
-        <ul class="dropdown-menu w-100" role="menu">
-          <li><a href="#"><i class="fa fa-eur mr-5"></i>EUR</a>
-          </li>
-          <li class=""><a href="#"><i class="fa fa-usd mr-5"></i>USD</a>
-          </li>
-        </ul>
-      </li>
 
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false"> <img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt=""> <span class="hidden-xs"> Français <i class="fa fa-angle-down ml-5"></i></span> </a>
-        <ul class="dropdown-menu w-100" role="menu">
-          <li>
-            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-english.jpg" class="mr-5" alt="">English</a>
-          </li>
-          <li class="">
-            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-french.jpg" class="mr-5" alt="">French</a>
-          </li>
-          <li>
-            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-german.jpg" class="mr-5" alt="">German</a>
-          </li>
-          <li>
-            <a href="#"><img src="http://diamondcreative.net/plus-v1.2/img/flags/flag-spain.jpg" class="mr-5" alt="">Spain</a>
-          </li>
-        </ul>
-      </li>
+<div class="super_container" align="center">
 
-      <li class="dropdown user">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">
-            <i class="fa fa-user mr-5"></i><span class="hidden-xs">
-          Compte
-            <i class="fa fa-angle-down ml-5">
-        </i>
-        </span>
-        </a>
-        <ul class="dropdown-menu w-150" role="menu">
-          <li><a href="#"><i class="fa fa-user-circle-o icon-size-24"></i>&nbsp; &nbsp; Mon profil</a>
-          </li>
-            <li class="divider"></li>
-          <li>
-              <a href="#"><span class="glyphicon glyphicon-list-alt icon-size-24"></span> &nbsp;Mes Commandes </a>
-          </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#"><span class="glyphicon glyphicon glyphicon-tags icon-size-24"></span> &nbsp; Mes Avantages </a>
-            </li>
-          <li class="divider"></li>
-            <li>
-                <a href="#"><span class="glyphicon glyphicon-off icon-size-24"></span> &nbsp; Déconnexion</a>
-            </li>
-        </ul>
-      </li>
+    <!-- Header -->
+    <header class="header trans_300">
+        <!-- Top Navigation -->
 
-
-
-        <!-- panier-->
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">
-                <i class="fa fa-shopping-basket mr-5 icon-size-28">
-                    <span class="badge">1</span>
-                </i>
-                <span class="hidden-xs">
-                    <i class="fa fa-angle-down ml-5"></i>
-                </span>
-
-            </a>
-
-            <ul class="dropdown-menu cart w-250" role="menu">
-                <li>
-                    <div class="cart-items">
-                        <ol class="items">
-                            <li>
-                                <a href="#" class="product-image"> <img src="/assets/images/prod.jpg" class="img-responsive" alt="Sample Product "> </a>
-                                <div class="product-details">
-                                    <div class="close-icon"> <a href="#"><i class="fa fa-close"></i></a> </div>
-                                    <p class="product-name"> <a href="#">pc thompson</a>
-                                    </p>
-                                    <strong>1</strong> x <span class="price text-primary">$59.99</span>
-                                </div>
-                                <!-- end product-details -->
-                            </li>
-
-                        </ol>
+        <div class="top_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="top_nav_left">free shipping on all u.s orders over $50</div>
                     </div>
+                    <div class="col-md-6 text-right">
+                        <div class="top_nav_right">
+                            <ul class="top_nav_menu">
+
+                                <!-- Currency / Language / My Account -->
+
+                                <li class="currency">
+                                    <a href="#">
+                                        EUR
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="currency_selection">
+                                        <li><a href="#">cad</a></li>
+                                        <li><a href="#">aud</a></li>
+                                        <li><a href="#">eur</a></li>
+                                        <li><a href="#">gbp</a></li>
+                                    </ul>
+                                </li>
+                                <li class="language">
+                                    <a href="#">
+                                        Français
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="language_selection">
+                                        <li><a href="#">French</a></li>
+                                        <li><a href="#">Italian</a></li>
+                                        <li><a href="#">German</a></li>
+                                        <li><a href="#">Spanish</a></li>
+                                    </ul>
+                                </li>
+                                <li class="account">
+                                    <a href="#">
+                                        Mon Compte
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+                                    <ul class="account_selection">
+                                        <li><a href="#">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>Mon profil</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                            &nbsp; Commandes</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                            &nbsp; Avantages</a>
+                                        </li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                                            &nbsp;  Déconnexion</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+
+        <div class="main_nav_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-right">
+                        <div class="logo_container">
+                            <a href="#">sbz<span>market</span></a>
+                        </div>
+                        <nav class="navbar">
+                            <ul class="navbar_menu">
+                                <li routerLinkActive="active">
+                                    <a routerLink="">Accueil</a>
+                                </li>
+
+                                <li><a href="#">Vêtements</a></li>
+                                <li><a href="#">High-Tec</a></li>
+                                <li><a href="#">Beauté et Parfum</a></li>
+                                <li><a href="#">Bijoux</a></li>
+                                <li><a href="#">Voyages</a></li>
+                                <li><a href="#">Billetterie</a></li>
+
+                            </ul>
+                            <ul class="navbar_user">
+                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                <li class="checkout">
+                                    <a href="#">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <span id="checkout_items" class="checkout_items">2</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="hamburger_container">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="fs_menu_overlay"></div>
+    <div class="hamburger_menu">
+        <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+        <div class="hamburger_menu_content text-right">
+            <ul class="menu_top_nav">
+                <li class="menu_item has-children">
+                    <a href="#">
+                        usd
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="menu_selection">
+                        <li><a href="#">cad</a></li>
+                        <li><a href="#">aud</a></li>
+                        <li><a href="#">eur</a></li>
+                        <li><a href="#">gbp</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <div class="cart-footer"> <a href="#" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View
-                        Cart</a> <a href="#" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a> </div>
+                <li class="menu_item has-children">
+                    <a href="#">
+                        English
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="menu_selection">
+                        <li><a href="#">French</a></li>
+                        <li><a href="#">Italian</a></li>
+                        <li><a href="#">German</a></li>
+                        <li><a href="#">Spanish</a></li>
+                    </ul>
                 </li>
+                <li class="menu_item has-children">
+                    <a href="#">
+                        My Account
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="menu_selection">
+                        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="#">home</a></li>
+                <li class="menu_item"><a href="#">shop</a></li>
+                <li class="menu_item"><a href="#">promotion</a></li>
+                <li class="menu_item"><a href="#">pages</a></li>
+                <li class="menu_item"><a href="#">blog</a></li>
+                <li class="menu_item"><a href="#">contact</a></li>
             </ul>
-        </li>
+        </div>
+    </div>
 
 
 
-    </ul>
-  </div>
-</nav>
+
+</div>
