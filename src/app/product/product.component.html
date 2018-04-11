@@ -1,0 +1,10 @@
+<div *ngIf="deleted === false">
+  <h4 >Product : {{ productName }} </h4>
+  <h3>price :{{ price }}</h3>
+  <h3>quantity :{{ quantity }}</h3>
+  <h3>price :{{ id }}</h3>
+  <div *ngFor="let image of images; let i = index;">
+    <img [src]="url+image.name">
+    <p>image:{{image.name}}</p>
+  </div>
+</div>

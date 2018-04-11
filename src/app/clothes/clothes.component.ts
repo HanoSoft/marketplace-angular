@@ -1,13 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import { Component, OnInit } from '@angular/core';
 import {BrandService} from '../services/brand.service';
+import {ActivatedRoute} from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'app-brand-list',
-  templateUrl: './brand-list.component.html',
-  styleUrls: ['./brand-list.component.scss']
+  selector: 'app-clothes',
+  templateUrl: './clothes.component.html',
+  styleUrls: ['./clothes.component.scss']
 })
-export class BrandListComponent implements OnInit {
+export class ClothesComponent implements OnInit {
     brands: any[];
     brandSubscription: Subscription;
     constructor( private brandService: BrandService) {
@@ -20,7 +21,7 @@ export class BrandListComponent implements OnInit {
             }
         );
         this.brandService.emitBrandSubject();
-            this.onFetch() ;
+        this.onFetch() ;
     }
     onFetch() {
         this.brandService.getBrands();

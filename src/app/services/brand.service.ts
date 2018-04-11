@@ -24,4 +24,11 @@ export class BrandService {
         console.log('ok' + id);
         return brand;
     }
+    getCategory (id: number) {
+        const category = this.brands.find((brandObject) => {
+            return brandObject.categories.find((categObject) => {
+                return categObject.id === id ; }); });
+        console.log('ok' + id);
+        return category;
+    }
 }

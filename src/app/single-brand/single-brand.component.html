@@ -9,10 +9,10 @@
               <img id="cph_middle_SaleContainer_ctl00_ImgLogo" [src]="url+brand.logo.name" alt="" width="150">
             </li>
             <li *ngFor="let category of brand.categories; let i = index;">
-              <a href="#" *ngIf="category.deleted ===false">{{ category.name }}<span class="link-inner">›</span></a>
+              <a [routerLink]="[category.id]" *ngIf="category.deleted ===false">{{ category.name }}<span class="link-inner">›</span></a>
             </li>
             <li>
-              <a href="#">Voir tous les produits <span class="link-inner">›</span></a>
+              <a routerLink="all">Voir tous les produits <span class="link-inner">›</span></a>
             </li>
           </ul>
         </div>

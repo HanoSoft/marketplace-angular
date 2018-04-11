@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -17,12 +16,23 @@ import { SingleBrandComponent } from './single-brand/single-brand.component';
 import { HorizontalTabComponent } from './horizontal-tab/horizontal-tab.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ClothesComponent } from './clothes/clothes.component';
+import { BeautyComponent } from './beauty/beauty.component';
+import { ProductComponent } from './product/product.component';
+import { CategoryComponent } from './category/category.component';
+import { BrandAllProductComponent } from './brand-all-product/brand-all-product.component';
 
 
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
+    { path: 'clothes', component: ClothesComponent},
+    { path: 'beauty', component: BeautyComponent},
+    { path: 'clothes/:id', component: SingleBrandComponent},
+    { path: 'beauty/:id', component: SingleBrandComponent},
     { path: ':id', component: SingleBrandComponent},
+    { path: ':id/all', component: BrandAllProductComponent},
+    { path: ':id/:idc', component: ProductListComponent},
     {path: 'not-found', component: NotFoundComponent},
     {path: '**', redirectTo: '/not-found'},
 ];
@@ -30,7 +40,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     TopNavComponent,
     HomeComponent,
     BrandListComponent,
@@ -40,6 +49,11 @@ const appRoutes: Routes = [
     HorizontalTabComponent,
     NotFoundComponent,
     ProductListComponent,
+    ClothesComponent,
+    BeautyComponent,
+    ProductComponent,
+    CategoryComponent,
+    BrandAllProductComponent,
 
   ],
   imports: [

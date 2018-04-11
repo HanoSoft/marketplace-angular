@@ -1,13 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {BrandService} from '../services/brand.service';
 
 @Component({
-  selector: 'app-brand-list',
-  templateUrl: './brand-list.component.html',
-  styleUrls: ['./brand-list.component.scss']
+  selector: 'app-beauty',
+  templateUrl: './beauty.component.html',
+  styleUrls: ['./beauty.component.scss']
 })
-export class BrandListComponent implements OnInit {
+export class BeautyComponent implements OnInit {
     brands: any[];
     brandSubscription: Subscription;
     constructor( private brandService: BrandService) {
@@ -20,9 +20,10 @@ export class BrandListComponent implements OnInit {
             }
         );
         this.brandService.emitBrandSubject();
-            this.onFetch() ;
+        this.onFetch() ;
     }
     onFetch() {
         this.brandService.getBrands();
     }
+
 }
