@@ -1,17 +1,17 @@
 
 .footer {
   padding: 50px 0 20px 0;
-  background-color: #ebebeb;
+  background-color: #1E1E27;
   color: #878c94;
 }
 .footer .title{
   text-align: left;
-  color:#35404f;
+  color:#b5aec4;
   font-size:15px;
 }
 .footer .titlePayment{
   margin-left:60px;
-  color: #35404f;
+  color: #b5aec4;
   font-size:15px;
 }
 .footer .social-icon{
@@ -30,7 +30,7 @@
 }
 .footer .acount-icon a{
   display:block;
-  color:#333333;
+  color:#9fcdff;
   font-size:13px;
   padding:5px;
   text-decoration:none;
@@ -52,7 +52,7 @@
   border-radius:6px;
   margin-top: 6px;
   background-color: #ffffff;
-  border: solid 1px #CD075C;
+  border: solid 1px #1E1E27;
 
 
 }
@@ -82,4 +82,7 @@ hr {
 }
 .footer .copy{
   text-align: center;
+}
+.footer .question{
+  color: #878c94;
 }
