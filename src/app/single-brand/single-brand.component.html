@@ -1,4 +1,4 @@
-<div class="container" align="center">
+<div class="container-fluid" align="center" style="margin-top: 180px;">
   <div class="pave_940">
     <div class="pave_m">
       <div class="accueil_vente__bloc_visuel" [style.background-image]="'url(' + url+brand.brand_image.name+ ')'" >
@@ -6,10 +6,13 @@
         <div class="accueil_vente__arbo">
           <ul class="accueil_vente__liste_arbo">
             <li class="accueil_vente_logo">
-              <img id="cph_middle_SaleContainer_ctl00_ImgLogo" src="" alt="">
+              <img id="cph_middle_SaleContainer_ctl00_ImgLogo" [src]="url+brand.logo.name" alt="" width="150">
             </li>
             <li *ngFor="let category of brand.categories; let i = index;">
-              <a href="#">{{ category.name }}<span>›</span></a>
+              <a href="#" *ngIf="category.deleted ===false">{{ category.name }}<span class="link-inner">›</span></a>
+            </li>
+            <li>
+              <a href="#">Voir tous les produits <span class="link-inner">›</span></a>
             </li>
           </ul>
         </div>
@@ -17,3 +20,4 @@
     </div>
   </div>
 </div>
+<app-horizontal-tab [description]="brand.description"></app-horizontal-tab>
