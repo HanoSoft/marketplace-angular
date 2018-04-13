@@ -21,15 +21,18 @@ import { BeautyComponent } from './beauty/beauty.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { BrandAllProductComponent } from './brand-all-product/brand-all-product.component';
+import { HighTecComponent } from './high-tec/high-tec.component';
 
 
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'clothes', component: ClothesComponent},
-    { path: 'beauty', component: BeautyComponent},
     { path: 'clothes/:id', component: SingleBrandComponent},
+    { path: 'beauty', component: BeautyComponent},
     { path: 'beauty/:id', component: SingleBrandComponent},
+    { path: 'HighTec', component: HighTecComponent},
+    { path: 'HighTec/:id', component: SingleBrandComponent},
     { path: ':id', component: SingleBrandComponent},
     { path: ':id/all', component: BrandAllProductComponent},
     { path: ':id/:idc', component: ProductListComponent},
@@ -54,6 +57,7 @@ const appRoutes: Routes = [
     ProductComponent,
     CategoryComponent,
     BrandAllProductComponent,
+    HighTecComponent,
 
   ],
   imports: [
