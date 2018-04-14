@@ -1,8 +1,0 @@
-<div *ngFor="let category of brand.categories; let i = index;">
-  <div  style="margin-top: 300px;">
-    <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
-                 [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
-                 [deleted]="product.deleted">
-    </app-product>
-  </div>
-</div>

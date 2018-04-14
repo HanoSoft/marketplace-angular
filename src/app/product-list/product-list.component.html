@@ -6,21 +6,32 @@
                     <h5>Catégories</h5>
                 </div>
                 <ul class="sidebar_categories" *ngFor="let category of brand.categories; let i = index;">
-                    <li><a href=""> {{category.name}}</a></li>
+                    <li><a  (click)="ngOnRedirect(category.id);" *ngIf="category.deleted ===false"> {{category.name}}</a></li>
                 </ul>
             </div>
         </div>
-            <div class="col-md-10">
-            <div class="product_grid " *ngFor="let category of brand.categories; let i = index;">
+        <div class="col-md-10">
 
-            <ul class="product_list list " *ngIf="category.id === idc;">
+
+        <div class="product_grid ">
+    <ul class="product_list list " >
+        <span *ngFor="let category of brand.categories; let i = index;">
+            <span *ngIf="!idc;">
                 <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
                              [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
                              [deleted]="product.deleted">
                 </app-product>
+            </span>
+            <span *ngIf="category.id === idc">
+                <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
+                             [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
+                             [deleted]="product.deleted">
+                </app-product>
+            </span>
+        </span>
+    </ul>
 
-            </ul>
+</div>
         </div>
-            </div>
     </div>
 </div>

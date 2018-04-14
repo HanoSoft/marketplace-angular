@@ -20,8 +20,9 @@ import { ClothesComponent } from './clothes/clothes.component';
 import { BeautyComponent } from './beauty/beauty.component';
 import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
-import { BrandAllProductComponent } from './brand-all-product/brand-all-product.component';
 import { HighTecComponent } from './high-tec/high-tec.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import {ProductService} from './services/product.service';
 
 
 
@@ -34,10 +35,17 @@ const appRoutes: Routes = [
     { path: 'HighTec', component: HighTecComponent},
     { path: 'HighTec/:id', component: SingleBrandComponent},
     { path: ':id', component: SingleBrandComponent},
-    { path: ':id/all', component: BrandAllProductComponent},
+    { path: ':id/all', component: ProductListComponent},
     { path: ':id/:idc', component: ProductListComponent},
+    { path: ':id/:idc/:idp', component: ProductDetailsComponent},
+    { path: 'clothes/:id/all', component: ProductListComponent},
+    { path: 'clothes/:id/:idc', component: ProductListComponent},
+    { path: 'beauty/:id/all', component: ProductListComponent},
+    { path: 'beauty/:id/:idc', component: ProductListComponent},
+    { path: 'HighTec/:id/all', component: ProductListComponent},
+    { path: 'HighTec/:id/:idc', component: ProductListComponent},
     {path: 'not-found', component: NotFoundComponent},
-    {path: '**', redirectTo: '/not-found'},
+ /*   {path: '**', redirectTo: '/not-found'},*/
 ];
 
 @NgModule({
@@ -56,9 +64,8 @@ const appRoutes: Routes = [
     BeautyComponent,
     ProductComponent,
     CategoryComponent,
-    BrandAllProductComponent,
     HighTecComponent,
-
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +75,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-      BrandService
+      BrandService,
+      ProductService
   ],
   bootstrap: [AppComponent]
 })
