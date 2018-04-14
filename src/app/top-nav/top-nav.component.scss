@@ -807,48 +807,6 @@ section
 4. 1199px
 ************/
 
-@media only screen and (max-width: 1199px)
-{
-  .main_slider
-  {
-    min-height: 475px;
-    height: calc(100vw / 1.714);
-  }
-  .main_slider_content
-  {
-    width: 80%;
-  }
-  .banner_item
-  {
-    height: 220px;
-  }
-  .product-item
-  {
-    height: 360px;
-  }
-  .product
-  {
-    height: 320px;
-  }
-  .timer li
-  {
-    width: 90px;
-    height: 90px;
-  }
-  .timer_num
-  {
-    font-size: 36px;
-    font-weight: 500;
-  }
-  .timer_unit
-  {
-    margin-top: 5px;
-  }
-  .blog_title
-  {
-    font-size: 20px;
-  }
-}
 
 /************
 5. 1024px
@@ -1173,16 +1131,3 @@ section
 {
 
 }
-
-/************
-
-
-14. 400px
-************/
-
-@media only screen and (max-width: 400px)
-{
-
-}
-
-
