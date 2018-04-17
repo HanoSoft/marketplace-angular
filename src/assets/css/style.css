@@ -423,10 +423,10 @@ i.fa.fa-shopping-bag.top_logo_agile_bag {
 /* Individual styles */
 .menu--shylock .menu__link {
 	position: relative;
-    margin: 0;
 	color: #b5b5b5;
 	-webkit-transition: color 0.4s;
 	transition: color 0.4s;
+    font-size: 12px;
 }
 
 .menu--shylock .menu__item--current .menu__link,
@@ -1458,6 +1458,7 @@ button.w3view-cart {
     height: 43px;
     font-size: 24px;
     color: #000;
+
 }
 /*-- //cart --*/
 /*-- effect --*/

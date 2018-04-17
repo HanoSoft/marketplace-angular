@@ -1,166 +1,97 @@
-
-<div class="super_container" align="center">
-
-    <!-- Header -->
-    <header class="header trans_300">
-        <!-- Top Navigation -->
-        <div class="top_nav">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="top_nav_left">free shipping on all u.s orders over $50</div>
-                    </div>
-                    <div class="col-md-6 text-right">
-                        <div class="top_nav_right">
-                            <ul class="top_nav_menu">
-
-                                <!-- Currency / Language / My Account -->
-
-                                <li class="currency">
-                                    <a href="#">
-                                        EUR
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="currency_selection">
-                                        <li><a href="#">cad</a></li>
-                                        <li><a href="#">aud</a></li>
-                                        <li><a href="#">eur</a></li>
-                                        <li><a href="#">gbp</a></li>
-                                    </ul>
-                                </li>
-                                <li class="language">
-                                    <a href="#">
-                                        Français
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="language_selection">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Italian</a></li>
-                                        <li><a href="#">German</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                    </ul>
-                                </li>
-                                <li class="account">
-                                    <a href="#">
-                                        Mon Compte
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="account_selection">
-                                        <li><a href="#">
-                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>Mon profil</a>
-                                        </li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                                            &nbsp; Commandes</a>
-                                        </li>
-                                        <li><a href="#"><span class="glyphicon glyphicon glyphicon-tags" aria-hidden="true"></span>
-                                            &nbsp; Avantages</a>
-                                        </li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                                            &nbsp;  Déconnexion</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Navigation -->
-
-        <div class="main_nav_container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-right">
-                        <div class="logo_container">
-                            <a href="#">sbz<span>market</span></a>
-                        </div>
-                        <nav class="navbar">
-                            <ul class="navbar_menu">
-                                <li routerLinkActive="active">
-                                    <a routerLink="">Accueil</a>
-                                </li>
-                                <li><a routerLink="clothes">Vêtements</a></li>
-                                <li><a routerLink="HighTec">High-Tec</a></li>
-                                <li><a routerLink="beauty">Beauté et Parfum</a></li>
-                                <li><a href="#">Bijoux</a></li>
-                                <li><a href="#">Voyages</a></li>
-                                <li><a href="#">Billetterie</a></li>
-
-                            </ul>
-                            <ul class="navbar_user">
-                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                <li class="checkout">
-                                    <a href="#">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                        <span id="checkout_items" class="checkout_items">{{products.length}}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="hamburger_container">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-    <div class="fs_menu_overlay"></div>
-    <div class="hamburger_menu">
-        <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-        <div class="hamburger_menu_content text-right">
-            <ul class="menu_top_nav">
-                <li class="menu_item has-children">
-                    <a href="#">
-                        usd
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="menu_selection">
-                        <li><a href="#">cad</a></li>
-                        <li><a href="#">aud</a></li>
-                        <li><a href="#">eur</a></li>
-                        <li><a href="#">gbp</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item has-children">
-                    <a href="#">
-                        English
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="menu_selection">
-                        <li><a href="#">French</a></li>
-                        <li><a href="#">Italian</a></li>
-                        <li><a href="#">German</a></li>
-                        <li><a href="#">Spanish</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item has-children">
-                    <a href="#">
-                        My Account
-                        <i class="fa fa-angle-down"></i>
-                    </a>
-                    <ul class="menu_selection">
-                        <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                    </ul>
-                </li>
-                <li class="menu_item"><a href="#">home</a></li>
-                <li class="menu_item"><a href="#">shop</a></li>
-                <li class="menu_item"><a href="#">promotion</a></li>
-                <li class="menu_item"><a href="#">pages</a></li>
-                <li class="menu_item"><a href="#">blog</a></li>
-                <li class="menu_item"><a href="#">contact</a></li>
-            </ul>
-        </div>
+<div class="header" id="home">
+    <div class="container">
+        <ul>
+            <li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Se connecter </a></li>
+            <li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> S'inscrire </a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> Appeler : +555 558 7885</li>
+            <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">sbzMarket@contact.com</a></li>
+        </ul>
     </div>
+</div>
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+    <div class="header-bot_inner_wthreeinfo_header_mid">
+        <div class="col-md-4 header-middle">
+            <form action="#" method="post">
+                <input type="search" name="search" placeholder="Rechercher" required="">
+                <input type="submit" value=" ">
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <!-- header-bot -->
+        <div class="col-md-4 logo_agile">
+            <h1><a href="#">S<span>B</span>Z Market</a></h1>
+        </div>
+        <!-- header-bot -->
+        <div class="col-md-4 agileits-social top_content">
+            <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+                <li class="share">Partager sur : </li>
+                <li><a href="#" class="facebook">
+                    <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="twitter">
+                    <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="instagram">
+                    <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div></a></li>
+                <li><a href="#" class="pinterest">
+                    <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                    <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
+            </ul>
 
 
 
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //header-bot -->
+<!-- banner -->
+<div class="ban-top">
+    <div class="container">
+        <div class="top_nav_left">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav menu__list">
+                            <li  routerLinkActive="active" class="active menu__item menu__item--current">
+                                <a class="menu__link" routerLink="">Acceuil
+                                <span class="sr-only">(current)</span></a></li>
+                            <li class=" menu__item"><a routerLink="clothes" class="menu__link" >Vêtements</a></li>
+                            <li class=" menu__item"><a routerLink="HighTec" class="menu__link" >High-Tec</a></li>
+                            <li class=" menu__item"><a routerLink="beauty" class="menu__link" >Beauté et Parfum </a></li>
+                            <li class=" menu__item"><a class="menu__link" >Bijoux</a></li>
+                            <li class=" menu__item"><a class="menu__link" >Voyages</a></li>
+                            <li class=" menu__item"><a class="menu__link" >Billetterie</a></li>
 
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="top_nav_right">
+            <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                <form action="#" method="post" class="last">
+                    <input type="hidden" name="cmd" value="_cart">
+                    <input type="hidden" name="display" value="1">
+                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                </form>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 </div>
