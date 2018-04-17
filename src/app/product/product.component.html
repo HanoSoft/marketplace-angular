@@ -1,10 +1,30 @@
-<div *ngIf="deleted === false">
-  <h4 >Product : {{ productName }} </h4>
-  <h3>price :{{ price }}</h3>
-  <h3>quantity :{{ quantity }}</h3>
-  <h3>price :{{ id }}</h3>
-  <div *ngFor="let image of images; let i = index;">
-    <img [src]="url+image.name">
-    <p>image:{{image.name}}</p>
-  </div>
-</div>
+<li class="product_item">
+    <div class="product_sale">
+        <p>-20%</p>
+    </div>
+    <div class="product_image">
+        <a href="#"><img [src]="url+images[0].name" alt=""></a>
+        <div class="product_buttons">
+      <!--      <button class="product_heart"><i class="fa fa-heart"></i></button>-->
+            <button class="product_compare"><a style="color:#ffffff" [routerLink]="[id]"><i class="fa fa-info"></i></a></button>
+            <button class="add_to_cart" (click)="onAdd(id);"><i class="fa fa-shopping-cart"></i></button>
+
+        </div>
+    </div>
+    <div class="product_values">
+        <div class="product_title">
+            <h5>{{productName}}</h5>
+        </div>
+        <div class="product_price">
+            <a href="#"><span class="price_old">{{price}} €</span> <span class="price_new">{{price}} €</span></a>
+
+        </div>
+
+        <div class="product_buttons">
+           <!-- <button class="product_heart"><i class="fa fa-heart"></i></button>-->
+            <a class="product_compare" [routerLink]="[id]"><i class="fa fa-info"></i></a>
+            <button class="add_to_cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+    </div>
+</li>
+

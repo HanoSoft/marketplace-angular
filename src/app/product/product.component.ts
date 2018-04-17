@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ShopingService} from '../services/shoping.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -6,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+    products = [] ;
     @Input() id: number;
     @Input() deleted: boolean;
     @Input()  productName: string ;
@@ -14,9 +17,13 @@ export class ProductComponent implements OnInit {
     @Input() quantity: number ;
     @Input() images = [];
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
-  constructor() { }
+  constructor(private shoping: ShopingService, private route: Router) { }
 
   ngOnInit() {
+      this.products = this.shoping.getShopingProducts();
+  }
+  onAdd(id) {
+      this.shoping.add(id);
   }
 
 }

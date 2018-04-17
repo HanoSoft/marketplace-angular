@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BrandService} from '../services/brand.service';
+import {ShopingService} from '../services/shoping.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,15 +9,23 @@ import {BrandService} from '../services/brand.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+    products = [] ;
     brand;
     idc ;
+    id;
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/brand/';
-    constructor(private brandService: BrandService, private route: ActivatedRoute) {
-        const id = this.route.snapshot.params['id'];
-         this.idc = +this.route.snapshot.params['idc'];
-        this.brand = this.brandService.getBrand(+id);
+constructor(private brandService: BrandService, private router: ActivatedRoute, private route: Router, private shoping: ShopingService) {
+        this.id = this.router.snapshot.params['id'];
+        this.idc = +this.router.snapshot.params['idc'];
+        this.brand = this.brandService.getBrand(+this.id);
     }
-  ngOnInit() {
+    ngOnInit(): void {
+        this.products = this.shoping.getShopingProducts();
+    }
+  ngOnRedirect(idc: number) {
+      this.route.navigate(['/', this.id, idc]);
+      this.id = this.router.snapshot.params['id'];
+      this.idc = idc;
+      this.brand = this.brandService.getBrand(+this.id);
   }
-
 }

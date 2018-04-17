@@ -12,7 +12,6 @@ export class BrandListComponent implements OnInit {
     brandSubscription: Subscription;
     constructor( private brandService: BrandService) {
     }
-
     ngOnInit() {
         this.brandSubscription = this.brandService.brandSubject.subscribe(
             (brands: any[]) => {

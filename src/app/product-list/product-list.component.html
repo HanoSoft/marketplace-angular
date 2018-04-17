@@ -1,8 +1,44 @@
-<div *ngFor="let category of brand.categories; let i = index;">
-<div *ngIf="category.id === idc;" style="margin-top: 300px;">
-<app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
-             [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
-[deleted]="product.deleted">
-</app-product>
+<div  class="container-fluid" style="margin-top: 250px;">
+    <div class="row">
+        <div class="sidebar col-md-2">
+            <div class="sidebar_section">
+                <div class="sidebar_title">
+                    <h5>Catégories</h5>
+                </div>
+                <ul class="sidebar_categories" *ngFor="let category of brand.categories; let i = index;">
+                    <li><a  (click)="ngOnRedirect(category.id);" *ngIf="category.deleted ===false"> {{category.name}}</a></li>
+                </ul>
+            </div>
+            <span *ngFor="let product of products; let i = index;">
+        {{product.id}}
+</span>
+
+
+        </div>
+
+
+
+
+        <div class="col-md-10">
+        <div class="product_grid ">
+    <ul class="product_list list " >
+        <span *ngFor="let category of brand.categories; let i = index;">
+            <span *ngIf="!idc;">
+                <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
+                             [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
+                             [deleted]="product.deleted">
+                </app-product>
+            </span>
+            <span *ngIf="category.id === idc">
+                <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
+                             [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
+                             [deleted]="product.deleted">
+                </app-product>
+            </span>
+        </span>
+    </ul>
+
 </div>
+        </div>
+    </div>
 </div>
