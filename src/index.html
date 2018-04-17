@@ -10,7 +10,21 @@
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
+    <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+
+
 
 </head>
 <body>
@@ -18,10 +32,93 @@
   <app-root></app-root>
 
 
-
-  <script src="assets/js/jquery-3.2.1.min.js"></script>
-  <script src="assets/bootstrap4/popper.js"></script>
-  <script src="assets/bootstrap4/bootstrap.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <!-- js -->
+  <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+  <!-- //js -->
+  <script src="assets/js/modernizr.custom.js"></script>
+  <!-- Custom-JavaScript-File-Links -->
+  <!-- cart-js -->
+  <script src="assets/js/minicart.min.js"></script>
+  <script>
+      // Mini Cart
+      paypal.minicart.render({
+          action: '#'
+      });
+
+      if (~window.location.search.indexOf('reset=true')) {
+          paypal.minicart.reset();
+      }
+  </script>
+
+  <!-- //cart-js -->
+  <!-- single -->
+  <script src="assets/js/imagezoom.js"></script>
+  <!-- single -->
+  <!-- script for responsive tabs -->
+  <script src="assets/js/easy-responsive-tabs.js"></script>
+  <script>
+      $(document).ready(function () {
+          $('#horizontalTab').easyResponsiveTabs({
+              type: 'default', //Types: default, vertical, accordion
+              width: 'auto', //auto or any width like 600px
+              fit: true,   // 100% fit in a container
+              closed: 'accordion', // Start closed if in accordion view
+              activate: function(event) { // Callback function if tab is switched
+                  var $tab = $(this);
+                  var $info = $('#tabInfo');
+                  var $name = $('span', $info);
+                  $name.text($tab.text());
+                  $info.show();
+              }
+          });
+          $('#verticalTab').easyResponsiveTabs({
+              type: 'vertical',
+              width: 'auto',
+              fit: true
+          });
+      });
+  </script>
+  <!-- FlexSlider -->
+  <script src="assets/js/jquery.flexslider.js"></script>
+  <script>
+      // Can also be used with $(document).ready()
+      $(window).load(function() {
+          $('.flexslider').flexslider({
+              animation: "slide",
+              controlNav: "thumbnails"
+          });
+      });
+  </script>
+  <!-- //FlexSlider-->
+  <!-- //script for responsive tabs -->
+  <!-- start-smoth-scrolling -->
+  <script type="text/javascript" src="assets/js/move-top.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.easing.min.js"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function($) {
+          $(".scroll").click(function(event){
+              event.preventDefault();
+              $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+          });
+      });
+  </script>
+  <!-- here stars scrolling icon -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+          /*
+              var defaults = {
+              containerID: 'toTop', // fading element id
+              containerHoverID: 'toTopHover', // fading element hover id
+              scrollSpeed: 1200,
+              easingType: 'linear'
+              };
+          */
+
+          $().UItoTop({ easingType: 'easeOutQuart' });
+
+      });
+  </script>
+  <!-- //here ends scrolling icon -->
 </body>
 </html>

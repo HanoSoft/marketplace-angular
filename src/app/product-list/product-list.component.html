@@ -9,10 +9,17 @@
                     <li><a  (click)="ngOnRedirect(category.id);" *ngIf="category.deleted ===false"> {{category.name}}</a></li>
                 </ul>
             </div>
+            <span *ngFor="let product of products; let i = index;">
+        {{product.id}}
+</span>
+
+
         </div>
+
+
+
+
         <div class="col-md-10">
-
-
         <div class="product_grid ">
     <ul class="product_list list " >
         <span *ngFor="let category of brand.categories; let i = index;">

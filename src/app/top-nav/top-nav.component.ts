@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ShopingService} from '../services/shoping.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
-
-  constructor() { }
-
+    products = [] ;
+  constructor(private shoping: ShopingService) { }
   ngOnInit() {
+      this.products = this.shoping.getShopingProducts();
   }
 
 }

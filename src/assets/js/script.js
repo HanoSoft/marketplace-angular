@@ -197,3 +197,17 @@ jQuery(document).ready(function(){
     jQuery(window).resize(checkWindowSize);
     checkWindowSize();
 });
+/*-------------------------------------------product-details-------------------------------------------------*/
+$("#carousel-custom").carousel();
+
+// Enable Carousel Indicators
+$(".item").click(function(){
+    $("#carousel-custom").carousel(1);
+});
+
+// Enable Carousel Controls
+$(".left").click(function(){
+    $("#carousel-custom").carousel("prev");
+});
+
+

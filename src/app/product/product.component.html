@@ -6,8 +6,8 @@
         <a href="#"><img [src]="url+images[0].name" alt=""></a>
         <div class="product_buttons">
       <!--      <button class="product_heart"><i class="fa fa-heart"></i></button>-->
-            <a [routerLink]="[id]" class="product_compare"><i class="fa fa-info"></i></a>
-            <button class="add_to_cart"><i class="fa fa-shopping-cart"></i></button>
+            <button class="product_compare"><a style="color:#ffffff" [routerLink]="[id]"><i class="fa fa-info"></i></a></button>
+            <button class="add_to_cart" (click)="onAdd(id);"><i class="fa fa-shopping-cart"></i></button>
 
         </div>
     </div>
@@ -27,5 +27,4 @@
         </div>
     </div>
 </li>
-
 

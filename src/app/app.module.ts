@@ -23,6 +23,8 @@ import { CategoryComponent } from './category/category.component';
 import { HighTecComponent } from './high-tec/high-tec.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import {ProductService} from './services/product.service';
+import {ShopingService} from './services/shoping.service';
+import { BasketListComponent } from './basket-list/basket-list.component';
 
 
 
@@ -66,6 +68,7 @@ const appRoutes: Routes = [
     CategoryComponent,
     HighTecComponent,
     ProductDetailsComponent,
+    BasketListComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ const appRoutes: Routes = [
   ],
   providers: [
       BrandService,
-      ProductService
+      ProductService,
+      ShopingService
   ],
   bootstrap: [AppComponent]
 })
