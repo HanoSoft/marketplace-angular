@@ -910,10 +910,11 @@ ul.social-nav.model-3d-0.footer-social.w3_agile_social.two {
 	display:inline-block;
 	margin:5px 5px;
 }
+
 .flickr-post ul li {
     display: inline-block;
-    margin: 1% 1%;
-    width: 28%;
+    margin: 0% 0% 3%;
+    width: 21%;
 }
 p.copy-right {
     color: #848484;
