@@ -1,30 +1,39 @@
-<li class="product_item">
-    <div class="product_sale">
-        <p>-20%</p>
-    </div>
-    <div class="product_image">
-        <a href="#"><img [src]="url+images[0].name" alt=""></a>
-        <div class="product_buttons">
-      <!--      <button class="product_heart"><i class="fa fa-heart"></i></button>-->
-            <button class="product_compare"><a style="color:#ffffff" [routerLink]="[id]"><i class="fa fa-info"></i></a></button>
-            <button class="add_to_cart" (click)="onAdd(id);"><i class="fa fa-shopping-cart"></i></button>
+<div class="col-md-4 product-men">
+    <div class="men-pro-item simpleCart_shelfItem">
+        <div class="men-thumb-item">
+            <img [src]="url+images[0].name" alt="" class="pro-image-front">
+            <img [src]="url+images[0].name" class="pro-image-back">
+            <div class="men-cart-pro">
+                <div class="inner-men-cart-pro">
+                    <a [routerLink]="[id]" class="link-product-add-cart">Quick View</a>
+                </div>
+            </div>
+            <span class="product-new-top">-20%</span>
+
+        </div>
+        <div class="item-info-product ">
+            <h4><a [routerLink]="[id]">{{productName}}</a></h4>
+            <div class="info-product-price">
+                <span class="item_price">{{price}} €</span>
+                <del>{{price}} €</del>
+            </div>
+            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                <form action="#" method="post">
+                    <fieldset>
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                        <input type="hidden" name="business" value=" ">
+                        <input type="hidden" name="item_name" value="Black Basic Shorts">
+                        <input type="hidden" name="amount" value="30.99">
+                        <input type="hidden" name="discount_amount" value="1.00">
+                        <input type="hidden" name="currency_code" value="USD">
+                        <input type="hidden" name="return" value=" ">
+                        <input type="hidden" name="cancel_return" value=" ">
+                        <input type="submit" name="submit" value="Add to cart" class="button">
+                    </fieldset>
+                </form>
+            </div>
 
         </div>
     </div>
-    <div class="product_values">
-        <div class="product_title">
-            <h5>{{productName}}</h5>
-        </div>
-        <div class="product_price">
-            <a href="#"><span class="price_old">{{price}} €</span> <span class="price_new">{{price}} €</span></a>
-
-        </div>
-
-        <div class="product_buttons">
-           <!-- <button class="product_heart"><i class="fa fa-heart"></i></button>-->
-            <a class="product_compare" [routerLink]="[id]"><i class="fa fa-info"></i></a>
-            <button class="add_to_cart"><i class="fa fa-shopping-cart"></i></button>
-        </div>
-    </div>
-</li>
-
+</div>
