@@ -1,28 +1,32 @@
-<div  class="container-fluid" style="margin-top: 250px;">
-    <div class="row">
-        <div class="sidebar col-md-2">
-            <div class="sidebar_section">
-                <div class="sidebar_title">
-                    <h5>Catégories</h5>
-                </div>
-                <ul class="sidebar_categories" *ngFor="let category of brand.categories; let i = index;">
-                    <li><a  (click)="ngOnRedirect(category.id);" *ngIf="category.deleted ===false"> {{category.name}}</a></li>
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <!-- mens -->
+        <div class="col-md-4 products-left">
+
+            <div class="css-treeview">
+                <h4>Categories</h4>
+                <ul class="tree-list-pad">
+                    <li *ngFor="let category of brand.categories; let i = index;">
+                        <a (click)="ngOnRedirect(category.id);" *ngIf="category.deleted ===false">
+                        <input type="checkbox" checked="checked" id="item-0" />
+                        <label for="item-0"><i class="fa fa-long-arrow-right" aria-hidden="true">
+                        </i> {{category.name}}</label>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
-            <span *ngFor="let product of products; let i = index;">
-        {{product.id}}
-</span>
 
-
+            <div class="clearfix"></div>
         </div>
 
+        <div class="col-md-8 products-right">
+            <h5>Produits <span>Compare(0)</span></h5>
+            <div class="sort-grid">
+                <div class="clearfix"></div>
+            </div>
 
-
-
-        <div class="col-md-10">
-        <div class="product_grid ">
-    <ul class="product_list list " >
-        <span *ngFor="let category of brand.categories; let i = index;">
+            <span *ngFor="let category of brand.categories; let i = index;">
             <span *ngIf="!idc;">
                 <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
                              [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
@@ -36,9 +40,7 @@
                 </app-product>
             </span>
         </span>
-    </ul>
-
-</div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
