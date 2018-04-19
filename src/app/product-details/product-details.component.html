@@ -39,14 +39,15 @@
         </div>
     </div>
 
-
+   <img [src] ="urlBrand+product.category.brand.logo.name" style="width: 200px;">
 
 
 
     <div class="col-md-8 single-right-left simpleCart_shelfItem">
-        <h3>{{product.product_name}}</h3>
-        <p><span class="item_price">{{product.price}}€</span> <del>- $900</del></p>
-        <div class="rating1">
+        <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
+        <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
+
+       <!-- <div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
 							<label for="rating5">5</label>
@@ -59,17 +60,24 @@
 							<input id="rating1" type="radio" name="rating" value="1">
 							<label for="rating1">1</label>
 						</span>
-        </div>
-        <div class="description">
+        </div>-->
+        <!--<div class="description">
             <h5>Check delivery, payment options and charges at your location</h5>
             <form action="#" method="post">
                 <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
                 <input type="submit" value="Check">
             </form>
-        </div>
+        </div>-->
         <div class="color-quality">
             <div class="color-quality-right">
-                <h5>Quantité :</h5>
+                <h5 >Taille :</h5>
+                <select id="" onchange="" class="frm-field required sect">
+                    <option value="null" *ngFor="let size of product.sizes; let i = index;">
+                        {{size.size}}
+                    </option>
+                </select>
+
+                <h5 style="margin-top: 10px;">Quantité :</h5>
                 <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
                     <option value="null">1 </option>
                     <option value="null">2 </option>
@@ -77,9 +85,12 @@
                     <option value="null">4 </option>
                     <option value="null">5 </option>
                 </select>
+
+
             </div>
+
         </div>
-        <div class="occasional">
+       <!-- <div class="occasional">
             <h5>Types :</h5>
             <div class="colr ert">
                 <label class="radio"><input type="radio" name="radio" checked=""><i></i>Taille</label>
@@ -91,7 +102,7 @@
                 <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
             </div>
             <div class="clearfix"> </div>
-        </div>
+        </div>-->
         <div class="occasion-cart">
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                 <form action="#" method="post">
@@ -105,7 +116,7 @@
                         <input type="hidden" name="currency_code" value="USD">
                         <input type="hidden" name="return" value=" ">
                         <input type="hidden" name="cancel_return" value=" ">
-                        <input type="submit" name="submit" value="Add to cart" class="button">
+                        <input type="submit" name="submit" value="Ajouter au panier" class="button">
                     </fieldset>
                 </form>
             </div>

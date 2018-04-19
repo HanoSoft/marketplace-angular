@@ -13,6 +13,7 @@ export class ProductDetailsComponent implements OnInit {
      product;
     productSubscription: Subscription;
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
+    urlBrand = 'http://localhost:8888/pfe_marketplace/web/uploads/brand/';
     constructor(private productService: ProductService, private route: ActivatedRoute) {
         this.productSubscription = this.productService.productSubject.subscribe();
         this.productService.emitProductSubject();
