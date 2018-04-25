@@ -10,7 +10,7 @@
 <!-- //header -->
 <!-- header-bot -->
 
-<div class="header-bot">
+<div class="header-bot" >
     <div class="header-bot_inner_wthreeinfo_header_mid">
 
         <div class="col-md-4 logo_agile">
@@ -51,8 +51,8 @@
                     <div class="dropdown-content ">
                         <a href="#"><i class="fa fa-list" aria-hidden="true"></i>  Mes Commandes</a>
                         <a href="#"><i class="fa fa-tag" aria-hidden="true"></i>  Mes Avantages</a>
-                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mon Profil</a>
-                        <a href="#"><i class="fa fa-power-off" aria-hidden="true"></i>  Déconnexion</a>
+                        <a routerLink="profile"><i class="fa fa-user" aria-hidden="true"></i> Mon Profil</a>
+                        <a (click)="onLogOut()"><i class="fa fa-power-off" aria-hidden="true"></i>  Déconnexion</a>
                     </div>
                 </div>
                 <li class="checkout">

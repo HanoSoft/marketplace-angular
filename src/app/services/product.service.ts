@@ -19,6 +19,7 @@ export class ProductService {
         );
     }
     getProduct (id: number) {
+        this.getProducts();
         const product = this.products.find((productObject) => {
             return productObject.id === id; });
         console.log('ok' + id);

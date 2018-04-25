@@ -1,0 +1,55 @@
+<br><br>
+<div class="container w3layouts agileits ">
+
+    <div class="content-left w3layouts agileits">
+        <img src="assets/images/background.jpg" alt="W3layouts Agileits">
+        <p>LES GRANDES MARQUES EN VENTE PRIVÉE .</p>
+
+    </div>
+
+    <div class="content-right w3layouts agileits">
+        <section>
+            <div id="container_demo">
+
+                <div id="wrapper" class="">
+                    <div id="register" class="animate w3layouts agileits form col-md-11">
+                        <h2>S'inscrire</h2>
+                        <form [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
+
+                                <label for="name">Prénom *</label>
+                                <input type="text" class="name w3layouts agileits" name="name" id="name" formControlName="name" placeholder="Prénom">
+                            <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
+
+                                <label for="familyName">&nbsp; &nbsp; Nom *</label>
+                                <input type="text" class="name w3layouts agileits" Name="familyName" id="familyName" formControlName="familyName">
+                            <p class="error_message" *ngIf="customerForm.get('familyName').invalid">Veuillez fournir au moins 3 caractères.</p>
+
+                                <label for="email1"> &nbsp; E-mail *</label>
+                                <input type="text" Name="Email" id="email1" formControlName="email">
+                            <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
+
+                                <label for="pwd">Mot de passe *</label>
+                                <input type="password" Name="Password" id="pwd"  formControlName="pwd">
+                            <p class="error_message" *ngIf="customerForm.get('pwd').invalid">Veuillez fournir au moins 8 caractères et au minimum un nombre et une lettre.</p>
+
+                                <label for="sponsor">Code Parrain</label>
+                                <input type="text" Name="sponsor" id="sponsor" class="sponsor" formControlName="sponsorCode">
+
+                                <div class="send-button w3layouts agileits">
+                                    <input type="submit" value="S'inscrire" [disabled]="customerForm.invalid">
+                                </div>
+
+                            </form>
+                            <p class="change_link w3layouts agileits">
+                                Déjà membre ? <a routerLink="/auth" class="to_register">Se connecter</a>
+                            </p>
+                            <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clear"></div>
+
+</div>

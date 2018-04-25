@@ -44,30 +44,9 @@
 
 
     <div class="col-md-8 single-right-left simpleCart_shelfItem">
-        <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
+        <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name|async}}</h3>
         <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
 
-       <!-- <div class="rating1">
-						<span class="starRating">
-							<input id="rating5" type="radio" name="rating" value="5">
-							<label for="rating5">5</label>
-							<input id="rating4" type="radio" name="rating" value="4">
-							<label for="rating4">4</label>
-							<input id="rating3" type="radio" name="rating" value="3" checked="">
-							<label for="rating3">3</label>
-							<input id="rating2" type="radio" name="rating" value="2">
-							<label for="rating2">2</label>
-							<input id="rating1" type="radio" name="rating" value="1">
-							<label for="rating1">1</label>
-						</span>
-        </div>-->
-        <!--<div class="description">
-            <h5>Check delivery, payment options and charges at your location</h5>
-            <form action="#" method="post">
-                <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}" required="">
-                <input type="submit" value="Check">
-            </form>
-        </div>-->
         <div class="color-quality">
             <div class="color-quality-right">
                 <h5 >Taille :</h5>
@@ -90,19 +69,7 @@
             </div>
 
         </div>
-       <!-- <div class="occasional">
-            <h5>Types :</h5>
-            <div class="colr ert">
-                <label class="radio"><input type="radio" name="radio" checked=""><i></i>Taille</label>
-            </div>
-            <div class="colr">
-                <label class="radio"><input type="radio" name="radio"><i></i>Sneakers </label>
-            </div>
-            <div class="colr">
-                <label class="radio"><input type="radio" name="radio"><i></i>Formal Shoes</label>
-            </div>
-            <div class="clearfix"> </div>
-        </div>-->
+
         <div class="occasion-cart">
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
                 <form action="#" method="post">

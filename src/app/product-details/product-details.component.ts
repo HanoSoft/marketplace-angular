@@ -10,13 +10,11 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-     product;
+    product;
     productSubscription: Subscription;
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
     urlBrand = 'http://localhost:8888/pfe_marketplace/web/uploads/brand/';
     constructor(private productService: ProductService, private route: ActivatedRoute) {
-        this.productSubscription = this.productService.productSubject.subscribe();
-        this.productService.emitProductSubject();
         this.productService.getProducts();
         const idp = this.route.snapshot.params['idp'];
         this.product = this.productService.getProduct(+idp);

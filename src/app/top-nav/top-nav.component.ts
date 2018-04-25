@@ -1,16 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ShopingService} from '../services/shoping.service';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-top-nav',
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.scss']
 })
 export class TopNavComponent implements OnInit {
-    products = [] ;
-  constructor(private shoping: ShopingService) { }
+  constructor(private router: Router) { }
   ngOnInit() {
-      this.products = this.shoping.getShopingProducts();
   }
-
+    onLogOut() {
+    localStorage.clear() ;
+    window.location.reload();
+    this.router.navigate(['auth']);
+}
 }

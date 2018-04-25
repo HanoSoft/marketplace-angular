@@ -1,0 +1,56 @@
+<br><br>
+<div class="container w3layouts agileits ">
+
+  <div class="content-left w3layouts agileits">
+    <img src="assets/images/background.jpg" alt="W3layouts Agileits">
+    <p>LES GRANDES MARQUES EN VENTE PRIVÉE .</p>
+
+  </div>
+
+  <div class="content-right w3layouts agileits">
+    <section>
+      <div id="container_demo">
+
+        <div id="wrapper" class="">
+
+          <div id="login" class="animate w3layouts agileits form">
+
+            <h2 class="w3layouts agileits">Déjà membre ?</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+
+              <label for="email">&nbsp; E-mail  </label>
+              <input type="text" name="email"  id="email" formControlName="email">
+              <p class="error_message" *ngIf="loginForm.get('email').invalid">Veuillez fournir un email valide.</p>
+              <label>Mot de passe </label>
+              <input type="password" name="password"  formControlName="pwd">
+                <p class="error_message" *ngIf="loginForm.get('pwd').invalid">Veuillez fournir au moins 8 caractères et au minimum un nombre et une lettre.</p>
+              <div class="send-button w3layouts agileits">
+                <p><a href="#">Mot de passe oublié ?</a></p>
+                  <input type="submit" value="Accéder aux ventes" [disabled]="loginForm.invalid">
+                  <p class="error_message">{{msg}}</p>
+                <div class="clear"></div>
+              </div>
+              <p class="change_link w3layouts agileits">
+                Vous n'avez pas de compte? <a routerLink="/signup" class="to_register">S'inscrire!</a>
+              </p>
+              <div class="clear"></div>
+            </form>
+            <div class="social-icons w3layouts agileits">
+              <p> Ou</p>
+              <ul>
+                <li class="fb w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Facebook</span></a></li>
+                <li class="twt w3ls w3layouts agileits"><a href="#"><span class="icons w3layouts agileits"></span><span class="text w3layouts agileits">Twitter</span></a></li>
+                <div class="clear"></div>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="clear"></div>
+
+</div>

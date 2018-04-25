@@ -1,0 +1,56 @@
+
+<div class="container w3layouts agileits ">
+
+    <div class="content-right w3layouts agileits">
+        <section>
+            <div id="container_demo">
+
+                <div id="wrapper" class="">
+                    <div id="register" class="animate w3layouts agileits form col-md-11">
+                        <h2>Mon Profile</h2>
+                        <form  [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
+
+                            <label for="name">Prénom</label>
+                            <input type="text" class="name w3layouts agileits" name="name" id="name" formControlName="name" placeholder="Prénom">
+
+
+                            <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
+
+                            <label for="familyName">&nbsp; &nbsp; Nom</label>
+                            <input type="text" class="name w3layouts agileits" Name="familyName" id="familyName" formControlName="familyName">
+                            <p class="error_message" *ngIf="customerForm.get('familyName').invalid">Veuillez fournir au moins 3 caractères.</p>
+
+                            <label for="email1"> &nbsp; E-mail</label>
+                            <input type="text" Name="Email" id="email1" formControlName="email">
+                            <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
+
+
+
+
+                            <label for="birthDate">dateNaiss</label>
+                            <input type="text"  formControlName="birthDate" id="birthDate">
+
+                            <label for="tel">tel</label>
+                            <input type="number" Name="tel" id="tel" class="t" formControlName="phoneNumber">
+                            <select formControlName="sex">
+                                <option value="Homme" selected>Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                            <div class="send-button w3layouts agileits">
+                                <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
+                            </div>
+
+
+
+                        </form>
+
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clear"></div>
+
+</div>
