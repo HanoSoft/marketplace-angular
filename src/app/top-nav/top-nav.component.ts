@@ -5,6 +5,7 @@ import {Shoping} from '../models/Shoping';
 import {Subscription} from 'rxjs/Subscription';
 import {getTemplate} from 'codelyzer/util/ngQuery';
 import {Subject} from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
 
 
 @Component({
@@ -12,10 +13,12 @@ import {Subject} from 'rxjs/Subject';
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.scss']
 })
-export class TopNavComponent {
+export class TopNavComponent implements OnInit{
+    subscribtion: Subscription ;
     public itemCount;
     public subscription: Subscription;
     private val: Subject <any>;
+    isAuth: string;
     constructor(private router: Router, private _basketService: ShopingService) {
         this.val = _basketService.itemCountSource;
         this.itemCount = 0;
@@ -28,5 +31,12 @@ export class TopNavComponent {
         localStorage.clear();
         window.location.reload();
         this.router.navigate(['auth']);
+    }
+    ngOnInit(): void {
+        const auth = Observable.of(localStorage.getItem('isAuth'));
+        this.subscribtion = auth.subscribe(
+            (value) => {
+                this.isAuth = value;
+            });
     }
 }

@@ -31,9 +31,6 @@ import { SigninComponent } from './signin/signin.component';
 import { ContainerComponent } from './container/container.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { JewelryComponent } from './jewelry/jewelry.component';
-import { TicketingComponent } from './ticketing/ticketing.component';
-import { TravelingComponent } from './traveling/traveling.component';
-
 
 
 
@@ -41,34 +38,37 @@ const appRoutes: Routes = [
     { path: 'auth', component: SigninComponent},
     { path: 'signup', component: SignupComponent},
     { path: 'profile', canActivate: [AuthGuard], component: CustomerProfileComponent },
-    { path: '', canActivate: [AuthGuard], component: HomeComponent},
+    { path: '', component: HomeComponent},
     /*basket-list*/
-    { path: 'basket', canActivate: [AuthGuard], component: BasketListComponent},
-    { path: 'clothes', canActivate: [AuthGuard], component: ClothesComponent},
-    { path: 'beauty', canActivate: [AuthGuard],  component: BeautyComponent},
-    { path: 'HighTec', canActivate: [AuthGuard], component: HighTecComponent},
-    { path: 'jewelry', canActivate: [AuthGuard], component: JewelryComponent},
-    { path: 'ticketing', canActivate: [AuthGuard], component: TicketingComponent},
-    { path: 'traveling', canActivate: [AuthGuard], component: TravelingComponent},
+    { path: 'basket', component: BasketListComponent},
+    { path: 'clothes',  component: ClothesComponent},
+    { path: 'beauty',  component: BeautyComponent},
+    { path: 'HighTec',  component: HighTecComponent},
+    { path: 'jewelry',  component: JewelryComponent},
     /*single brand*/
-    { path: ':id', canActivate: [AuthGuard], component: SingleBrandComponent},
-    { path: 'clothes/:id', canActivate: [AuthGuard], component: SingleBrandComponent},
-    { path: 'beauty/:id', canActivate: [AuthGuard], component: SingleBrandComponent},
-    { path: 'HighTec/:id', canActivate: [AuthGuard], component: SingleBrandComponent},
-    { path: 'jewelry/:id', canActivate: [AuthGuard], component: SingleBrandComponent},
+    { path: ':id',  component: SingleBrandComponent},
+    { path: 'clothes/:id', component: SingleBrandComponent},
+    { path: 'beauty/:id',  component: SingleBrandComponent},
+    { path: 'HighTec/:id',  component: SingleBrandComponent},
+    { path: 'jewelry/:id',  component: SingleBrandComponent},
     /*product list */
-    { path: ':id/all', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: ':id/:idc', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'clothes/:id/all', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'clothes/:id/:idc', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'beauty/:id/all', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'beauty/:id/:idc', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'HighTec/:id/all', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'HighTec/:id/:idc', canActivate: [AuthGuard],  component: ProductListComponent},
-    { path: 'jewelry/:id/all', canActivate: [AuthGuard], component: ProductListComponent},
-    { path: 'jewelry/:id/:idc', canActivate: [AuthGuard],  component: ProductListComponent},
+    { path: ':id/all', component: ProductListComponent},
+    { path: ':id/:idc',  component: ProductListComponent},
+    { path: 'clothes/:id/all',  component: ProductListComponent},
+    { path: 'clothes/:id/:idc',  component: ProductListComponent},
+    { path: 'beauty/:id/all',  component: ProductListComponent},
+    { path: 'beauty/:id/:idc',  component: ProductListComponent},
+    { path: 'HighTec/:id/all',  component: ProductListComponent},
+    { path: 'HighTec/:id/:idc',   component: ProductListComponent},
+    { path: 'jewelry/:id/all', component: ProductListComponent},
+    { path: 'jewelry/:id/:idc',   component: ProductListComponent},
     /*product Details*/
-    { path: ':id/:idc/:idp', canActivate: [AuthGuard], component: ProductDetailsComponent},
+    { path: ':id/:idc/:idp',  component: ProductDetailsComponent},
+    { path: 'clothes/:id/:idc/:idp',  component: ProductDetailsComponent},
+    { path: 'beauty/:id/:idc/:idp',  component: ProductDetailsComponent},
+    { path: 'HighTec/:id/:idc/:idp',  component: ProductDetailsComponent},
+    { path: 'jewelry/:id/:idc/:idp',  component: ProductDetailsComponent},
+
     /*not found*/
     {path: 'not-found', component: NotFoundComponent},
     {path: '**', redirectTo: '/not-found'},
@@ -99,8 +99,6 @@ const appRoutes: Routes = [
     ContainerComponent,
     CustomerProfileComponent,
     JewelryComponent,
-    TicketingComponent,
-    TravelingComponent,
   ],
   imports: [
     BrowserModule,

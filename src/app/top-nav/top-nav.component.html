@@ -1,8 +1,8 @@
 <div class="header" id="home">
     <div class="container">
         <ul>
-            <li> <a href="#"  ><i class="fa fa-unlock-alt" aria-hidden="true"></i> Se connecter </a></li>
-            <li> <a href="#"  ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> S'inscrire </a></li>
+            <li> <a routerLink="auth"  *ngIf="!isAuth"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Se connecter </a></li>
+            <li> <a routerLink="signup" *ngIf="!isAuth" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> S'inscrire </a></li>
             <li><i class="fa fa-phone" aria-hidden="true"></i> Appel : +555 558 7885</li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="#">sbzMarket@contact.com</a></li>
         </ul>
@@ -31,7 +31,8 @@
         <div class="col-md-4 agileits-social top_content">
             <ul class="icon-list">
                 <div class="dropdown">
-                    <li ><a href="#"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+                    <li *ngIf="isAuth" >
+                        <a href=""><i class="fa fa-users" aria-hidden="true"></i></a></li>
                         <div class=" dropdown-content">
                             <p class="gras textfield">Parrainez et gagnez  12 €</p>
                         <div class="textfield">
@@ -48,7 +49,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> </li>
+                    <li *ngIf="isAuth"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> </li>
                     <div class="dropdown-content ">
                         <a href="#"><i class="fa fa-list" aria-hidden="true"></i>  Mes Commandes</a>
                         <a href="#"><i class="fa fa-tag" aria-hidden="true"></i>  Mes Avantages</a>
@@ -85,8 +86,10 @@
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
                             <li  routerLinkActive="active" class="active menu__item menu__item--current">
-                                <a class="menu__link" routerLink="">Acceuil
-                                    <span class="sr-only">(current)</span></a></li>
+                                <a class="menu__link" routerLink=""><i class="fa fa-home" style="font-size: large;"></i>
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
                             <li class=" menu__item"><a routerLink="clothes" class="menu__link" >Vêtements</a></li>
                             <li class=" menu__item"><a routerLink="HighTec" class="menu__link" >High-Tec</a></li>
                             <li class=" menu__item"><a routerLink="beauty" class="menu__link" >Beauté et Parfum </a></li>
