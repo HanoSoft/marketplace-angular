@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
     @Input() quantity: number ;
     @Input() images = [];
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
-  constructor(private shoping: ShopingService, private route: Router, private nav: TopNavComponent) { }
+  constructor(private shoping: ShopingService, private route: Router ) { }
   ngOnInit() {
   }
   onAdd(id, price , name, image) {

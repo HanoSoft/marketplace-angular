@@ -2,7 +2,6 @@ import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import 'rxjs/add/observable/of';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
-import {ProductService} from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +11,7 @@ import {ProductService} from './services/product.service';
 export class AppComponent  implements OnInit, OnDestroy {
     subscribtion: Subscription ;
     isAuth: string;
-    basket = 0 ;
-    constructor( ) {
+    constructor() {
     }
     ngOnInit() {
         console.log(localStorage.getItem('isAuth'));

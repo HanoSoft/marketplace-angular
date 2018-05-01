@@ -1,8 +1,6 @@
 import {Component , OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BrandService} from '../services/brand.service';
-import {ProductService} from '../services/product.service';
-import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-product-details',
@@ -10,15 +8,18 @@ import {Subscription} from 'rxjs/Subscription';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-    product;
-    productSubscription: Subscription;
-    url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
+    brand;
+    idc ;
+    id;
+    idp;
     urlBrand = 'http://localhost:8888/pfe_marketplace/web/uploads/brand/';
-    constructor(private productService: ProductService, private route: ActivatedRoute) {
-        this.productService.getProducts();
-        const idp = this.route.snapshot.params['idp'];
-        this.product = this.productService.getProduct(+idp);
+    url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
+    constructor(private brandService: BrandService, private router: ActivatedRoute) {
+        this.id = this.router.snapshot.params['id'];
+        this.idc = +this.router.snapshot.params['idc'];
+         this.idp = this.router.snapshot.params['idp'];
+        this.brand = this.brandService.getBrand(+this.id);
     }
-  ngOnInit() {
-  }
+    ngOnInit(): void {
+    }
 }

@@ -22,7 +22,6 @@ import { ProductComponent } from './product/product.component';
 import { CategoryComponent } from './category/category.component';
 import { HighTecComponent } from './high-tec/high-tec.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import {ProductService} from './services/product.service';
 import {ShopingService} from './services/shoping.service';
 import { BasketListComponent } from './basket-list/basket-list.component';
 import { SignupComponent } from './signup/signup.component';
@@ -112,7 +111,6 @@ const appRoutes: Routes = [
   ],
   providers: [
       BrandService,
-      ProductService,
       ShopingService,
       CustomerService,
       AuthGuard,
