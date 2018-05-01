@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 export class BrandService {
   brandSubject = new Subject<any[]>();
   private brands = [];
+  categories = [];
     constructor(private httpClient: HttpClient) { }
   public emitBrandSubject() {
       this.brandSubject.next(this.brands.slice());
@@ -23,12 +24,5 @@ export class BrandService {
             return brandObject.id === id; });
         console.log('ok' + id);
         return brand;
-    }
-    getCategory (id: number) {
-        const category = this.brands.find((brandObject) => {
-            return brandObject.categories.find((categObject) => {
-                return categObject.id === id ; }); });
-        console.log('ok' + id);
-        return category;
     }
 }

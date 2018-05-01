@@ -1,18 +1,52 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs/Subject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class ShopingService {
-    ProductSubject = new Subject<any[]>();
-    private shopingproducts = [
-        {id: 1},
-        {id: 2}
-    ];
-  constructor() { }
-    public getShopingProducts () {
-       return this.shopingproducts;
+    private itemCount: number;
+     itemCountSource = new BehaviorSubject(0);
+    itemCount$ = this.itemCountSource.asObservable();
+    totalPrice: number;
+    private products = [];
+    constructor() {
+        this.itemCount = 0;
+        this.itemCountSource.next(0);
+        this.totalPrice = 0.0;
     }
-    public add(id) {
-        this.shopingproducts.push(id);
+
+    public AddToBasket(id, price, name, image) {
+        this.itemCount++;
+        this.itemCountSource.next(this.itemCount);
+        this.totalPrice += price;
+        // initialise the product
+        const productObject = {
+            id: '',
+            product_name: '',
+            price: '',
+            image: ''
+        };
+        productObject.id = id;
+        productObject.product_name = name;
+        productObject.price = price;
+        productObject.image = image;
+        this.products.push(productObject);
+    }
+    public getProducts () {
+       return this.products;
+    }
+
+    public remove (id, price) {
+        const productIndexToRemove = this.products.findIndex(
+            (product) => {
+                if (product.id === id) {
+                    return true;
+                }
+            }
+        );
+        console.log (productIndexToRemove);
+        this.itemCount--;
+        this.itemCountSource.next(this.itemCount);
+        this.totalPrice -= price;
+        this.products.splice(productIndexToRemove, 1);
     }
 }
