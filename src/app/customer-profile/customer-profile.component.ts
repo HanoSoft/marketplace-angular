@@ -27,9 +27,9 @@ export class CustomerProfileComponent implements OnInit {
          const phoneNumber = localStorage.getItem('phoneNumber');
          const sex = localStorage.getItem('sex');
          this.customerForm = this.formBuilder.group({
-          name: name,
-            familyName: familyName,
-            email: email,
+             name: name,
+             familyName: familyName,
+             email: email,
              birthDate: birthDate,
              phoneNumber: phoneNumber,
              sex: sex
@@ -44,6 +44,7 @@ export class CustomerProfileComponent implements OnInit {
             formValue['birthDate'],
             formValue['phoneNumber'],
             formValue['sex']);
+
         this.customerService.editCustomer(+this.id, newCustomer) ;
       /* this.router.navigate(['']);*/
     }
