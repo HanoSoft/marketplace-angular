@@ -53,15 +53,16 @@
 
         <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
 
-        <div class="color-quality">
+        <div class="color-quality" >
             <div class="color-quality-right">
-                <h5 >Taille :</h5>
-                <select id="" onchange="" class="frm-field required sect">
-                    <option value="null" *ngFor="let size of product.sizes; let i = index;">
-                        {{size.size}}
-                    </option>
-                </select>
-
+               <span *ngIf="product.sizes.length>0">
+                    <h5 >Taille :</h5>
+                    <select id="" onchange="" class="frm-field required sect">
+                        <option value="null" *ngFor="let size of product.sizes; let i = index;">
+                            {{size.size}}
+                        </option>
+                    </select>
+                </span>
                 <h5 style="margin-top: 10px;">Quantité :</h5>
                 <select id="country1"  class="frm-field required sect">
                     <option value="null">1 </option>
