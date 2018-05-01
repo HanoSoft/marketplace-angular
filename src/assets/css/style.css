@@ -772,9 +772,7 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
     width: 49.5%;
     float: left;
 }
-.banner_bottom_agile_info {
-    padding: 5em 0;
-}
+
 .banner_bottom_agile_info.team {
     background: #f5f5f5;
 }
@@ -955,13 +953,14 @@ color: #2fdab8;
     margin-top: 0;
 }
 .address-grid {
-    padding: 1em 0em 0 0em;
+    padding: 2em 0em 0 0em;
 }
 .contact-form {
-    background: #181919;
+    background: #fff;
     padding: 5em 3em;
+
 }
-.contact input[type="text"], .contact input[type="email"], .contact textarea {
+.contact input[type="text"], .contact input[type="email"], .contact textarea,.contact input[type="password"] {
     font-size: 15px;
     letter-spacing: 1px;
     color: #fff;
@@ -1034,7 +1033,7 @@ color: #2fdab8;
 	transition: all 0.075s;
 }
 .white-w3ls{
-	color:#fff!important;
+	color: black !important;
 }
 .modal-body-sub {
     padding:2em !important;
@@ -2044,10 +2043,10 @@ h3.tittle {
     padding-left: 2em;
     float: left;
 }
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea,.contact-form input[type="password"],.contact-form input[type="date"],.contact-form input[type="number"] {
     font-size: 15px;
     letter-spacing: 1px;
-    color: #fff;
+    color: #000000;
     padding: 0.5em 1em;
     border: 0;
     width: 100%;
@@ -2071,7 +2070,7 @@ h3.tittle {
     text-transform: uppercase;
     font-weight: 700;
     color: #2fdab8;
-    font-size: 1em;
+    font-size: 14px;
     letter-spacing: 2px;
 	margin-bottom: 0.5em;
 }
@@ -2087,6 +2086,7 @@ h3.tittle {
     text-transform: uppercase;
     color: #181919;
 	letter-spacing:1px;
+
 }
 .address-grid h4 span,h4.white-w3ls span{
   font-weight:300;
@@ -3738,7 +3738,7 @@ p.w3ls_para {
 		font-size: 14px;
 	}
 	.banner_bottom_agile_info{
-	   padding:4em 0;
+	   padding:2em 0;
 	}
 	.carousel-caption {
 		min-height: 450px!important;
@@ -5544,5 +5544,147 @@ p.w3ls_para {
 	#PPMiniCart {
       left: 68% !important;
     }
+}
+
+
+
+
+
+
+.textfield {
+    float: inherit;
+    left: inherit;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 250px;
+    text-align: center;
+    border: #0e0e0e;
+
+}
+#btn-parrainage:hover{
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+.center-block {
+    float:none;
+    background-color: #FF007F;
+    margin-top: 15px;
+    border: #FF007F;
+    color: #fff;
+    padding: 10px 24px;
+    font-size: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.espace{
+    padding-bottom: 20px;
+}
+
+/* Dropdown Button : hover*/
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    color: #CD075C;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #fff;
+
+
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.icon-list
+{
+    margin-left: 200px;
+}
+.icon-list li
+{
+    display: inline-block;
+    text-align: center;
+}
+.icon-list li a
+{
+    font-size: 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    color: #1e1e27;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+.icon-list li a:hover
+{
+    color: #b5aec4;
+}
+.checkout a
+{
+    background: #eceff6;
+    border-radius: 50%;
+}
+.checkout_items
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -9px;
+    left: 22px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FF007F;
+    font-size: 12px;
+    color: #FFFFFF;
 }
 
