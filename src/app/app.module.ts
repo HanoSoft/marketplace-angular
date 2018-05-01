@@ -31,9 +31,6 @@ import { SigninComponent } from './signin/signin.component';
 import { ContainerComponent } from './container/container.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { JewelryComponent } from './jewelry/jewelry.component';
-import { TicketingComponent } from './ticketing/ticketing.component';
-import { TravelingComponent } from './traveling/traveling.component';
-
 
 
 
@@ -48,8 +45,6 @@ const appRoutes: Routes = [
     { path: 'beauty', canActivate: [AuthGuard],  component: BeautyComponent},
     { path: 'HighTec', canActivate: [AuthGuard], component: HighTecComponent},
     { path: 'jewelry', canActivate: [AuthGuard], component: JewelryComponent},
-    { path: 'ticketing', canActivate: [AuthGuard], component: TicketingComponent},
-    { path: 'traveling', canActivate: [AuthGuard], component: TravelingComponent},
     /*single brand*/
     { path: ':id', canActivate: [AuthGuard], component: SingleBrandComponent},
     { path: 'clothes/:id', canActivate: [AuthGuard], component: SingleBrandComponent},
@@ -99,8 +94,6 @@ const appRoutes: Routes = [
     ContainerComponent,
     CustomerProfileComponent,
     JewelryComponent,
-    TicketingComponent,
-    TravelingComponent,
   ],
   imports: [
     BrowserModule,
