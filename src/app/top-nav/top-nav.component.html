@@ -1,8 +1,8 @@
 <div class="header" id="home">
     <div class="container">
         <ul>
-            <li> <a routerLink="auth"  ><i class="fa fa-unlock-alt" aria-hidden="true"></i> Se connecter </a></li>
-            <li> <a routerLink="signup"  ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> S'inscrire </a></li>
+            <li> <a routerLink="auth"  *ngIf="!isAuth"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Se connecter </a></li>
+            <li> <a routerLink="signup" *ngIf="!isAuth" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> S'inscrire </a></li>
             <li><i class="fa fa-phone" aria-hidden="true"></i> Appel : +555 558 7885</li>
             <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="#">sbzMarket@contact.com</a></li>
         </ul>
@@ -31,7 +31,8 @@
         <div class="col-md-4 agileits-social top_content">
             <ul class="icon-list">
                 <div class="dropdown">
-                    <li ><a href="#"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+                    <li *ngIf="isAuth" >
+                        <a href=""><i class="fa fa-users" aria-hidden="true"></i></a></li>
                         <div class=" dropdown-content">
                             <p class="gras textfield">Parrainez et gagnez  12 €</p>
                         <div class="textfield">
@@ -48,7 +49,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> </li>
+                    <li *ngIf="isAuth"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> </li>
                     <div class="dropdown-content ">
                         <a href="#"><i class="fa fa-list" aria-hidden="true"></i>  Mes Commandes</a>
                         <a href="#"><i class="fa fa-tag" aria-hidden="true"></i>  Mes Avantages</a>

@@ -41,7 +41,7 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     /*basket-list*/
     { path: 'basket', component: BasketListComponent},
-    { path: 'clothes', canActivate: [AuthGuard], component: ClothesComponent},
+    { path: 'clothes',  component: ClothesComponent},
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},
     { path: 'jewelry',  component: JewelryComponent},

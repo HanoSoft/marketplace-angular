@@ -82,8 +82,9 @@
 
 
                 <input type="submit" name="submit" value="Ajouter au panier" class="button"
-                       (click)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
+                       (click)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)" *ngIf="!selected" >
 
+                <input type="submit" name="submit" value="Supprimer" class="button" (click)="onDelete(product.id,product.price)" *ngIf="selected">
 
             </div>
 
