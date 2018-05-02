@@ -2,6 +2,7 @@ import {Component , OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BrandService} from '../services/brand.service';
 import {ShopingService} from '../services/shoping.service';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-product-details',
@@ -17,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
     basket ;
     selected = false;
+    quantity;
     constructor(private brandService: BrandService, private router: ActivatedRoute, private shoping: ShopingService) {
         this.basket = this.shoping.getProducts();
         this.id = this.router.snapshot.params['id'];
@@ -31,8 +33,8 @@ export class ProductDetailsComponent implements OnInit {
     }
     ngOnInit(): void {
     }
-    onAdd(id, price , name, image) {
-        this.shoping.AddToBasket(id, price , name, image);
+    onAdd(id, price , name, image, quantity) {
+        this.shoping.AddToBasket(id, price , name, image, 1);
         this.selected = true;
         this.basket = this.shoping.getProducts();
     }

@@ -20,10 +20,10 @@
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
                         <div class="quantity">
-                            <input type="button" value="+" class="plus">
-                            <input type="number" step="1" max="10" min="1" value="1" title="Qty" class="qty"
-                                   size="4">
-                            <input type="button" value="-" class="minus">
+                            <input type="button" value="+" class="plus" (click)="onAdd(product.price)">
+                            <input type="text" step="1" max="10" min="1" [value]="quantity" title="Qty" class="qty"
+                                   size="4"  disabled>
+                            <input type="button" value="-" class="minus" (click)="onMinus()">
                         </div>
                     </div>
                     <div class="col-2 col-sm-2 col-md-2 text-right">

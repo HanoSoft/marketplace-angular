@@ -14,21 +14,23 @@ export class ShopingService {
         this.totalPrice = 0.0;
     }
 
-    public AddToBasket(id, price, name, image) {
+    public AddToBasket(id, price, name, image, quantity) {
         this.itemCount++;
         this.itemCountSource.next(this.itemCount);
-        this.totalPrice += price;
+        this.totalPrice += price * quantity;
         // initialise the product
         const productObject = {
             id: '',
             product_name: '',
             price: '',
-            image: ''
+            image: '',
+            quantity: ''
         };
         productObject.id = id;
         productObject.product_name = name;
         productObject.price = price;
         productObject.image = image;
+        productObject.quantity = quantity;
         this.products.push(productObject);
     }
     public getProducts () {
