@@ -1,124 +1,115 @@
-<body class="align">
+<div class="banner_bottom_agile_info">
     <div class="container">
-        <div class="row">
-                <div class="information">
-                    <div class="login">
-                        <h2>Voici vos informations enregistrées :</h2>
-
-                            <fieldset>
-                                <p> Vous avez déménagé ou vous souhaitez changer votre mot de passe... <br>
-                                    Faites les modifications dans les champs ci-dessous : votre compte sera immédiatement mis à jour.<br>
-                                    Votre mot de passe doit comporter au minimum 8 caractères (dont 1 lettre et 1 chiffre)<br>
-
-                                <p class="col-lg-offset-10" >*champs obligatoires</p>
-
-                            </fieldset>
-
+        <div class="agile-contact-grids">
+            <div class="agile-contact-left">
+                <div class="col-md-6 address-grid">
+                    <div class="mail-agileits-w3layouts">
+                        <h4>Informations <span>enregistrées</span></h4><br>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Vous avez déménagé ou vous souhaitez <br>changer votre mot de passe...</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="mail-agileits-w3layouts">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Faites les modifications dans <br>les champs ci-dessous votre <br> compte sera immédiatement mis à jour.</p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="mail-agileits-w3layouts">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        <div class="contact-right">
+                            <p>Votre mot de passe doit comporter <br>au minimum 8 caractères (dont 1 <br> lettre et 1 chiffre)</p>
+                        </div>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
-
-        <div class="row">
-            <div class="col-lg-6 ">
-                <div class="pers-details">
-                    <div class="login">
-                        <h2>Mes coordonnées</h2>
-                        <form  [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
-                            <fieldset>
-                                <p><label for="name">Prénom* :</label></p>
-                                <p><input type="text" id="name" placeholder="Prénom" formControlName="name"></p>
-                                <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
-
-                                <p><label for="family-name">Nom* :</label></p>
-                                <p><input type="text" id="family-name" placeholder="Nom" formControlName="familyName"></p>
-                                <p class="error_message" *ngIf="customerForm.get('familyName').invalid">Veuillez fournir au moins 3 caractères.</p>
-
-                                <p><label for="birthDate">Date de naissance* :</label></p>
-                                <p><input type="date" id="birthDate" placeholder="Date de naissance" formControlName="birthDate"></p>
-
-                                <p><label for="tel">Numéro de téléphone* :</label></p>
-                                <p><input type="number" id="tel" placeholder="Numéro de téléphone" formControlName="phoneNumber"></p>
-
-                                <!--
-                                <div class="col-md-6 mb-3">
-                                    <p><label for="validationCustom03">Ville*:</label></p>
-                                    <input type="text" class="form-control" id="validationCustom03" placeholder="Ville" required>
-
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <p><label for="validationCustom04">Pays</label></p>
-                                    <input type="text" class="form-control" id="validationCustom04" placeholder="Pays" required>
-
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <p><label for="validationCustom05">Code postal</label></p>
-                                    <input type="text" class="form-control" id="validationCustom05" placeholder="Code postal" required>
-                                    <br>
-                                </div>   -->
-
-                                <p><label >sexe* :</label></p>
-                                <select formControlName="sex" class="form-control form-control-sm">
-                                    <option value="Homme" selected>Homme</option>
-                                    <option value="Femme">Femme</option>
-                                </select>
-                                <br>
-                                <p><input type="submit" value="Modifier" [disabled]="customerForm.invalid"></p>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-    <div class="row">
-        <div class="col-lg-offset-6">
-            <div class="grid">
-                <div class="login">
-                    <h2>Mon adresse Email</h2>
+                <div class="col-md-6 contact-form">
+                    <h4 class="white-w3ls">Mes   <span>coordonnées</span></h4>
                     <form  [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
-                <fieldset>
-                    <p><label for="email">Nouveau Email* :</label></p>
-                    <p><input type="email" id="email" placeholder="" formControlName="email"></p>
-                    <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
-
-                    <p><label for="email1">Confirmer* :</label></p>
-                    <p><input type="email" id="email1" placeholder="" formControlName="email1"></p>
-
-                    <p><label for="pwd1">Mot de passe * :</label></p>
-                    <p><input type="password" id="pwd1" placeholder="" formControlName="pwd1"></p>
-
-                    <p><input type="submit" value="Modifier" [disabled]="customerForm.invalid"></p>
-
-                </fieldset>
-            </form>
-                </div>
-            </div>
-    </div>
-        <div class="col-lg-offset-6" >
-            <div class="grid">
-                <div class="login">
-                    <h2>Mon mot de passe</h2>
-                    <form action="#" method="POST" >
-                        <fieldset id="pwd">
-                            <p><label for="password">Ancien mot de passe* :</label></p>
-                            <p><input type="password" id="password" placeholder=""></p>
-
-                            <p><label for="password">Nouveau mode passe* :</label></p>
-                            <p><input type="password" id="new-password" placeholder=""></p>
-
-                            <p><label for="password">Confirmer* :</label></p>
-                            <p><input type="password" id="confirm-password" placeholder=""></p>
-
-                            <p><input type="submit" value="Modifier"></p>
-
-                        </fieldset>
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" id="name" placeholder="Prénom" formControlName="name">
+                            <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
+                            <label  for="name">Prénom* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" id="family-name" placeholder="Nom" formControlName="familyName">
+                            <p class="error_message" *ngIf="customerForm.get('familyName').invalid">Veuillez fournir au moins 3 caractères.</p>
+                            <label for="family-name">Nom* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="date" id="birthDate" placeholder="Date de naissance" formControlName="birthDate">
+                            <label  for="birthDate">Date de naissnace* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="number" id="tel" placeholder="Numéro de téléphone" formControlName="phoneNumber">
+                            <label for="tel">Numéro de télephone* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <select formControlName="sex" class="form-control form-control-sm">
+                                <option value="Homme" selected>Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                        </div>
+                        <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
                     </form>
                 </div>
+                <div class="col-md-6 contact-form">
+                    <h4 class="white-w3ls">Mon adresse  <span>Email</span></h4>
+                    <form  [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="email" id="email" placeholder="" formControlName="email">
+                            <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
+                            <label for="email">Nouveau Email* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="email" name="Email" required="">
+                            <label>Confirmer* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" name="Subject" required="">
+                            <label>Mot de passe * :</label>
+                            <span></span>
+                        </div>
+                        <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
+                    </form>
+                </div>
+                    <div class="col-md-6 contact-form">
+                        <h4 class="white-w3ls">Mon mot de   <span>passe</span></h4>
+                        <form action="#" method="post">
+                            <div class="styled-input agile-styled-input-top">
+                                <input type="password" name="Name" required="">
+                                <label>Ancien mot de passe* :</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" name="Email" required="">
+                                <label>Nouveau mot de passe* :</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" name="Subject" required="">
+                                <label>Confirmer* :</label>
+                                <span></span>
+                            </div>
+
+                            <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
+                        </form>
+                        <br>
+                        <br>
+                        <div  style="float: right;">
+                            * champs obligatoires
+                        </div>
+                    </div>
             </div>
         </div>
-
     </div>
-    </div>
-    </div>
-    </div>
-</body>
-
-
+</div>
