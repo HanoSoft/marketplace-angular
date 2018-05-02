@@ -13,7 +13,7 @@ import {Observable} from 'rxjs/Observable';
   templateUrl: './top-nav.component.html',
   styleUrls: ['./top-nav.component.scss']
 })
-export class TopNavComponent implements OnInit{
+export class TopNavComponent implements OnInit {
     subscribtion: Subscription ;
     public itemCount;
     public subscription: Subscription;
