@@ -29,8 +29,8 @@ export class TopNavComponent implements OnInit{
     }
     onLogOut() {
         localStorage.clear();
+        this.router.navigate(['']);
         window.location.reload();
-        this.router.navigate(['auth']);
     }
     ngOnInit(): void {
         const auth = Observable.of(localStorage.getItem('isAuth'));
