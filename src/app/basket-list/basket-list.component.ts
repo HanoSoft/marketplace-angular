@@ -14,7 +14,6 @@ export class BasketListComponent  {
     private val: Subject <any>;
     products;
     total;
-    quantity = 1;
     constructor(private _basketService: ShopingService) {
         this.val = _basketService.itemCountSource;
         this.itemCount = 0;
@@ -31,12 +30,9 @@ export class BasketListComponent  {
         this.products = this._basketService.getProducts();
         this.total = this._basketService.totalPrice;
     }
-    public onAdd(price) {
-        this.quantity++;
-        this.total = this.total + price;
+    public onAdd(id, price) {
+     this._basketService.increaseQuantity(id, price);
+        this.total = this._basketService.totalPrice;
     }
-    public onMinus(price) {
-        this.quantity--;
-        this.total = this.total - price;
-    }
+
 }

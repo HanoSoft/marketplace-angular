@@ -41,6 +41,7 @@ export class ShopingService {
         const productIndexToRemove = this.products.findIndex(
             (product) => {
                 if (product.id === id) {
+                    this.totalPrice -= product.quantity * price;
                     return true;
                 }
             }
@@ -48,7 +49,17 @@ export class ShopingService {
         console.log (productIndexToRemove);
         this.itemCount--;
         this.itemCountSource.next(this.itemCount);
-        this.totalPrice -= price;
         this.products.splice(productIndexToRemove, 1);
+    }
+    public increaseQuantity(id, price) {
+        const productIndexToRemove = this.products.findIndex(
+            (product) => {
+                if (product.id === id) {
+                   product.quantity ++;
+                   return true;
+                }
+            }
+        );
+        this.totalPrice += price;
     }
 }
