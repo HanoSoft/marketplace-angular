@@ -23,7 +23,7 @@
                             <input type="button" value="+" class="plus" (click)="onAdd(product.id,product.price)">
                             <input type="text" step="1" max="10" min="1" [value]="product.quantity" title="Qty" class="qty"
                                    size="4"  disabled>
-                            <input type="button" value="-" class="minus">
+                            <input type="button" value="-" class="minus" (click)="onDecrease(product.id,product.price)">
                         </div>
                     </div>
                     <div class="col-2 col-sm-2 col-md-2 text-right">

@@ -55,11 +55,22 @@ export class ShopingService {
         const productIndexToRemove = this.products.findIndex(
             (product) => {
                 if (product.id === id) {
-                   product.quantity ++;
-                   return true;
+                    product.quantity ++;
+                    return true;
                 }
             }
         );
         this.totalPrice += price;
+    }
+    public decreaseQuantity(id, price) {
+        const productIndexToRemove = this.products.findIndex(
+            (product) => {
+                if (product.id === id) {
+                    product.quantity --;
+                    return true;
+                }
+            }
+        );
+        this.totalPrice -= price;
     }
 }

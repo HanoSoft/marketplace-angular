@@ -34,5 +34,8 @@ export class BasketListComponent  {
      this._basketService.increaseQuantity(id, price);
         this.total = this._basketService.totalPrice;
     }
-
+    public onDecrease(id, price) {
+        this._basketService.decreaseQuantity(id, price);
+        this.total = this._basketService.totalPrice;
+    }
 }
