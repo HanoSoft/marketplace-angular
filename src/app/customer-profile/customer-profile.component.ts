@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../services/customer.service';
 import {CustomerProfile} from '../models/CustomerProfile.mpodel';
+import {UpdateEmail} from '../models/UpdateEmail';
+import {UpdatePassword} from '../models/UpdatePassword.model';
+import {emailMatcher} from './email-matcher';
+import {oldPassword} from './old-password';
+import {equal} from 'assert';
+import {passwordMatcher} from './password-matcher';
+
 
 @Component({
   selector: 'app-customer-profile',
@@ -11,20 +18,27 @@ import {CustomerProfile} from '../models/CustomerProfile.mpodel';
 })
 export class CustomerProfileComponent implements OnInit {
     customerForm: FormGroup;
+    emailForm: FormGroup;
+    pwdForm: FormGroup;
     id = localStorage.getItem('id');
+    msg: string;
+    msgPwd: string;
+    password = localStorage.getItem('pwd');
     constructor(private formBuilder: FormBuilder,
                 private customerService: CustomerService,
                 private router: Router) { }
     ngOnInit() {
         this.initForm();
+        this.initEmailForm();
+        this.initPwdForm();
     }
 
      initForm() {
          const name = localStorage.getItem('name');
          const familyName = localStorage.getItem('familyName');
-         const email = localStorage.getItem('email');
          const birthDate = localStorage.getItem('birthDate');
          const phoneNumber = localStorage.getItem('phoneNumber');
+         const email = localStorage.getItem('email');
          const sex = localStorage.getItem('sex');
          this.customerForm = this.formBuilder.group({
              name: name,
@@ -42,10 +56,56 @@ export class CustomerProfileComponent implements OnInit {
             formValue['familyName'],
             formValue['email'],
             formValue['birthDate'],
-            formValue['phoneNumber'],
-            formValue['sex']);
+            formValue['phoneNumber']
+           );
 
         this.customerService.editCustomer(+this.id, newCustomer) ;
       /* this.router.navigate(['']);*/
+    }
+    initEmailForm() {
+        this.emailForm = this.formBuilder.group({
+            email: localStorage.getItem('email'),
+            password: ['', [Validators.required] ],
+            newEmail: ['', [Validators.required, Validators.email]],
+            confirmEmail:   ['', [Validators.required, Validators.email]]
+        }, { validator: emailMatcher }
+        );
+    }
+    onSubmitEmailForm() {
+        const formValue = this.emailForm.value;
+        const newCustomer = new UpdateEmail(
+            formValue['newEmail'],
+        );
+        this.customerService.updateEmail(+this.id, newCustomer) ;
+        }
+    initPwdForm() {
+        this.pwdForm = this.formBuilder.group({
+                password: ['', [Validators.required] ],
+                newPassword: ['', [Validators.required, Validators.minLength(8),
+                    Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$')]],
+                confirmPwd:   ['', [Validators.required]]
+            }, { validator: passwordMatcher }
+        );
+    }
+    onSubmitPwdForm() {
+        const formValue = this.pwdForm.value;
+        const newCustomer = new UpdatePassword(
+            formValue['newPassword'],
+        );
+        this.customerService.updatePwd(+this.id, newCustomer) ;
+    }
+    onchange() {
+        if (this.emailForm.value.password !== localStorage.getItem( 'pwd')) {
+           this.msg = 'mot de passe erroné' ;
+        } else {
+            this.msg = '';
+        }
+    }
+    onPwdchange() {
+        if (this.pwdForm.value.password !== localStorage.getItem( 'pwd')) {
+            this.msgPwd = 'mot de passe erroné' ;
+        } else {
+            this.msgPwd = '';
+        }
     }
 }

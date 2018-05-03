@@ -49,6 +49,7 @@ export class CustomerService {
             localStorage.setItem('sponsorCode', customer.sponsor_code);
             localStorage.setItem('birthDate', customer.birth_date);
             localStorage.setItem('phoneNumber', customer.phone_number);
+            localStorage.setItem('pwd', pwd);
             return true;
         } else {return false; }
     }
@@ -82,5 +83,33 @@ export class CustomerService {
         localStorage.setItem('phoneNumber', newCustomer.phone_number);
         this.editCustomerToServer(newCustomer);
         console.log(newCustomer);
+    }
+    updateEmail (id: number, newCustomer) {
+        this.getCustomers();
+        newCustomer.id = id;
+        localStorage.setItem('id', newCustomer.id);
+        localStorage.setItem('email', newCustomer.email);
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/edit/email';
+        const b = JSON.stringify(newCustomer);
+        this.httpClient.put(url, b, {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .subscribe(
+                () => {}, (error) => {console.log( b + 'erreur' + error); }
+            );
+    }
+    updatePwd (id: number, newCustomer) {
+        this.getCustomers();
+        newCustomer.id = id;
+        localStorage.setItem('id', newCustomer.id);
+        localStorage.setItem('pwd', newCustomer.pwd);
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/edit/pwd';
+        const b = JSON.stringify(newCustomer);
+        this.httpClient.put(url, b, {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .subscribe(
+                () => {}, (error) => {console.log( b + 'erreur' + error); }
+            );
     }
 }

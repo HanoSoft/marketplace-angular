@@ -51,57 +51,80 @@
                             <label for="tel">Numéro de télephone* :</label>
                             <span></span>
                         </div>
-                        <div class="styled-input">
-                            <select formControlName="sex" class="form-control form-control-sm">
-                                <option value="Homme" selected>Homme</option>
-                                <option value="Femme">Femme</option>
-                            </select>
-                        </div>
+
                         <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
                     </form>
                 </div>
+
+
+
+
+
                 <div class="col-md-6 contact-form">
                     <h4 class="white-w3ls">Mon adresse  <span>Email</span></h4>
-                    <form  [formGroup]="customerForm" (ngSubmit)="onSubmitForm()">
+
+                    <form  [formGroup]="emailForm" (ngSubmit)="onSubmitEmailForm()">
+
                         <div class="styled-input agile-styled-input-top">
-                            <input type="email" id="email" placeholder="" formControlName="email">
-                            <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
+                            <input type="email" id="email" placeholder="" formControlName="email" >
+                            <label for="email">Email* :</label>
+                            <span></span>
+                        </div>
+
+
+
+
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="email" id="newEmail" placeholder="" formControlName="newEmail">
+                            <p class="error_message" *ngIf="emailForm.get('newEmail').invalid">Veuillez fournir un email valide.</p>
                             <label for="email">Nouveau Email* :</label>
                             <span></span>
                         </div>
+
                         <div class="styled-input">
-                            <input type="email" name="Email" required="">
+                            <input type="email" name="Email" formControlName="confirmEmail">
+                            <p class="error_message" *ngIf="emailForm.hasError('nomatch')">les 2 emails ne sont pas identiques .</p>
+
                             <label>Confirmer* :</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="password" name="Subject" required="">
+                            <input type="password" name="password" formControlName="password" (input)="onchange()">
+                            <p>{{msg}}</p>
                             <label>Mot de passe * :</label>
                             <span></span>
                         </div>
-                        <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
+                        <input type="submit" value="Modifier" [disabled]="emailForm.invalid || msg !== ''">
                     </form>
                 </div>
+
+
+
+
                     <div class="col-md-6 contact-form">
                         <h4 class="white-w3ls">Mon mot de   <span>passe</span></h4>
-                        <form action="#" method="post">
+                        <form  [formGroup]="pwdForm" (ngSubmit)="onSubmitPwdForm()">
+
                             <div class="styled-input agile-styled-input-top">
-                                <input type="password" name="Name" required="">
+                                <input type="password" name="pwd" (input)="onPwdchange()" formControlName="password">
                                 <label>Ancien mot de passe* :</label>
-                                <span></span>
+                                <p>{{msgPwd}}</p>
                             </div>
+
                             <div class="styled-input">
-                                <input type="password" name="Email" required="">
+                                <input type="password" name="pwd" formControlName="newPassword">
                                 <label>Nouveau mot de passe* :</label>
                                 <span></span>
                             </div>
+
                             <div class="styled-input">
-                                <input type="password" name="Subject" required="">
+                                <input type="password" formControlName="confirmPwd">
                                 <label>Confirmer* :</label>
-                                <span></span>
+                                <p class="error_message" *ngIf="pwdForm.hasError('nomatch')">les 2 mot de passe  ne sont pas identiques .</p>
+
                             </div>
 
-                            <input type="submit" value="Modifier" [disabled]="customerForm.invalid">
+                            <input type="submit" value="Modifier" [disabled]="pwdForm.invalid || msgPwd !== ''">
                         </form>
                         <br>
                         <br>

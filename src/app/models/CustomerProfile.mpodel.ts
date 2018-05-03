@@ -5,6 +5,5 @@ export class CustomerProfile {
         public email: string,
         public birth_date: string,
         public phone_number: number,
-        public sex: string
     ) {}
 }
