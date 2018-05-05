@@ -61,7 +61,7 @@ form{
 label{
   font-weight: bold;
   display:block;
-  color: #49E;
+  color: #2fdab8;
   padding-bottom: 5px;
   width: 100%;
   margin: 0 auto;
@@ -141,7 +141,6 @@ label{
 }
 .input_1:invalid ~ .blue-line:after,
 .input_1.isUnvalid ~ .blue-line:after{
-  content: '!';
   position: absolute;
   top: -28px;
   left: -12px;
@@ -379,7 +378,7 @@ select:focus{
   background-color: #2fdab8;
   border: 1px solid transparent;
   border-radius: 2px;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   color: #fafafa;
   text-decoration: none;
@@ -390,7 +389,7 @@ select:focus{
   }
   &:hover{
     background-color: #2fdab8;
-    font-size: 20px;
+    font-size: 16px;
 
   }
 
