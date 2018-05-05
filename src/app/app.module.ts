@@ -31,6 +31,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ContainerComponent } from './container/container.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { JewelryComponent } from './jewelry/jewelry.component';
+import { AdressComponent } from './adress/adress.component';
 
 
 
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     /*basket-list*/
     { path: 'basket', component: BasketListComponent},
+    { path: 'address', component: AdressComponent},
     { path: 'clothes',  component: ClothesComponent},
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},
@@ -99,6 +101,7 @@ const appRoutes: Routes = [
     ContainerComponent,
     CustomerProfileComponent,
     JewelryComponent,
+    AdressComponent,
   ],
   imports: [
     BrowserModule,
