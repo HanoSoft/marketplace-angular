@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {HttpClient} from '@angular/common/http';
-import {Order} from '../models/Order.model';
 import {Address} from '../models/Address.model';
 
 @Injectable()
@@ -12,8 +11,16 @@ export class AddressService {
     public emitAddressSubject() {
         this.addressSubject.next(this.addresses.slice());
     }
+    public getAddresses() {
+        this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses').subscribe(
+            (response) => {this.addresses = response;
+                this.emitAddressSubject();
+            },
+            (error) => {console.log('Erreur ! :' + error); }
+        );
+    }
     saveToServer(body: any) {
-        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresess';
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses';
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}

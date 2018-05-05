@@ -32,6 +32,7 @@ import { ContainerComponent } from './container/container.component';
 import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { JewelryComponent } from './jewelry/jewelry.component';
 import { AdressComponent } from './adress/adress.component';
+import {AddressService} from './services/address.service';
 
 
 
@@ -115,6 +116,7 @@ const appRoutes: Routes = [
       ShopingService,
       CustomerService,
       AuthGuard,
+      AddressService,
   ],
   bootstrap: [AppComponent]
 })
