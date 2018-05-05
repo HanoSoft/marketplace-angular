@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {HttpClient} from '@angular/common/http';
+import {Address} from '../models/Address.model';
+import {Item} from '../models/Item.model';
 
 @Injectable()
 export class ShopingService {
@@ -8,12 +11,28 @@ export class ShopingService {
     itemCount$ = this.itemCountSource.asObservable();
     totalPrice: number;
     private products = [];
-    constructor() {
+    constructor(private httpClient: HttpClient) {
         this.itemCount = 0;
         this.itemCountSource.next(0);
         this.totalPrice = 0.0;
     }
-
+    saveToServer(body: any) {
+        /*const customerId = localStorage.getItem('id');*/
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/items';
+        const b = JSON.stringify(body);
+        this.httpClient.post(url, b, {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .subscribe(
+                () => {}, (error) => {console.log( b + 'erreur' + error); }
+            );
+    }
+    public saveItems () {
+        for (const product of this.products) {
+            const item = new Item(product.id, product.quantity);
+            this.saveToServer(item);
+        }
+    }
     public AddToBasket(id, price, name, image, quantity) {
         this.itemCount++;
         this.itemCountSource.next(this.itemCount);

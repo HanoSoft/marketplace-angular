@@ -13,7 +13,9 @@ export class OrderService {
         this.orderSubject.next(this.orders.slice());
     }
     saveOrderToServer(body: any) {
-        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders';
+        const customerId = localStorage.getItem('id');
+        console.log('id customer' + customerId);
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId;
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}

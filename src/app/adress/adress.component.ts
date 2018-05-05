@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Address} from '../models/Address.model';
 import {AddressService} from '../services/address.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-adress',
@@ -10,7 +11,7 @@ import {AddressService} from '../services/address.service';
 })
 export class AdressComponent implements OnInit {
     addressForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private addressService: AddressService) { }
+  constructor(private formBuilder: FormBuilder, private addressService: AddressService, private router: Router ) { }
 
   ngOnInit() {
       this.initForm();
@@ -41,7 +42,7 @@ export class AdressComponent implements OnInit {
             formValue['postal_code']
         );
         this.addressService.add(address) ;
-        /* this.router.navigate(['']);*/
+         this.router.navigate(['payment']);
     }
 
 }
