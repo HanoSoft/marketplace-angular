@@ -29,6 +29,8 @@
 <!--breadcrump end-->
 
 <!--form Start-->
+
+<!--
 <form>
     <label>pays</label>
     <select>
@@ -39,3 +41,122 @@
     <textarea></textarea>
     
 </form>
+-->
+
+<div class="content">
+    <form method="post" action="#" class="forms">
+
+        <div class="row">
+            <h2>CREATION D'UNE ADRESSE DE LIVRAISON</h2>
+            <br>
+            <h3>Informations</h3>
+            <div class="col _s12 _m6">
+                <label>Prénom* :
+                    <input class="input_1" type="text" name="f-name" placeholder="Prénom" required>
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+            </div>
+            <div class="col _s12 _m6">
+                <label>Nom* :
+                    <input class="input_1" type="text" name="f-name" placeholder="Nom" required>
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+            </div>
+
+
+            <div class="col _s12 _m12">
+                <label>Télephone* :
+                    <input class="input_1" type="number" name="f-email" placeholder="06 01 02 03 04">
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Adresse de livraison</h3>
+            <div class="col _s12 _m12">
+                <label>Donner un nom à cette adresse* :
+                    <input class="input_1" type="text" name="f-email" placeholder="Bureau, maison ...">
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+            </div>
+            <div class="col _s12 _m12">
+                <label>Adresse* :
+                    <input class="input_1" type="text" name="f-email" placeholder="Rue, numéro, étage,...">
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+
+            </div>
+            <div class="col _s12 _m6">
+                <label>Code postal* :
+                    <input class="input_1" type="number" name="f-email" placeholder="12345">
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+                </label>
+            </div>
+            <div class="col _s12 _m6">
+                <label>Ville* :
+                    <input class="input_1" type="text" name="f-email" placeholder="Ville">
+                    <span class="grey-line"></span>
+                    <span class="blue-line"></span>
+
+                </label>
+            </div>
+
+            <div class="col _s12 _m12">
+                <label>Pays* :
+                    <SELECT name="nom" size="1">
+                        <OPTION>France métropolitaine
+                        <OPTION>Belgique
+                        <OPTION>Dom-Tom
+                        <OPTION>Luxembourg
+                        <OPTION>Suisse
+                    </SELECT>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="r-field col _s12 _m12">
+                <p>* Champs obligatoires</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-8">
+                <a href="#" class="button">Valider cette adresse</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(function() {
+
+        $( ".input_1[required]" ).change(function() {
+            if($(this).val() != ""){
+                $(this).addClass("isValid");
+                $(this).removeClass("isUnvalid");
+            }
+            else{
+                $(this).removeClass("isValid");
+                $(this).addClass("isUnvalid");
+            }
+        });
+        $( ".input_1" ).change(function() {
+            if($(this).val() != ""){
+                $(this).addClass("isValid");
+            }
+            else{
+                $(this).removeClass("isValid");
+            }
+        });
+
+    });
+
+
+</script>
