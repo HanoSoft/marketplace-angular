@@ -27,90 +27,72 @@
   </div>
 </div>
 <!--breadcrump end-->
+<div class="banner_bottom_agile_info">
+    <div class="container">
+        <div class="agile-contact-grids">
+            <div class="agile-contact-left">
+                <div class="col-md-12 contact-form">
+                    <h4 class="white-w3ls">CREATION D'UNE ADRESSE DE <span>LIVRAISON</span></h4>
+                    <form method="post" action="#">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" id="name" placeholder="Prénom" formControlName="name">
+                            <label  for="name">Prénom* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" id="family-name" placeholder="Nom" formControlName="familyName">
+                            <label for="family-name">Nom* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" id="tel" placeholder="Numéro de téléphone" formControlName="phoneNumber">
+                            <label for="tel">Numéro de télephone* :</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" id="address" placeholder="Rue, numéro, étage,..." formControlName="address">
+                            <label  for="address">Adresse* :</label>
+                            <span></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+
 
 <!--form Start-->
 
-<div class="content">
-    <form method="post" action="#" class="forms">
-        <div class="row">
-            <h2>CREATION D'UNE ADRESSE DE LIVRAISON</h2>
-            <br>
-            <h3>Informations</h3>
-            <div class="col _s12 _m6">
-                <label>Prénom* :
-                    <input class="input_1" type="text" name="f-name" placeholder="" >
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
-            </div>
-            <div class="col _s12 _m6">
-                <label>Nom* :
-                    <input class="input_1" type="text" name="f-name" placeholder="" required>
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
-            </div>
-            <div class="col _s12 _m12">
-                <label>Télephone* :
-                    <input class="input_1" type="number" name="f-email" placeholder="">
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
+                            <div class="styled-input">
+                                <input type="text" id="city" placeholder="Ville" formControlName="city">
+                                <label  for="city">Ville* :</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="styled-input">
+                                <input type="text" id="postalcode" placeholder="Code postal" formControlName="postalcode">
+                                <label  for="postalcode">Code postal* :</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        <br>
+                        <br><br>
+                        <div class="styled-input">
+                        <select class="form-control" >
+                            <option>France</option>
+                        </select>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" id="name-address" placeholder="Domicile" formControlName="name">
+                            <label  for="name-address">Donner un nom à cette adresse* : Bureau, maison ...</label>
+                            <span></span>
+                        </div>
+                           <p> (*Champs obligatoires)</p>
+                        <br>
+                        <div  style="float: right;">
+                            <input type="submit" value="Valider cette adresse" >
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
-        <div class="row">
-            <h3>Adresse de livraison</h3>
-            <div class="col _s12 _m12">
-                <label>Donner un nom à cette adresse* :
-                    <input class="input_1" type="text" name="f-email" placeholder="Bureau, maison ...">
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
-            </div>
-            <div class="col _s12 _m12">
-                <label>Adresse* :
-                    <input class="input_1" type="text" name="f-email" placeholder="Rue, numéro, étage,...">
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
-
-            </div>
-            <div class="col _s12 _m6">
-                <label>Code postal* :
-                    <input class="input_1" type="number" name="f-email" placeholder="12345">
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-                </label>
-            </div>
-            <div class="col _s12 _m6">
-                <label>Ville* :
-                    <input class="input_1" type="text" name="f-email" placeholder="Ville">
-                    <span class="grey-line"></span>
-                    <span class="blue-line"></span>
-
-                </label>
-            </div>
-
-            <div class="col _s12 _m12">
-                <label>Pays* :
-                    <SELECT name="nom" size="1">
-                        <OPTION>France
-                    </SELECT>
-                </label>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="r-field col _s12 _m12">
-                <p>* Champs obligatoires</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-offset-8">
-                <a href="#" class="button">Valider cette adresse</a>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
-
