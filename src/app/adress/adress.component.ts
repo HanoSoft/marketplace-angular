@@ -31,6 +31,7 @@ export class AdressComponent implements OnInit {
         });
     }
     onSubmitForm() {
+        const customerId = localStorage.getItem('id');
         const formValue = this.addressForm.value;
         const address = new Address(
             formValue['country'],

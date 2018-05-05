@@ -27,15 +27,18 @@
   </div>
 </div>
 <!--breadcrump end-->
+
 <div class="banner_bottom_agile_info">
     <div class="container">
         <div class="agile-contact-grids">
             <div class="agile-contact-left">
                 <div class="col-md-12 contact-form">
                     <h4 class="white-w3ls">CREATION D'UNE ADRESSE DE <span>LIVRAISON</span></h4>
-                    <form method="post" action="#">
+
+                    <form [formGroup]="addressForm" (ngSubmit)="onSubmitForm()">
+
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" id="name" placeholder="Prénom" formControlName="name">
+                            <input type="text" id="name"  formControlName="customerName">
                             <label  for="name">Prénom* :</label>
                             <span></span>
                         </div>
@@ -49,6 +52,11 @@
                             <label for="tel">Numéro de télephone* :</label>
                             <span></span>
                         </div>
+
+
+
+
+
                         <div class="styled-input">
                             <input type="text" id="address" placeholder="Rue, numéro, étage,..." formControlName="address">
                             <label  for="address">Adresse* :</label>
@@ -57,7 +65,6 @@
                         <div class="col-md-6 mb-3">
 
 
-<!--form Start-->
 
                             <div class="styled-input">
                                 <input type="text" id="city" placeholder="Ville" formControlName="city">
@@ -67,7 +74,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="styled-input">
-                                <input type="text" id="postalcode" placeholder="Code postal" formControlName="postalcode">
+                                <input type="text" id="postalcode" placeholder="Code postal" formControlName="postal_code">
                                 <label  for="postalcode">Code postal* :</label>
                                 <span></span>
                             </div>

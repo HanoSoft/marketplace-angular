@@ -20,7 +20,8 @@ export class AddressService {
         );
     }
     saveToServer(body: any) {
-        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses';
+        const customerId = localStorage.getItem('id');
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses/' + customerId;
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}
