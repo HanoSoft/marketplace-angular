@@ -29,23 +29,8 @@
 <!--breadcrump end-->
 
 <!--form Start-->
-
-<!--
-<form>
-    <label>pays</label>
-    <select>
-        <option>France</option>
-    </select>
-
-    <label>ligne d'adresse</label>
-    <textarea></textarea>
-    
-</form>
--->
-
 <div class="content">
     <form method="post" action="#" class="forms">
-
         <div class="row">
             <h2>CREATION D'UNE ADRESSE DE LIVRAISON</h2>
             <br>
@@ -64,8 +49,6 @@
                     <span class="blue-line"></span>
                 </label>
             </div>
-
-
             <div class="col _s12 _m12">
                 <label>Télephone* :
                     <input class="input_1" type="number" name="f-email" placeholder="06 01 02 03 04">
@@ -133,30 +116,3 @@
         </div>
     </form>
 </div>
-
-<script>
-    $(function() {
-
-        $( ".input_1[required]" ).change(function() {
-            if($(this).val() != ""){
-                $(this).addClass("isValid");
-                $(this).removeClass("isUnvalid");
-            }
-            else{
-                $(this).removeClass("isValid");
-                $(this).addClass("isUnvalid");
-            }
-        });
-        $( ".input_1" ).change(function() {
-            if($(this).val() != ""){
-                $(this).addClass("isValid");
-            }
-            else{
-                $(this).removeClass("isValid");
-            }
-        });
-
-    });
-
-
-</script>
