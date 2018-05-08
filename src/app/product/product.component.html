@@ -17,6 +17,19 @@
                 <span class="item_price">{{price}} €</span>
                 <del>{{price}} €</del>
             </div>
+
+
+            <span *ngIf="sizes.length>0">
+                    <p >Taille :</p>
+                    <select  >
+                        <option value="{{size.size}}" *ngFor="let size of sizes; let i = index;">
+                            {{size.size}}
+                        </option>
+                    </select>
+                </span>
+
+
+
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 
             <input type="submit" name="submit" value="Ajouter au panier" class="button" (click)="onAdd(id,price,productName,url+images[0].name)" *ngIf="!selected">

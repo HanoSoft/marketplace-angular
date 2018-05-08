@@ -54,26 +54,27 @@
         <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
 
         <div class="color-quality" >
+            <form [formGroup]="itemForm" (ngSubmit)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
             <div class="color-quality-right">
                <span *ngIf="product.sizes.length>0">
                     <h5 >Taille :</h5>
-                    <select id="" onchange="" class="frm-field required sect">
-                        <option value="null" *ngFor="let size of product.sizes; let i = index;">
+                    <select id="" onchange="" class="frm-field required sect" formControlName="size">
+                        <option value="{{size.size}}" *ngFor="let size of product.sizes; let i = index;">
                             {{size.size}}
                         </option>
                     </select>
                 </span>
                 <h5 style="margin-top: 10px;">Quantité :</h5>
-                <select id="quantity"  class="frm-field required sect">
-                    <option value="null">1 </option>
-                    <option value="null">2 </option>
-                    <option value="null">3 </option>
-                    <option value="null">4 </option>
-                    <option value="null">5 </option>
+                <select id="quantity"  class="frm-field required sect" formControlName="quantity">
+                    <option value="1">1 </option>
+                    <option value="2">2 </option>
+                    <option value="3">3 </option>
+                    <option value="4">4 </option>
+                    <option value="5">5 </option>
                 </select>
-
-
             </div>
+
+            </form>
 
         </div>
 

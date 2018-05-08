@@ -7,6 +7,7 @@ import {Shoping} from '../models/Shoping';
 import {Subscription} from 'rxjs/Subscription';
 import {Subject} from 'rxjs/Subject';
 import {forEach} from '@angular/router/src/utils/collection';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
     providers: [TopNavComponent ],
@@ -23,19 +24,21 @@ export class ProductComponent implements OnInit {
     @Input() price: number;
     @Input() quantity: number ;
     @Input() images = [];
+    @Input() sizes = [];
     public subscription: Subscription;
     private val: Subject <any>;
     basket ;
     selected = false;
+    itemForm: FormGroup;
     url = 'http://localhost:8888/pfe_marketplace/web/uploads/product/';
-  constructor(private shoping: ShopingService, private route: Router ) {
+  constructor(private shoping: ShopingService, private route: Router, private formBuilder: FormBuilder) {
       this.basket = this.shoping.getProducts();
   }
   ngOnInit() {
       for (const b of this.basket) {
-      if (this.id === b.id) {
-          this.selected = true;
-      }
+          if (this.id === b.id) {
+              this.selected = true;
+          }
       }
   }
   onAdd(id, price , name, image) {
@@ -47,5 +50,11 @@ export class ProductComponent implements OnInit {
         this.shoping.remove(id, price);
         this.selected = false;
         this.basket = this.shoping.getProducts();
+    }
+    initForm() {
+        this.itemForm = this.formBuilder.group({
+            quantity: ['1', [Validators.required]],
+            size: [ [Validators.required]]
+        });
     }
 }

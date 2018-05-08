@@ -2,7 +2,7 @@ import {Component , OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BrandService} from '../services/brand.service';
 import {ShopingService} from '../services/shoping.service';
-import {FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-product-details',
@@ -19,7 +19,9 @@ export class ProductDetailsComponent implements OnInit {
     basket ;
     selected = false;
     quantity;
-    constructor(private brandService: BrandService, private router: ActivatedRoute, private shoping: ShopingService) {
+    itemForm: FormGroup;
+    constructor(private brandService: BrandService, private router: ActivatedRoute, private shoping: ShopingService,
+                private formBuilder: FormBuilder) {
         this.basket = this.shoping.getProducts();
         this.id = this.router.snapshot.params['id'];
         this.idc = +this.router.snapshot.params['idc'];
@@ -32,9 +34,12 @@ export class ProductDetailsComponent implements OnInit {
         }
     }
     ngOnInit(): void {
+        this.initForm();
     }
     onAdd(id, price , name, image, quantity) {
-        this.shoping.AddToBasket(id, price , name, image, 1);
+        const formValue = this.itemForm.value;
+
+        this.shoping.AddToBasket(id, price , name, image, +formValue['quantity'], formValue['size']);
         this.selected = true;
         this.basket = this.shoping.getProducts();
     }
@@ -42,5 +47,11 @@ export class ProductDetailsComponent implements OnInit {
         this.shoping.remove(id, price);
         this.selected = false;
         this.basket = this.shoping.getProducts();
+    }
+    initForm() {
+        this.itemForm = this.formBuilder.group({
+            quantity: ['1', [Validators.required]],
+            size: [ [Validators.required]]
+        });
     }
 }

@@ -30,12 +30,12 @@ export class ShopingService {
     public saveItems () {
         const items = [] ;
         for (const product of this.products) {
-            const item = new Item(product.id, product.quantity);
+            const item = new Item(product.id, product.quantity, product.size);
             items.push(item);
         }
         this.saveToServer( new Order(this.totalPrice, items));
     }
-    public AddToBasket(id, price, name, image, quantity) {
+    public AddToBasket(id, price, name, image, quantity, size) {
         this.itemCount++;
         this.itemCountSource.next(this.itemCount);
         this.totalPrice += price * quantity;
@@ -45,13 +45,15 @@ export class ShopingService {
             product_name: '',
             price: '',
             image: '',
-            quantity: ''
+            quantity: '',
+            size: ''
         };
         productObject.id = id;
         productObject.product_name = name;
         productObject.price = price;
         productObject.image = image;
         productObject.quantity = quantity;
+        productObject.size = size;
         this.products.push(productObject);
     }
     public getProducts () {
