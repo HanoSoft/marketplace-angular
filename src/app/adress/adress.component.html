@@ -55,8 +55,6 @@
 
 
 
-
-
                         <div class="styled-input">
                             <input type="text" id="address" placeholder="Rue, numéro, étage,..." formControlName="address">
                             <label  for="address">Adresse* :</label>
@@ -82,7 +80,7 @@
                         <br>
                         <br><br>
                         <div class="styled-input">
-                        <select class="form-control" >
+                        <select class="form-control" formControlName="country">
                             <option>France</option>
                         </select>
                         </div>
@@ -94,7 +92,7 @@
                            <p> (*Champs obligatoires)</p>
                         <br>
                         <div  style="float: right;">
-                            <input type="submit" value="Valider cette adresse" >
+                            <input type="submit" value="Valider cette adresse" [disabled]="addressForm.invalid">
                         </div>
                     </form>
                 </div>

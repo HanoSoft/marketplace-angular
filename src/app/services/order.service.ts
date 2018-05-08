@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {HttpClient} from '@angular/common/http';
-import {Customer} from '../models/Customer.model';
 import {Order} from '../models/Order.model';
 
 @Injectable()
@@ -12,9 +11,17 @@ export class OrderService {
     public emitOrderSubject() {
         this.orderSubject.next(this.orders.slice());
     }
+    public getOrdersFromServer () {
+        const customerId = localStorage.getItem('id');
+        this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId).subscribe(
+            (response) => {this.orders = response;
+                this.emitOrderSubject();
+            },
+            (error) => {console.log('Erreur ! :' + error); }
+        );
+    }
     saveOrderToServer(body: any) {
         const customerId = localStorage.getItem('id');
-        console.log('id customer' + customerId);
         const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId;
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
@@ -28,5 +35,8 @@ export class OrderService {
         this.orders.push(order);
         this.emitOrderSubject();
         this.saveOrderToServer(order);
+    }
+    getOrders() {
+        return this.orders[0].id;
     }
 }

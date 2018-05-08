@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Address} from '../models/Address.model';
 import {AddressService} from '../services/address.service';
 import {Router} from '@angular/router';
@@ -24,11 +24,11 @@ export class AdressComponent implements OnInit {
             customerName: name,
             familyName: familyName,
             phoneNumber: phoneNumber,
-            country: '',
-            city: '',
-            address: '',
-            name: '',
-            postal_code: ''
+            country: ['', Validators.required],
+            city: ['', Validators.required],
+            address: ['', Validators.required],
+            name: ['', Validators.required],
+            postal_code: ['', Validators.required],
         });
     }
     onSubmitForm() {

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {HttpClient} from '@angular/common/http';
-import {Address} from '../models/Address.model';
 import {Item} from '../models/Item.model';
+import {Order} from '../models/Order.model';
 
 @Injectable()
 export class ShopingService {
@@ -17,8 +17,8 @@ export class ShopingService {
         this.totalPrice = 0.0;
     }
     saveToServer(body: any) {
-        /*const customerId = localStorage.getItem('id');*/
-        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/items';
+        const customerId = localStorage.getItem('id');
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId;
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}
@@ -28,10 +28,12 @@ export class ShopingService {
             );
     }
     public saveItems () {
+        const items = [] ;
         for (const product of this.products) {
             const item = new Item(product.id, product.quantity);
-            this.saveToServer(item);
+            items.push(item);
         }
+        this.saveToServer( new Order(this.totalPrice, items));
     }
     public AddToBasket(id, price, name, image, quantity) {
         this.itemCount++;

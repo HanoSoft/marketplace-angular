@@ -13,8 +13,6 @@ export class ConfirmationComponent implements OnInit {
   constructor(private shopingService: ShopingService, private orderService: OrderService) { }
 
   ngOnInit() {
-      const order = new Order(this.shopingService.totalPrice);
-      this.orderService.addOrder(order);
     this.shopingService.saveItems();
   }
 
