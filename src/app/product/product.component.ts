@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit {
       }
   }
   onAdd(id, price , name, image) {
-      this.shoping.AddToBasket(id, price , name, image, 1);
+      this.shoping.AddToBasket(id, price , name, image, 1, 1);
       this.selected = true;
       this.basket = this.shoping.getProducts();
   }
