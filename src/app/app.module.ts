@@ -35,7 +35,6 @@ import { AdressComponent } from './adress/adress.component';
 import {AddressService} from './services/address.service';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
-import {OrderService} from './services/order.service';
 
 
 
@@ -123,8 +122,7 @@ const appRoutes: Routes = [
       ShopingService,
       CustomerService,
       AuthGuard,
-      AddressService,
-      OrderService
+      AddressService
   ],
   bootstrap: [AppComponent]
 })
