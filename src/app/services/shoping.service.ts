@@ -26,6 +26,11 @@ export class ShopingService {
             .subscribe(
                 () => {}, (error) => {console.log( b + 'erreur' + error); }
             );
+        this.destroy();
+        this.products = [];
+        this.itemCount = 0;
+        this.itemCountSource.next(0);
+        this.totalPrice = 0.0;
     }
     public saveItems () {
         const items = [] ;
@@ -111,5 +116,10 @@ export class ShopingService {
             this.itemCount = +localStorage.getItem('itemCount');
             this.itemCountSource.next(this.itemCount);
         }
+    }
+    public destroy() {
+        localStorage.removeItem('shopingList');
+        localStorage.removeItem('total');
+        localStorage.removeItem('itemCount');
     }
 }

@@ -11,6 +11,7 @@ export class ConfirmationComponent implements OnInit {
   constructor(private shopingService: ShopingService) { }
 
   ngOnInit() {
+      this.shopingService.initialse();
     this.shopingService.saveItems();
   }
 

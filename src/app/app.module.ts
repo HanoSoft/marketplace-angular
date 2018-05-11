@@ -36,6 +36,7 @@ import {AddressService} from './services/address.service';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -111,6 +112,7 @@ const appRoutes: Routes = [
     PaymentComponent,
     ConfirmationComponent,
     ConfirmationModalComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

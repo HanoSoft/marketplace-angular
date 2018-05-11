@@ -10,6 +10,7 @@ import {BrandService} from '../services/brand.service';
 export class BrandListComponent implements OnInit {
     brands: any[];
     brandSubscription: Subscription;
+    isLoading = true;
     constructor( private brandService: BrandService) {
     }
     ngOnInit() {
@@ -20,6 +21,7 @@ export class BrandListComponent implements OnInit {
         );
         this.brandService.emitBrandSubject();
             this.onFetch() ;
+        this.isLoading = false;
     }
     onFetch() {
         this.brandService.getBrands();
