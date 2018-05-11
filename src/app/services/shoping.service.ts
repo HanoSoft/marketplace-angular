@@ -55,11 +55,16 @@ export class ShopingService {
         productObject.quantity = quantity;
         productObject.size = size;
         this.products.push(productObject);
+       this.storeData();
     }
     public getProducts () {
        return this.products;
     }
-
+    public storeData() {
+        localStorage.setItem('shopingList', JSON.stringify(this.products));
+        localStorage.setItem('total', this.totalPrice.toString());
+        localStorage.setItem('itemCount', this.itemCount.toString());
+    }
     public remove (id, price) {
         const productIndexToRemove = this.products.findIndex(
             (product) => {
@@ -73,6 +78,7 @@ export class ShopingService {
         this.itemCount--;
         this.itemCountSource.next(this.itemCount);
         this.products.splice(productIndexToRemove, 1);
+        this.storeData();
     }
     public increaseQuantity(id, price) {
         const productIndexToRemove = this.products.findIndex(
@@ -84,6 +90,7 @@ export class ShopingService {
             }
         );
         this.totalPrice += price;
+        this.storeData();
     }
     public decreaseQuantity(id, price) {
         const productIndexToRemove = this.products.findIndex(
@@ -95,5 +102,14 @@ export class ShopingService {
             }
         );
         this.totalPrice -= price;
+        this.storeData();
+    }
+    public initialse() {
+        if (localStorage.getItem('itemCount')) {
+            this.products = JSON.parse(localStorage.getItem('shopingList'));
+            this.totalPrice = +localStorage.getItem('total');
+            this.itemCount = +localStorage.getItem('itemCount');
+            this.itemCountSource.next(this.itemCount);
+        }
     }
 }

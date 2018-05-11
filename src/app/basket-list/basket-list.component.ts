@@ -15,13 +15,14 @@ export class BasketListComponent  {
     products;
     total;
     constructor(private _basketService: ShopingService) {
+        this._basketService.initialse();
+        this.products = this._basketService.getProducts();
         this.val = _basketService.itemCountSource;
         this.itemCount = 0;
         this.subscription = _basketService.itemCount$.subscribe(
             data => {
                 this.itemCount = data;
             });
-        this.products = this._basketService.getProducts();
         this.total = this._basketService.totalPrice;
     }
 

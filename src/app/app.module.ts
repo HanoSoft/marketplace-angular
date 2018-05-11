@@ -35,6 +35,7 @@ import { AdressComponent } from './adress/adress.component';
 import {AddressService} from './services/address.service';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 
 
 
@@ -45,9 +46,9 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent},
     /*basket-list*/
     { path: 'basket', component: BasketListComponent},
-    { path: 'address', component: AdressComponent},
-    { path: 'payment', component: PaymentComponent},
-    { path: 'confirmation', component: ConfirmationComponent},
+    { path: 'address', canActivate: [AuthGuard], component: AdressComponent},
+    { path: 'payment', canActivate: [AuthGuard], component: PaymentComponent},
+    { path: 'confirmation', canActivate: [AuthGuard], component: ConfirmationComponent},
     { path: 'clothes',  component: ClothesComponent},
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},
@@ -109,6 +110,7 @@ const appRoutes: Routes = [
     AdressComponent,
     PaymentComponent,
     ConfirmationComponent,
+    ConfirmationModalComponent,
   ],
   imports: [
     BrowserModule,

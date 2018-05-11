@@ -20,8 +20,8 @@ export class TopNavComponent implements OnInit {
     private val: Subject <any>;
     isAuth: string;
     constructor(private router: Router, private _basketService: ShopingService) {
+        this._basketService.initialse();
         this.val = _basketService.itemCountSource;
-        this.itemCount = 0;
         this.subscription = _basketService.itemCount$.subscribe(
             data => {
                 this.itemCount = data;
