@@ -1,6 +1,4 @@
-<div class="container">
-
-
+<div class="container" >
     <div class="row bs-wizard" style="border-bottom:0;">
 
         <div class="col-xs-3 bs-wizard-step active">
@@ -9,7 +7,6 @@
             <a  class="bs-wizard-dot"></a>
 
         </div>
-
         <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
             <div class="text-center bs-wizard-stepnum">Livraison</div>
             <div class="progress"><div class="progress-bar"></div></div>
@@ -35,9 +32,10 @@
 
 <!--basket-->
 <div class="container" id="main">
-    <h2 class="pink">Mon Panier</h2>
+    <h2 class="pink" *ngIf="total !=0">Mon Panier</h2>
+    <h4 class="pink" *ngIf="total ==0" align="center">Votre panier est vide pour le moment.</h4>
     <hr>
-    <div class="card shopping-cart" >
+    <div class="card shopping-cart" *ngIf="total !=0">
 
         <div class="card-body">
             <!-- PRODUCT -->
@@ -80,11 +78,8 @@
                             </div>
                             <h4 class="modal-title">Êtes-vous sûr ?</h4>
                         </div>
-
-
                             <button type="button" class="btn btn-info" aria-label="Close" (click)="modalRef.hide()"><span class="fa fa-close" > </span> Quitter</button>
                             <button class="btn btn-success" type="submit" (click)="onDelete(product.id, product.price)"><span class="fa fa-check-circle"> </span> Confirmer</button>
-
                     </div>
                 </ng-template>
 
@@ -95,6 +90,7 @@
 
 
         </div>
+
         <div class="card-footer">
 
             <div class="pull-right" style="margin: 10px">

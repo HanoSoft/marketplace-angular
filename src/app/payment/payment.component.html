@@ -31,6 +31,44 @@
 
 
 
+<div class="container" id="main">
+    <h2 class="pink">Livreurs</h2>
+    <hr>
+    <div class="card shopping-cart">
+
+        <div class="card-body" >
+            <form action="">
+
+
+            <div class="row" *ngFor="let delev of delivery; let i = index;">
+
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6"  style="margin-top: 10px;">
+
+                   <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)">&nbsp;{{delev.name}}
+
+                    <p >{{delev.address}}</p>
+
+                </div>
+                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                    <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                        <h6><strong>{{delev.price}} €</strong></h6>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                    <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                        <h6><strong>{{delev.delivery_time}} jour</strong></h6>
+                    </div>
+                </div>
+
+
+        </div>
+                <hr>
+            </form>
+    </div>
+
+</div>
+
+</div>
 
 
 

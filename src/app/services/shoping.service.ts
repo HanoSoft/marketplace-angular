@@ -12,16 +12,30 @@ export class ShopingService {
     itemCount$ = this.itemCountSource.asObservable();
     totalPrice: number;
     orders = [];
+    delivery = [];
     orderSubject = new Subject<any[]>();
+    deliverySubject = new Subject<any[]>();
     private products = [];
     constructor(private httpClient: HttpClient) {
         this.itemCount = 0;
         this.itemCountSource.next(0);
         this.totalPrice = 0.0;
     }
+    public emitDelivrySubject() {
+        this.deliverySubject.next(this.delivery.slice());
+    }
+    public getDeliveries() {
+        this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/delivery').subscribe(
+            (response) => {this.delivery = response;
+                this.emitDelivrySubject();
+            },
+            (error) => {console.log('Erreur ! :' + error); }
+        );
+    }
     saveToServer(body: any) {
         const customerId = localStorage.getItem('id');
-        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId;
+        const deliveryId = localStorage.getItem('delivery');
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId + '/' + deliveryId;
         const b = JSON.stringify(body);
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}

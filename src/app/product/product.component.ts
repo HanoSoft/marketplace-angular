@@ -40,9 +40,12 @@ export class ProductComponent implements OnInit {
               this.selected = true;
           }
       }
+      this.initForm();
   }
   onAdd(id, price , name, image) {
-      this.shoping.AddToBasket(id, price , name, image, 1,  '');
+      const formValue = this.itemForm.value;
+
+      this.shoping.AddToBasket(id, price , name, image, 1, formValue['size']);
       this.selected = true;
       this.basket = this.shoping.getProducts();
   }
@@ -53,8 +56,7 @@ export class ProductComponent implements OnInit {
     }
     initForm() {
         this.itemForm = this.formBuilder.group({
-            quantity: ['1', [Validators.required]],
-            size: [ [Validators.required]]
+            size: [this.sizes[0].size, [Validators.required]]
         });
     }
 }
