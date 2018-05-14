@@ -3,6 +3,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {HttpClient} from '@angular/common/http';
 import {Item} from '../models/Item.model';
 import {Order} from '../models/Order.model';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class ShopingService {
@@ -10,6 +11,8 @@ export class ShopingService {
      itemCountSource = new BehaviorSubject(0);
     itemCount$ = this.itemCountSource.asObservable();
     totalPrice: number;
+    orders = [];
+    orderSubject = new Subject<any[]>();
     private products = [];
     constructor(private httpClient: HttpClient) {
         this.itemCount = 0;
@@ -121,5 +124,26 @@ export class ShopingService {
         localStorage.removeItem('shopingList');
         localStorage.removeItem('total');
         localStorage.removeItem('itemCount');
+    }
+    public emitOrderSubject() {
+        this.orderSubject.next(this.orders.slice());
+    }
+    public getOrders() {
+        const customerId = localStorage.getItem('id');
+        this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/' + customerId).subscribe(
+            (response) => {this.orders = response;
+                this.emitOrderSubject();
+            },
+            (error) => {console.log('Erreur ! :' + error); }
+        );
+    }
+    public cancelOrder(id) {
+        const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/orders/cancel/' + id;
+        this.httpClient.put(url, [], {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .subscribe(
+                () => {}, (error) => {console.log( 'erreur' + error); }
+            );
     }
 }

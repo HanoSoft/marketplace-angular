@@ -11,7 +11,8 @@ import {Router} from '@angular/router';
 })
 export class AdressComponent implements OnInit {
     addressForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private addressService: AddressService, private router: Router ) { }
+  constructor(private formBuilder: FormBuilder, private addressService: AddressService,
+              private router: Router ) { }
 
   ngOnInit() {
       this.initForm();
@@ -20,15 +21,17 @@ export class AdressComponent implements OnInit {
         const name = localStorage.getItem('name');
         const familyName = localStorage.getItem('familyName');
         const phoneNumber = localStorage.getItem('phoneNumber');
+        const address = JSON.parse(localStorage.getItem('address'));
+    console.log( 'adresse ' + address);
         this.addressForm = this.formBuilder.group({
             customerName: name,
             familyName: familyName,
             phoneNumber: phoneNumber,
-            country: ['', Validators.required],
-            city: ['', Validators.required],
-            address: ['', Validators.required],
-            name: ['', Validators.required],
-            postal_code: ['', Validators.required],
+            country: [address.country, Validators.required],
+            city: [address.city, Validators.required],
+            address: [address.address, Validators.required],
+            name: [address.name, Validators.required],
+            postal_code: [address.postal_code, Validators.required],
         });
     }
     onSubmitForm() {

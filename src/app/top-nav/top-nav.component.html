@@ -51,8 +51,8 @@
                 <div class="dropdown">
                     <li *ngIf="isAuth"><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> </li>
                     <div class="dropdown-content ">
-                        <a href="#"><i class="fa fa-list" aria-hidden="true"></i>  Mes Commandes</a>
-                        <a href="#"><i class="fa fa-tag" aria-hidden="true"></i>  Mes Avantages</a>
+                        <a routerLink="orders"><i class="fa fa-list" aria-hidden="true"></i>  Mes Commandes</a>
+                      <!--  <a href="#"><i class="fa fa-tag" aria-hidden="true"></i>  Mes Avantages</a>-->
                         <a routerLink="profile"><i class="fa fa-user" aria-hidden="true"></i> Mon Profil</a>
                         <a (click)="onLogOut()"><i class="fa fa-power-off" aria-hidden="true"></i>  Déconnexion</a>
                     </div>

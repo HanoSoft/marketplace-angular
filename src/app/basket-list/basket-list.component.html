@@ -33,8 +33,6 @@
 
 
 
-
-
 <!--basket-->
 <div class="container" id="main">
     <h2 class="pink">Mon Panier</h2>
@@ -65,11 +63,31 @@
                         </div>
                     </div>
                     <div class="col-2 col-sm-2 col-md-2 text-right">
-                        <button type="button" class="btn btn-outline-danger btn-xs" (click)="onDelete(product.id, product.price)">
+                        <button type="button" class="btn btn-outline-danger btn-xs" (click)="openModal(template)">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
+
+                <ng-template #template>
+                    <div class="modal-content " >
+                        <div class="modal-header">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div class="icon-box" >
+                                <b style="color:green;font-size: 46px;">!</b>
+                            </div>
+                            <h4 class="modal-title">Êtes-vous sûr ?</h4>
+                        </div>
+
+
+                            <button type="button" class="btn btn-info" aria-label="Close" (click)="modalRef.hide()"><span class="fa fa-close" > </span> Quitter</button>
+                            <button class="btn btn-success" type="submit" (click)="onDelete(product.id, product.price)"><span class="fa fa-check-circle"> </span> Confirmer</button>
+
+                    </div>
+                </ng-template>
+
             </div>
             <hr>
             <br>
@@ -88,3 +106,5 @@
         </div>
     </div>
 </div>
+
+

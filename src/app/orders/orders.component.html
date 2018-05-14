@@ -1,0 +1,7 @@
+<div class="container" style="margin-top: 50px;" >
+  <div *ngFor="let order of orders; let i = index;" >
+    {{order.id}}
+      {{order.amount}}
+      <button (click)="onDelete(order.id)">annuler commande </button>
+  </div>
+</div>

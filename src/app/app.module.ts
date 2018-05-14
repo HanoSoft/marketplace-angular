@@ -35,9 +35,9 @@ import { AdressComponent } from './adress/adress.component';
 import {AddressService} from './services/address.service';
 import { PaymentComponent } from './payment/payment.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
-import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { LoadingComponent } from './loading/loading.component';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrdersComponent } from './orders/orders.component';
 
 
 const appRoutes: Routes = [
@@ -50,6 +50,7 @@ const appRoutes: Routes = [
     { path: 'address', canActivate: [AuthGuard], component: AdressComponent},
     { path: 'payment', canActivate: [AuthGuard], component: PaymentComponent},
     { path: 'confirmation', canActivate: [AuthGuard], component: ConfirmationComponent},
+    { path: 'orders', canActivate: [AuthGuard], component: OrdersComponent},
     { path: 'clothes',  component: ClothesComponent},
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},
@@ -111,8 +112,8 @@ const appRoutes: Routes = [
     AdressComponent,
     PaymentComponent,
     ConfirmationComponent,
-    ConfirmationModalComponent,
     LoadingComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,6 +121,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
+    ModalModule.forRoot(),
   ],
   providers: [
       BrandService,

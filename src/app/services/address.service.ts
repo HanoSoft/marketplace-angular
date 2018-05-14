@@ -11,18 +11,12 @@ export class AddressService {
     public emitAddressSubject() {
         this.addressSubject.next(this.addresses.slice());
     }
-    /*public getAddresses() {
-        this.httpClient.get<any[]>('http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses').subscribe(
-            (response) => {this.addresses = response;
-                this.emitAddressSubject();
-            },
-            (error) => {console.log('Erreur ! :' + error); }
-        );
-    }*/
     saveToServer(body: any) {
         const customerId = localStorage.getItem('id');
         const url = 'http://localhost:8888/pfe_marketplace/web/app_dev.php/api/customers/addresses/' + customerId;
         const b = JSON.stringify(body);
+        localStorage.setItem('address', b);
+
         this.httpClient.post(url, b, {
             headers: {'Content-Type': 'application/json'}
         })

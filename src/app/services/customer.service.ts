@@ -50,6 +50,7 @@ export class CustomerService {
             localStorage.setItem('birthDate', customer.birth_date);
             localStorage.setItem('phoneNumber', customer.phone_number);
             localStorage.setItem('pwd', pwd);
+            localStorage.setItem('address', JSON.stringify(customer.addresses[customer.addresses.length - 1 ]));
             return true;
         } else {return false; }
     }
