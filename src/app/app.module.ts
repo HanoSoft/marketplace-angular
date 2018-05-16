@@ -38,6 +38,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { LoadingComponent } from './loading/loading.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderItemsComponent } from './order-items/order-items.component';
 
 
 const appRoutes: Routes = [
@@ -114,6 +115,7 @@ const appRoutes: Routes = [
     ConfirmationComponent,
     LoadingComponent,
     OrdersComponent,
+    OrderItemsComponent,
   ],
   imports: [
     BrowserModule,

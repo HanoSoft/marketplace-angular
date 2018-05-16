@@ -42,12 +42,13 @@
 
             <div class="row" *ngFor="let delev of delivery; let i = index;">
 
-                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6"  style="margin-top: 10px;">
-
-                   <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)">&nbsp;{{delev.name}}
-
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6"  style="margin-top: 10px;" *ngIf="i==0">
+                   <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)" checked >&nbsp;{{delev.name}}
                     <p >{{delev.address}}</p>
-
+                </div>
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6"  style="margin-top: 10px;" *ngIf="i>0">
+                    <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)"  >&nbsp;{{delev.name}}
+                    <p >{{delev.address}}</p>
                 </div>
                 <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                     <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
@@ -70,8 +71,7 @@
 
 </div>
 
-
-
+<!--payment form -->
 
 
 
