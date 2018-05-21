@@ -8,18 +8,17 @@
                     <a [routerLink]="[id]" class="link-product-add-cart">Afficher</a>
                 </div>
             </div>
-<!--
-            <span class="product-new-top" *ngIf="promotions.length>0">-{{promotions[0].discount}}%</span>
--->
+
+            <span class="product-new-top" *ngIf="promotions.length>0 && promotions[0].deleted==false">-{{promotions[0].discount}}%</span>
 
         </div>
         <div class="item-info-product ">
             <h4><a [routerLink]="[id]">{{productName}}</a></h4>
-          <!--  <div class="info-product-price" *ngIf="promotions.length>0">
+            <div class="info-product-price" *ngIf="promotions.length>0 && promotions[0].deleted==false">
                 <span class="item_price">{{price-(price*promotions[0].discount/100)}} €</span>
                 <del>{{price}} €</del>
-            </div>-->
-            <div class="info-product-price" >
+            </div>
+            <div class="info-product-price" *ngIf="promotions.length==0 || promotions[0].deleted==true">
                 <span class="item_price">{{price}} €</span>
             </div>
 
@@ -34,8 +33,8 @@
 -->
             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 
-            <input type="submit" name="submit" value="Ajouter au panier" class="button" *ngIf="!selected" (click)="onAdd(id,price,productName,url+images[0].name)">
-
+            <input type="submit" name="submit" value="Ajouter au panier" class="button" *ngIf="!selected &&(promotions.length==0||promotions[0].deleted==true)" (click)="onAdd(id,price,productName,url+images[0].name)">
+                <input type="submit" name="submit" value="Ajouter au panier" class="button" *ngIf="!selected &&promotions.length>0 &&promotions[0].deleted==false" (click)="onAdd(id,(price-(price*promotions[0].discount/100)),productName,url+images[0].name)">
             <input type="submit" name="delete" value="Supprimer" class="button" (click)="onDelete(id,price)" *ngIf="selected">
 
             </div>
