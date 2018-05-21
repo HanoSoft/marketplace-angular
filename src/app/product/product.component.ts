@@ -8,6 +8,7 @@ import {Subscription} from 'rxjs/Subscription';
 import {Subject} from 'rxjs/Subject';
 import {forEach} from '@angular/router/src/utils/collection';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DATE} from 'ngx-bootstrap/chronos/units/constants';
 
 @Component({
     providers: [TopNavComponent ],
@@ -17,6 +18,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class ProductComponent implements OnInit {
     products = [] ;
+    date: Date;
     @Input() id: number;
     @Input() deleted: boolean;
     @Input()  productName: string ;
@@ -25,6 +27,7 @@ export class ProductComponent implements OnInit {
     @Input() quantity: number ;
     @Input() images = [];
     @Input() sizes = [];
+    @Input() promotions = [];
     public subscription: Subscription;
     private val: Subject <any>;
     basket ;
@@ -35,6 +38,7 @@ export class ProductComponent implements OnInit {
       this.basket = this.shoping.getProducts();
   }
   ngOnInit() {
+      this.date = new Date();
       for (const b of this.basket) {
           if (this.id === b.id) {
               this.selected = true;

@@ -39,13 +39,13 @@
             <span *ngIf="!idc;">
                 <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
                              [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
-                             [deleted]="product.deleted" [sizes]="product.sizes">
+                             [deleted]="product.deleted" [sizes]="product.sizes" [promotions]="product.promotions">
                 </app-product>
             </span>
             <span *ngIf="category.id === idc">
                 <app-product *ngFor="let product of category.products; let i = index;" [productName]="product.product_name"
                              [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
-                             [deleted]="product.deleted" [sizes]="product.sizes">
+                             [deleted]="product.deleted" [sizes]="product.sizes" [promotions]="product.promotions">
                 </app-product>
             </span>
         </span>

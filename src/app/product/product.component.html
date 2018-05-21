@@ -8,14 +8,19 @@
                     <a [routerLink]="[id]" class="link-product-add-cart">Afficher</a>
                 </div>
             </div>
-            <span class="product-new-top">-20%</span>
+<!--
+            <span class="product-new-top" *ngIf="promotions.length>0">-{{promotions[0].discount}}%</span>
+-->
 
         </div>
         <div class="item-info-product ">
             <h4><a [routerLink]="[id]">{{productName}}</a></h4>
-            <div class="info-product-price">
-                <span class="item_price">{{price}} €</span>
+          <!--  <div class="info-product-price" *ngIf="promotions.length>0">
+                <span class="item_price">{{price-(price*promotions[0].discount/100)}} €</span>
                 <del>{{price}} €</del>
+            </div>-->
+            <div class="info-product-price" >
+                <span class="item_price">{{price}} €</span>
             </div>
 
            <!-- <form [formGroup]="itemForm" (ngSubmit)="onAdd(id,price,productName,url+images[0].name)" *ngIf="sizes.length>0">-->
