@@ -1,7 +1,35 @@
-<div class="container" style="margin-top: 50px;" >
-  <div *ngFor="let order of orders; let i = index;" >
-    {{order.id}}
-      {{order.amount}}
-      <button (click)="onDelete(order.id)">annuler commande </button>
+<div class="container-fluid" style="margin-top: 50px;" >
+  <h4 class="white-w3ls">Mes   <span>commandes</span></h4>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12" style="">
+      <div class="panel panel-default list-group-panel">
+        <div class="panel-body">
+          <ul class="list-group list-group-header">
+            <li class="list-group-item list-group-body">
+              <div class="row">
+                <div class="col-xs-3 text-left" style="color: #2fdab8"><b>Etat</b></div>
+                <div class="col-xs-2" style="color: #2fdab8"><b>Date commande</b></div>
+                <div class="col-xs-2" style="color: #2fdab8"><b>Montant</b></div>
+                <div class="col-xs-2" style="color: #2fdab8"><b>Date livraison</b></div>
+              </div>
+            </li>
+          </ul>
+          <ul class="list-group list-group-body" style="">
+            <li class="list-group-item">
+              <div class="row">
+                <div *ngFor="let order of orders; let i = index;" >
+                <div class="col-xs-3 text-left" style=" ">{{order.status}}</div>
+                <div class="col-xs-2" style="">{{order.order_date}}</div>
+                <div class="col-xs-2" style="">{{order.amount}} €</div>
+                <div class="col-xs-2" style="">{{order.delivery_date}}</div>
+                <div class="col-xs-offset-10" style=""><button id="cancel-btn" (click)="onDelete(order.id)">annuler</button></div>
+                </div>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
