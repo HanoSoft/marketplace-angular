@@ -37,10 +37,10 @@
                     <ul class="list-group list-group-header">
                         <li class="list-group-item list-group-body">
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-xs-3 text-left" style="color: #2fdab8"><b>Nom</b></div>
-                                <div class="col-lg-2 col-md-2 col-xs-2" style="color: #2fdab8"><b>Prix</b></div>
-                                <div class="col-lg-2 col-md-2 col-xs-2" style="color: #2fdab8"><b>Adresse</b></div>
-                                <div class="col-lg-2 col-md-2 col-xs-2" style="color: #2fdab8"><b>Délai</b></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  text-left" style="color: #2fdab8"><b>Nom</b></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left" style="color: #2fdab8; margin-left: 7px;"><b>Prix</b></div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left" style="color: #2fdab8"><b>Adresse</b></div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left" style="color: #2fdab8 ;margin-left: 7px;"><b>Délai</b></div>
 
                             </div>
                         </li>
@@ -49,19 +49,19 @@
                         <li class="list-group-item">
                             <div class="row">
                                     <div class="row" *ngFor="let delev of delivery; let i = index;">
-                                        <div class="col-xs-3 text-left" style="margin-left: 10px;" *ngIf="i==0">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left" style="margin-left: 10px;" *ngIf="i==0">
                                             <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)" checked >&nbsp;{{delev.name}}
                                         </div>
-                                        <div class="col-xs-3 text-left" style="margin-left: 10px;" *ngIf="i>0">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left" style="margin-left: 10px;" *ngIf="i>0">
                                             <input type="radio" name="delivery" class="pink" (click)="onChecked(delev.id)"  >&nbsp;{{delev.name}}
                                         </div>
-                                        <div class="col-xs-2 text-left">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left" >
                                             <h6><strong>{{delev.price}} €</strong></h6>
                                         </div>
-                                        <div class="col-xs-2 text-left">
+                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-left">
                                             <h6><strong>{{delev.address}} </strong></h6>
                                         </div>
-                                        <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 text-left">
                                                 <h6><strong>{{delev.delivery_time}} jour</strong></h6>
                                         </div>
                                     </div>
