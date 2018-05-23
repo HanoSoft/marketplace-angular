@@ -20,9 +20,9 @@
               <div class="row">
                 <div *ngFor="let order of orders; let i = index;" >
                 <div class="col-xs-3 text-left" style=" ">{{order.status}}</div>
-                <div class="col-xs-2" style="">{{order.order_date}}</div>
+                <div class="col-xs-2" style="">{{order.order_date|date:'dd/MM/yyyy'}}</div>
                 <div class="col-xs-2" style="">{{order.amount}} €</div>
-                <div class="col-xs-2" style="">{{order.delivery_date}}</div>
+                <div class="col-xs-2" style="">{{order.delivery_date|date:'dd/MM/yyyy'}}</div>
                 <div class="col-xs-offset-10" style=""><button id="cancel-btn" (click)="onDelete(order.id)">annuler</button></div>
                 </div>
                 </div>
