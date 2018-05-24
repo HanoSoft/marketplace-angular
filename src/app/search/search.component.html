@@ -1,0 +1,24 @@
+<div *ngIf="products.length==0">0 article correspond à votre recherche</div>
+
+
+
+<div class="banner-bootom-w3-agileits">
+    <div class="container">
+        <!-- mens -->
+
+        <div class="col-md-8 products-right">
+            <h5>Produits </h5>
+            <div class="sort-grid">
+                <div class="clearfix"></div>
+            </div>
+
+                <app-product *ngFor="let product of products; let i = index;" [productName]="product.product_name"
+                             [id]="product.id" [price]="product.price" [quantity]="product.quantity" [images]="product.images"
+                             [deleted]="product.deleted" [sizes]="product.sizes" [promotions]="product.promotions">
+                </app-product>
+
+
+            <div class="clearfix"></div>
+        </div>
+
+    </div></div>

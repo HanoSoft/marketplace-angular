@@ -1,11 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {ShopingService} from '../services/shoping.service';
-import {Shoping} from '../models/Shoping';
 import {Subscription} from 'rxjs/Subscription';
-import {getTemplate} from 'codelyzer/util/ngQuery';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -38,5 +37,13 @@ export class TopNavComponent implements OnInit {
             (value) => {
                 this.isAuth = value;
             });
+    }
+    onSubmit(form: NgForm) {
+       const search = form.value['search'];
+    }
+    onSearch(form: NgForm) {
+        const search = form.value['search'];
+        localStorage.setItem('search', search);
+        this.router.navigate(['/search']);
     }
 }

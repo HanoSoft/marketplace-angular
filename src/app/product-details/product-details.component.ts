@@ -20,18 +20,21 @@ export class ProductDetailsComponent implements OnInit {
     selected = false;
     quantity;
     itemForm: FormGroup;
+    product;
     constructor(private brandService: BrandService, private router: ActivatedRoute, private shoping: ShopingService,
                 private formBuilder: FormBuilder) {
         this.basket = this.shoping.getProducts();
         this.id = this.router.snapshot.params['id'];
         this.idc = +this.router.snapshot.params['idc'];
          this.idp = this.router.snapshot.params['idp'];
-        this.brand = this.brandService.getBrand(+this.id);
+       /* this.brand = this.brandService.getBrand(+this.id);*/
+        this.brand = brandService.getBrandFromProductID(+this.idp);
         for (const b of this.basket) {
             if (this.idp === b.id.toString()) {
                 this.selected = true;
             }
         }
+        this.product = this.brandService.getProduct(+this.idp);
     }
     ngOnInit(): void {
         this.initForm();

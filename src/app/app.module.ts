@@ -39,6 +39,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
+import { SearchComponent } from './search/search.component';
 
 
 const appRoutes: Routes = [
@@ -56,12 +57,14 @@ const appRoutes: Routes = [
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},
     { path: 'jewelry',  component: JewelryComponent},
+    { path: 'search',  component: SearchComponent},
     /*single brand*/
     { path: ':id',  component: SingleBrandComponent},
     { path: 'clothes/:id', component: SingleBrandComponent},
     { path: 'beauty/:id',  component: SingleBrandComponent},
     { path: 'HighTec/:id',  component: SingleBrandComponent},
     { path: 'jewelry/:id',  component: SingleBrandComponent},
+    { path: 'search/:idp',  component: ProductDetailsComponent},
     /*product list */
     { path: ':id/all', component: ProductListComponent},
     { path: ':id/:idc',  component: ProductListComponent},
@@ -116,6 +119,7 @@ const appRoutes: Routes = [
     LoadingComponent,
     OrdersComponent,
     OrderItemsComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,4 +25,39 @@ export class BrandService {
         console.log('ok' + id);
         return brand;
     }
+    getProducts(search) {
+        const products = [];
+        for (const brand of this.brands) {
+            for (const categorie of brand.categories) {
+                for (const product of categorie.products) {
+                    if (product.product_name.match('^' + search + '*')) {
+                        products.push(product);
+                    }
+                }
+            }
+        }
+        return products;
+    }
+    getProduct(id: number) {
+        for (const brand of this.brands) {
+            for (const categorie of brand.categories) {
+                for (const product of categorie.products) {
+                    if (product.id === id) {
+                       return  product;
+                    }
+                }
+            }
+        }
+    }
+    getBrandFromProductID(id: number) {
+        for (const brand of this.brands) {
+            for (const categorie of brand.categories) {
+                for (const product of categorie.products) {
+                    if (product.id === id) {
+                        return  brand;
+                    }
+                }
+            }
+        }
+    }
 }
