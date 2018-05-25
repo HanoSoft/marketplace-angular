@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Customer} from '../models/Customer.model';
-
+import * as sha1 from 'js-sha1';
 @Injectable()
 export class CustomerService {
     customerSubject = new Subject<any[]>();
@@ -38,7 +38,7 @@ export class CustomerService {
     signIn(email: string, pwd: string) {
         this.getCustomers();
         const customer = this.customers.find((customerObject) => {
-            return (customerObject.email === email && customerObject.pwd === pwd ); });
+            return (customerObject.email === email && customerObject.pwd === sha1(pwd) ); });
         if (customer) {
             this.isAuth = true;
             localStorage.setItem('isAuth', 'true');
