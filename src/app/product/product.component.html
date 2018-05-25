@@ -21,17 +21,7 @@
             <div class="info-product-price" *ngIf="promotions.length==0 || promotions[0].deleted==true">
                 <span class="item_price">{{price}} €</span>
             </div>
-
-           <!-- <form [formGroup]="itemForm" (ngSubmit)="onAdd(id,price,productName,url+images[0].name)" *ngIf="sizes.length>0">-->
-              <!--  <div  class="form-group">
-                        <select class="form-control"  formControlName="size">
-                            <option value="{{size.size}}" *ngFor="let size of sizes; let i = index;" >
-                                {{size.size}}
-                            </option>
-                        </select>
-                </div>
--->
-            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 
             <input type="submit" name="submit" value="Ajouter au panier" class="button" *ngIf="!selected &&(promotions.length==0||promotions[0].deleted==true)" (click)="onAdd(id,price,productName,url+images[0].name)">
                 <input type="submit" name="submit" value="Ajouter au panier" class="button" *ngIf="!selected &&promotions.length>0 &&promotions[0].deleted==false" (click)="onAdd(id,(price-(price*promotions[0].discount/100)),productName,url+images[0].name)">

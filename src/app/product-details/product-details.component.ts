@@ -27,7 +27,7 @@ export class ProductDetailsComponent implements OnInit {
         this.id = this.router.snapshot.params['id'];
         this.idc = +this.router.snapshot.params['idc'];
          this.idp = this.router.snapshot.params['idp'];
-       /* this.brand = this.brandService.getBrand(+this.id);*/
+     /*   this.brand = this.brandService.getBrand(+this.id);*/
         this.brand = brandService.getBrandFromProductID(+this.idp);
         for (const b of this.basket) {
             if (this.idp === b.id.toString()) {

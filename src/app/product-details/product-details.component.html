@@ -160,7 +160,13 @@
     <div class="col-md-8 single-right-left simpleCart_shelfItem">
         <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
 
-        <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
+        <p *ngIf="product.promotions.length>0 && product.promotions[0].deleted==false">
+            <span class="item_price">{{product.price-(product.price*product.promotions[0].discount/100)}} €</span>
+            <del>- {{product.price}}€</del>
+        </p>
+        <p *ngIf="product.promotions.length==0 || product.promotions[0].deleted==true">
+            <span class="item_price">{{product.price}}€</span>
+        </p>
 
         <div class="color-quality" >
             <form [formGroup]="itemForm" (ngSubmit)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
