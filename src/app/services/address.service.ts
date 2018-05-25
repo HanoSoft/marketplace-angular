@@ -24,6 +24,7 @@ export class AddressService {
                 () => {}, (error) => {console.log( b + 'erreur' + error); }
             );
     }
+    /*add new address*/
     add(address: Address) {
         this.addresses.push(address);
         this.emitAddressSubject();
