@@ -11,12 +11,14 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
     customerForm: FormGroup;
+    msg = '';
     constructor(private formBuilder: FormBuilder,
                 private customerService: CustomerService,
                 private router: Router) { }
 
     ngOnInit() {
         this.initForm();
+        this.customerService.getCustomers();
     }
 
     initForm() {
@@ -30,15 +32,20 @@ export class SignupComponent implements OnInit {
     }
     onSubmitForm() {
         const formValue = this.customerForm.value;
-        const newCustomer = new Customer(
-            formValue['name'],
-            formValue['pwd'],
-            formValue['familyName'],
-            formValue['email'],
-            formValue['sponsorCode'],
-           );
-        this.customerService.addCustomer(newCustomer) ;
-        this.router.navigate(['']);
+        const email = formValue['email'];
+        if (!this.customerService.emailExist(email)) {
+            const newCustomer = new Customer(
+                formValue['name'],
+                formValue['pwd'],
+                formValue['familyName'],
+                formValue['email'],
+                formValue['sponsorCode'],
+               );
+            this.customerService.addCustomer(newCustomer) ;
+            this.router.navigate(['']);
+        } else {
+            this.msg = 'Cette adresse email existe';
+        }
     }
 
 }

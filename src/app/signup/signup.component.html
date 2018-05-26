@@ -27,8 +27,9 @@
                                 <label for="email1"> &nbsp; E-mail *</label>
                                 <input type="text" Name="Email" id="email1" formControlName="email">
                             <p class="error_message" *ngIf="customerForm.get('email').invalid">Veuillez fournir un email valide.</p>
+                            <p class="error_message" *ngIf="msg">{{msg}}</p>
 
-                                <label for="pwd">Mot de passe *</label>
+                            <label for="pwd">Mot de passe *</label>
                                 <input type="password" Name="Password" id="pwd"  formControlName="pwd">
                             <p class="error_message" *ngIf="customerForm.get('pwd').invalid">Veuillez fournir au moins 8 caractères et au minimum un nombre et une lettre.</p>
 

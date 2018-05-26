@@ -113,4 +113,13 @@ export class CustomerService {
                 () => {}, (error) => {console.log( b + 'erreur' + error); }
             );
     }
+    public emailExist(email: string) {
+        let exist = false;
+        for (const customer of this.customers) {
+            if (email === customer.email) {
+               exist = true;
+            }
+        }
+        return exist;
+    }
 }
