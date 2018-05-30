@@ -6,9 +6,8 @@ import {CustomerProfile} from '../models/CustomerProfile.mpodel';
 import {UpdateEmail} from '../models/UpdateEmail';
 import {UpdatePassword} from '../models/UpdatePassword.model';
 import {emailMatcher} from './email-matcher';
-import {oldPassword} from './old-password';
-import {equal} from 'assert';
 import {passwordMatcher} from './password-matcher';
+import * as sha1 from 'js-sha1';
 
 
 @Component({
@@ -24,6 +23,7 @@ export class CustomerProfileComponent implements OnInit {
     msg: string;
     msgPwd: string;
     password = localStorage.getItem('pwd');
+    progressbar = '100%;';
     constructor(private formBuilder: FormBuilder,
                 private customerService: CustomerService,
                 private router: Router) { }
@@ -60,6 +60,7 @@ export class CustomerProfileComponent implements OnInit {
            );
 
         this.customerService.editCustomer(+this.id, newCustomer) ;
+        this.progressbar = 'width: 100%;';
       /* this.router.navigate(['']);*/
     }
     initEmailForm() {
@@ -90,7 +91,7 @@ export class CustomerProfileComponent implements OnInit {
     onSubmitPwdForm() {
         const formValue = this.pwdForm.value;
         const newCustomer = new UpdatePassword(
-            formValue['newPassword'],
+            sha1(formValue['newPassword']),
         );
         this.customerService.updatePwd(+this.id, newCustomer) ;
     }

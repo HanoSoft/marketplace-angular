@@ -18,10 +18,10 @@
 
                                 <label for="name">Prénom *</label>
                                 <input type="text" class="name w3layouts agileits" name="name" id="name" formControlName="name" placeholder="Prénom">
-                            <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
 
-                                <label for="familyName">&nbsp; &nbsp; Nom *</label>
-                                <input type="text" class="name w3layouts agileits" Name="familyName" id="familyName" formControlName="familyName">
+                                <label for="familyName">&nbsp; &nbsp; Nom *</label>                            <p class="error_message" *ngIf="customerForm.get('name').invalid">Veuillez fournir au moins 3 caractères.</p>
+
+                            <input type="text" class="name w3layouts agileits" Name="familyName" id="familyName" formControlName="familyName">
                             <p class="error_message" *ngIf="customerForm.get('familyName').invalid">Veuillez fournir au moins 3 caractères.</p>
 
                                 <label for="email1"> &nbsp; E-mail *</label>

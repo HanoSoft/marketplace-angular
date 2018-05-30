@@ -40,6 +40,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { SearchComponent } from './search/search.component';
+import {NgProgressModule} from 'ngx-progressbar';
 
 
 const appRoutes: Routes = [
@@ -128,6 +129,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     ModalModule.forRoot(),
+    NgProgressModule
   ],
   providers: [
       BrandService,

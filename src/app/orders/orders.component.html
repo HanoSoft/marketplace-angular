@@ -18,14 +18,16 @@
           <ul class="list-group list-group-body" style="">
             <li class="list-group-item">
               <div class="row">
-                <div *ngFor="let order of orders; let i = index;" >
-                <div class="col-xs-3 text-left" style=" ">{{order.status}}</div>
-                <div class="col-xs-2" style="">{{order.order_date|date:'dd/MM/yyyy'}}</div>
-                <div class="col-xs-2" style="">{{order.amount}} €</div>
-                <div class="col-xs-2" style="">{{order.delivery_date|date:'dd/MM/yyyy'}}</div>
-                <div class="col-xs-offset-10" style=""><button id="cancel-btn" (click)="onDelete(order.id)">annuler</button></div>
+                <div *ngFor="let order of orders; let i = index;" class="col-md-12">
+                    <div class="col-xs-3 text-left" style=" ">{{order.status}}</div>
+                    <div class="col-xs-2" style="">{{order.order_date|date:'dd/MM/yyyy'}}</div>
+                    <div class="col-xs-2" style="">{{order.amount}} €</div>
+                    <div class="col-xs-2" style="">{{order.delivery_date|date:'dd/MM/yyyy'}}</div>
+                    <div class="col-xs-offset-10" >
+                      <button id="cancel-btn" (click)="onDelete(order.id)" *ngIf="order.status == 'En attente'">annuler</button>
+                    </div>
                 </div>
-                </div>
+              </div>
             </li>
           </ul>
         </div>

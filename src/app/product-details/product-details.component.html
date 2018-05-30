@@ -1,216 +1,98 @@
-<!--
-<div *ngFor="let category of brand.categories; let i = index;">
-
-
-<ng-container *ngFor="let product of category.products; let i = index;">
-
-    <div class="container"  align="center"  *ngIf="product.id == idp">
-<div class="row" >
-    <div class=" col-md-4">
-        <div id='carousel-custom' class='carousel slide ' data-ride='carousel'>
-            <div class='carousel-outer'>
-                <div class='carousel-inner ' >
-                    <ng-container *ngFor="let image of product.images; let i = index;">
-                        <div class='item active ' *ngIf="i===0">
-                            <img [src]="url+image.name" data-imagezoom="true" >
-                        </div>
-
-                        <div class='item' *ngIf="i>0">
-                            <img [src]="url+image.name" data-imagezoom="true" class="img-responsive">
-                        </div>
-                    </ng-container>
-
-                    <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
-                        <span class='glyphicon glyphicon-menu-left'></span>
-                    </a>
-                    <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
-                        <span class='glyphicon glyphicon-menu-right'></span>
-                    </a>
-                </div>
-
-            </div>
-
-            <ol class='carousel-indicators mCustomScrollbar meartlab' >
-                <ng-container *ngFor="let image of product.images; let i = index;">
-                    <li data-target='#carousel-custom' [attr.data-slide-to]='i' class='active' *ngIf="i===0">
-                        <img [src]="url+image.name" alt='' />
-                    </li>
-
-                    <li  data-target='#carousel-custom' [attr.data-slide-to]='i' *ngIf="i>0">
-                        <img [src]="url+image.name" alt='' />
-                    </li>
-                </ng-container>
-
-            </ol>
-        </div>
-    </div>
-
-
-    <img [src] ="urlBrand+brand.logo.name" style="width: 200px;">
-
-
-    <div class="col-md-8 single-right-left simpleCart_shelfItem">
-        <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
-
-        <p><span class="item_price">{{product.price}}€</span> <del>- {{product.price}}€</del></p>
-
-        <div class="color-quality" >
-            <form [formGroup]="itemForm" (ngSubmit)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
-            <div class="color-quality-right">
-               <span *ngIf="product.sizes.length>0">
-                    <h5 >Taille :</h5>
-                    <select id="" onchange="" class="frm-field required sect" formControlName="size">
-                        <option value="{{size.size}}" *ngFor="let size of product.sizes; let i = index;">
-                            {{size.size}}
-                        </option>
-                    </select>
-                </span>
-                <h5 style="margin-top: 10px;">Quantité :</h5>
-                <select id="quantity"  class="frm-field required sect" formControlName="quantity">
-                    <option value="1">1 </option>
-                    <option value="2">2 </option>
-                    <option value="3">3 </option>
-                    <option value="4">4 </option>
-                    <option value="5">5 </option>
-                </select>
-            </div>
-
-            </form>
-
-        </div>
-
-        <div class="occasion-cart">
-            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-
-
-                <input type="submit" name="submit" value="Ajouter au panier" class="button"
-                       (click)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)" *ngIf="!selected" >
-
-                <input type="submit" name="submit" value="Supprimer" class="button" (click)="onDelete(product.id,product.price)" *ngIf="selected">
-
-            </div>
-
-        </div>
-
-
-    </div>
-    </div>
-        <app-horizontal-tab [description]="product.product_details"></app-horizontal-tab>
-</div>
-    <br>
-</ng-container>
-
-        </div>
--->
-
-
-
-
-
-
-
-
-
-
 <div class="container"  align="center"  style="margin-top: 2px;">
-<div class="row" >
-    <div class=" col-md-4">
-        <div id='carousel-custom' class='carousel slide ' data-ride='carousel'>
-            <div class='carousel-outer'>
-                <div class='carousel-inner ' >
-                    <ng-container *ngFor="let image of product.images; let i = index;">
-                        <div class='item active ' *ngIf="i===0">
-                            <img [src]="url+image.name" data-imagezoom="true" >
-                        </div>
+    <div class="row" >
+        <div class=" col-md-4">
+            <div id='carousel-custom' class='carousel slide ' data-ride='carousel'>
+                <div class='carousel-outer'>
+                    <div class='carousel-inner ' >
+                        <ng-container *ngFor="let image of product.images; let i = index;">
+                            <div class='item active ' *ngIf="i===0">
+                                <img [src]="url+image.name" data-imagezoom="true" >
+                            </div>
 
-                        <div class='item' *ngIf="i>0">
-                            <img [src]="url+image.name" data-imagezoom="true" class="img-responsive">
-                        </div>
+                            <div class='item' *ngIf="i>0">
+                                <img [src]="url+image.name" data-imagezoom="true" class="img-responsive">
+                            </div>
+                        </ng-container>
+
+                        <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+                            <span class='glyphicon glyphicon-menu-left'></span>
+                        </a>
+                        <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+                            <span class='glyphicon glyphicon-menu-right'></span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <ol class='carousel-indicators mCustomScrollbar meartlab' >
+                    <ng-container *ngFor="let image of product.images; let i = index;">
+                        <li data-target='#carousel-custom' [attr.data-slide-to]='i' class='active' *ngIf="i===0">
+                            <img [src]="url+image.name" alt='' />
+                        </li>
+
+                        <li  data-target='#carousel-custom' [attr.data-slide-to]='i' *ngIf="i>0">
+                            <img [src]="url+image.name" alt='' />
+                        </li>
                     </ng-container>
 
-                    <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
-                        <span class='glyphicon glyphicon-menu-left'></span>
-                    </a>
-                    <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
-                        <span class='glyphicon glyphicon-menu-right'></span>
-                    </a>
+                </ol>
+            </div>
+        </div>
+
+
+        <img [src] ="urlBrand+brand.logo.name" style="width: 200px;">
+
+
+        <div class="col-md-8 single-right-left simpleCart_shelfItem">
+            <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
+
+            <p *ngIf="product.promotions.length>0 && product.promotions[0].deleted==false">
+                <span class="item_price">{{product.price-(product.price*product.promotions[0].discount/100)}} €</span>
+                <del>- {{product.price}}€</del>
+            </p>
+            <p *ngIf="product.promotions.length==0 || product.promotions[0].deleted==true">
+                <span class="item_price">{{product.price}}€</span>
+            </p>
+
+            <div class="color-quality" >
+                <form [formGroup]="itemForm" (ngSubmit)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
+                <div class="color-quality-right">
+                   <span *ngIf="product.sizes.length>0">
+                        <h5 >Taille :</h5>
+                        <select id="" onchange="" class="frm-field required sect" formControlName="size">
+                            <option value="{{size.size}}" *ngFor="let size of product.sizes; let i = index;">
+                                {{size.size}}
+                            </option>
+                        </select>
+                    </span>
+                    <h5 style="margin-top: 10px;">Quantité :</h5>
+                    <select id="quantity"  class="frm-field required sect" formControlName="quantity">
+                        <option value="1">1 </option>
+                        <option value="2">2 </option>
+                        <option value="3">3 </option>
+                        <option value="4">4 </option>
+                        <option value="5">5 </option>
+                    </select>
+                </div>
+
+                </form>
+            </div>
+            <div class="occasion-cart">
+                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+
+
+                    <input type="submit" name="submit" value="Ajouter au panier" class="button"
+                           (click)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)" *ngIf="!selected" >
+
+                    <input type="submit" name="submit" value="Supprimer" class="button" (click)="onDelete(product.id,product.price)" *ngIf="selected">
+
                 </div>
 
             </div>
-
-            <ol class='carousel-indicators mCustomScrollbar meartlab' >
-                <ng-container *ngFor="let image of product.images; let i = index;">
-                    <li data-target='#carousel-custom' [attr.data-slide-to]='i' class='active' *ngIf="i===0">
-                        <img [src]="url+image.name" alt='' />
-                    </li>
-
-                    <li  data-target='#carousel-custom' [attr.data-slide-to]='i' *ngIf="i>0">
-                        <img [src]="url+image.name" alt='' />
-                    </li>
-                </ng-container>
-
-            </ol>
         </div>
-    </div>
-
-
-    <img [src] ="urlBrand+brand.logo.name" style="width: 200px;">
-
-
-    <div class="col-md-8 single-right-left simpleCart_shelfItem">
-        <h3  style="border-bottom: solid 1px #E9E9E9;border-top: solid 1px #E9E9E9;">{{product.product_name}}</h3>
-
-        <p *ngIf="product.promotions.length>0 && product.promotions[0].deleted==false">
-            <span class="item_price">{{product.price-(product.price*product.promotions[0].discount/100)}} €</span>
-            <del>- {{product.price}}€</del>
-        </p>
-        <p *ngIf="product.promotions.length==0 || product.promotions[0].deleted==true">
-            <span class="item_price">{{product.price}}€</span>
-        </p>
-
-        <div class="color-quality" >
-            <form [formGroup]="itemForm" (ngSubmit)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)">
-            <div class="color-quality-right">
-               <span *ngIf="product.sizes.length>0">
-                    <h5 >Taille :</h5>
-                    <select id="" onchange="" class="frm-field required sect" formControlName="size">
-                        <option value="{{size.size}}" *ngFor="let size of product.sizes; let i = index;">
-                            {{size.size}}
-                        </option>
-                    </select>
-                </span>
-                <h5 style="margin-top: 10px;">Quantité :</h5>
-                <select id="quantity"  class="frm-field required sect" formControlName="quantity">
-                    <option value="1">1 </option>
-                    <option value="2">2 </option>
-                    <option value="3">3 </option>
-                    <option value="4">4 </option>
-                    <option value="5">5 </option>
-                </select>
-            </div>
-
-            </form>
-
         </div>
-
-        <div class="occasion-cart">
-            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-
-
-                <input type="submit" name="submit" value="Ajouter au panier" class="button"
-                       (click)="onAdd(product.id,product.price,product.product_name,url+product.images[0].name)" *ngIf="!selected" >
-
-                <input type="submit" name="submit" value="Supprimer" class="button" (click)="onDelete(product.id,product.price)" *ngIf="selected">
-
-            </div>
-
-        </div>
-
-
-    </div>
-    </div>
-        <app-horizontal-tab [description]="product.product_details"></app-horizontal-tab>
+    <app-horizontal-tab [description]="product.product_details"></app-horizontal-tab>
 </div>
-    <br>
+
 
 

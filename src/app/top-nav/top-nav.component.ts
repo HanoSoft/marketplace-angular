@@ -38,12 +38,10 @@ export class TopNavComponent implements OnInit {
                 this.isAuth = value;
             });
     }
-    onSubmit(form: NgForm) {
-       const search = form.value['search'];
-    }
     onSearch(form: NgForm) {
         const search = form.value['search'];
         localStorage.setItem('search', search);
-        this.router.navigate(['/search']);
+        this.router.navigate(['/']);
+         this.router.navigate(['/search']);
     }
 }
