@@ -160,4 +160,10 @@ export class ShopingService {
                 () => {}, (error) => {console.log( 'erreur' + error); }
             );
     }
+    getOrder(id: number) {
+        const order = this.orders.find((orderObject) => {
+            return orderObject.id === id; });
+        console.log('ok' + id);
+        return order;
+    }
 }

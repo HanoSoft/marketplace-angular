@@ -11,7 +11,6 @@ import {BrandService} from '../services/brand.service';
 export class OrdersComponent implements OnInit {
    orders: any[];
    orderSubscription: Subscription;
-   products: any [];
    constructor(private shopingService: ShopingService, private brandService: BrandService) { }
     ngOnInit() {
         this.orderSubscription = this.shopingService.orderSubject.subscribe(
@@ -21,13 +20,11 @@ export class OrdersComponent implements OnInit {
         );
         this.shopingService.emitOrderSubject();
         this.shopingService.getOrders();
-        for (const order of this.orders) {
-            for (const item of order.items) {
-                this.products.push(this.brandService.getProduct(+item.product));
-            }
-        }
     }
     onDelete(id) {
         this.shopingService.cancelOrder(id);
+    }
+    onShow(){
+
     }
 }

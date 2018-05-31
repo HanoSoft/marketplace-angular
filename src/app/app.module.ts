@@ -54,6 +54,7 @@ const appRoutes: Routes = [
     { path: 'payment', canActivate: [AuthGuard], component: PaymentComponent},
     { path: 'confirmation', canActivate: [AuthGuard], component: ConfirmationComponent},
     { path: 'orders', canActivate: [AuthGuard], component: OrdersComponent},
+    { path: 'orders/:ido', canActivate: [AuthGuard], component: OrderItemsComponent},
     { path: 'clothes',  component: ClothesComponent},
     { path: 'beauty',  component: BeautyComponent},
     { path: 'HighTec',  component: HighTecComponent},

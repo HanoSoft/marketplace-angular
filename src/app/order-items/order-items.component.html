@@ -1,0 +1,58 @@
+<div class="container" id="main">
+    <!--<h2 class="pink" *ngIf="total !=0">Mes Commandes</h2>
+    <h4 class="pink" *ngIf="total ==0" align="center">Votre panier est vide pour le moment.</h4>
+    <hr>-->
+    <div class="card shopping-cart" >
+        <div class="card-body">
+            <!-- PRODUCT -->
+            <div class="row" *ngFor="let product of products">
+                <div class="col-12 col-sm-12 col-md-2 text-center" >
+                    <img class="img-responsive" [src]="url+product.images[0].name" class="product-image" alt="prewiew" width="90" >
+                </div>
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                    <h4 class="product-name"><strong>{{product.product_name}}</strong></h4>
+                    <p >{{product.size}}</p>
+                </div>
+                <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                    <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                        <h6><strong>{{product.price}} €</strong></h6>
+                    </div>
+
+                    <!-- <div class="col-2 col-sm-2 col-md-2 text-right">
+                       <button type="button" class="btn btn-outline-danger btn-xs" (click)="openModal(template)">
+                         <i class="fa fa-trash" aria-hidden="true"></i>
+                       </button>
+                     </div>-->
+                </div>
+
+                <!-- <ng-template #template>
+                   <div class="modal-content " >
+                     <div class="modal-header">
+                       <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                       <div class="icon-box" >
+                         <b style="color:green;font-size: 46px;">!</b>
+                       </div>
+                       <h4 class="modal-title">Êtes-vous sûr ?</h4>
+                     </div>
+                     <button type="button" class="btn btn-info" aria-label="Close" (click)="modalRef.hide()"><span class="fa fa-close" > </span> Annuler</button>
+                     <button class="btn btn-success" type="submit" (click)="onDelete(product.id, product.price)"><span class="fa fa-check-circle"> </span> Confirmer</button>
+                   </div>
+                 </ng-template>-->
+
+            </div>
+            <hr>
+            <br>
+            <!-- END PRODUCT -->
+        </div>
+        <div class="card-footer">
+            <div class="pull-right" style="margin: 10px">
+                <a  class="btn btn-success pull-right" routerLink="/address">Valider</a>
+                <div class="pull-right" style="margin: 5px">
+                    <!-- TOTAL: <b class="pink">{{order.amount}} €</b>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
