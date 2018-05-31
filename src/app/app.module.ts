@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrandService} from './services/brand.service';
 import { BrandListComponent } from './brand-list/brand-list.component';
 import { BrandComponent } from './brand/brand.component';
@@ -40,7 +40,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { SearchComponent } from './search/search.component';
-import {NgProgressModule} from 'ngx-progressbar';
+import {NgProgressInterceptor, NgProgressModule} from 'ngx-progressbar';
 
 
 const appRoutes: Routes = [
@@ -136,7 +136,8 @@ const appRoutes: Routes = [
       ShopingService,
       CustomerService,
       AuthGuard,
-      AddressService
+      AddressService,
+      { provide: HTTP_INTERCEPTORS, useClass: NgProgressInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

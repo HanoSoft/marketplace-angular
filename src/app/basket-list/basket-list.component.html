@@ -1,42 +1,33 @@
 <div class="container" >
     <div class="row bs-wizard" style="border-bottom:0;">
-
         <div class="col-xs-3 bs-wizard-step active">
             <div class="text-center bs-wizard-stepnum">Mon panier</div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a  class="bs-wizard-dot"></a>
-
         </div>
         <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
             <div class="text-center bs-wizard-stepnum">Livraison</div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot"></a>
         </div>
-
         <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
             <div class="text-center bs-wizard-stepnum">Paiement</div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot"></a>
         </div>
-
         <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
             <div class="text-center bs-wizard-stepnum">Confirmation</div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot"></a>
         </div>
     </div>
-
 </div>
-
-
-
 <!--basket-->
 <div class="container" id="main">
     <h2 class="pink" *ngIf="total !=0">Mon Panier</h2>
     <h4 class="pink" *ngIf="total ==0" align="center">Votre panier est vide pour le moment.</h4>
     <hr>
     <div class="card shopping-cart" *ngIf="total !=0">
-
         <div class="card-body">
             <!-- PRODUCT -->
             <div class="row" *ngFor="let product of products">
@@ -46,7 +37,6 @@
                 <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
                     <h4 class="product-name"><strong>{{product.product_name}}</strong></h4>
                     <p >{{product.size}}</p>
-
                 </div>
                 <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
                     <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
@@ -78,7 +68,7 @@
                             </div>
                             <h4 class="modal-title">Êtes-vous sûr ?</h4>
                         </div>
-                            <button type="button" class="btn btn-info" aria-label="Close" (click)="modalRef.hide()"><span class="fa fa-close" > </span> Quitter</button>
+                            <button type="button" class="btn btn-info" aria-label="Close" (click)="modalRef.hide()"><span class="fa fa-close" > </span> Annuler</button>
                             <button class="btn btn-success" type="submit" (click)="onDelete(product.id, product.price)"><span class="fa fa-check-circle"> </span> Confirmer</button>
                     </div>
                 </ng-template>
@@ -87,12 +77,8 @@
             <hr>
             <br>
             <!-- END PRODUCT -->
-
-
         </div>
-
         <div class="card-footer">
-
             <div class="pull-right" style="margin: 10px">
                 <a  class="btn btn-success pull-right" routerLink="/address" *ngIf="total !== 0">Valider</a>
                 <div class="pull-right" style="margin: 5px">

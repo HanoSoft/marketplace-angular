@@ -1,12 +1,9 @@
 <br><br>
 <div class="container w3layouts agileits " style="margin-bottom: 200px;">
-
     <div class="content-left w3layouts agileits">
         <img src="assets/images/background.jpg" alt="W3layouts Agileits">
         <p>LES GRANDES MARQUES EN VENTE PRIVÉE .</p>
-
     </div>
-
     <div class="content-right w3layouts agileits">
         <section>
             <div id="container_demo">
@@ -32,14 +29,12 @@
                             <label for="pwd">Mot de passe *</label>
                                 <input type="password" Name="Password" id="pwd"  formControlName="pwd">
                             <p class="error_message" *ngIf="customerForm.get('pwd').invalid">Veuillez fournir au moins 8 caractères et au minimum un nombre et une lettre.</p>
-
                                 <label for="sponsor">Code Parrain</label>
                                 <input type="text" Name="sponsor" id="sponsor" class="sponsor" formControlName="sponsorCode">
 
                                 <div class="send-button w3layouts agileits">
                                     <input type="submit" value="S'inscrire" [disabled]="customerForm.invalid">
                                 </div>
-
                             </form>
                             <p class="change_link w3layouts agileits">
                                 Déjà membre ? <a routerLink="/auth" class="to_register">Se connecter</a>
@@ -52,5 +47,7 @@
         </section>
     </div>
     <div class="clear"></div>
-
 </div>
+<br>
+<br>
+<br>
