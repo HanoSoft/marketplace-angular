@@ -5,21 +5,17 @@
     <div class="text-center bs-wizard-stepnum">Mon panier</div>
     <div class="progress"><div class="progress-bar"></div></div>
     <a  class="bs-wizard-dot"></a>
-
   </div>
-
   <div class="col-xs-3 bs-wizard-step active"><!-- complete -->
     <div class="text-center bs-wizard-stepnum">Livraison</div>
     <div class="progress"><div class="progress-bar"></div></div>
     <a href="#" class="bs-wizard-dot"></a>
   </div>
-
   <div class="col-xs-3 bs-wizard-step disabled"><!-- complete -->
     <div class="text-center bs-wizard-stepnum">Paiement</div>
     <div class="progress"><div class="progress-bar"></div></div>
     <a href="#" class="bs-wizard-dot"></a>
   </div>
-
   <div class="col-xs-3 bs-wizard-step disabled"><!-- active -->
     <div class="text-center bs-wizard-stepnum">Confirmation</div>
     <div class="progress"><div class="progress-bar"></div></div>
@@ -33,7 +29,7 @@
         <div class="agile-contact-grids">
             <div class="agile-contact-left">
                 <div class="col-md-12 contact-form">
-                    <h4 class="white-w3ls">CREATION D'UNE ADRESSE DE <span>LIVRAISON</span></h4>
+                    <h4 class="white-w3ls">MA  <span>LIVRAISON</span></h4>
 
                     <form [formGroup]="addressForm" (ngSubmit)="onSubmitForm()">
 
@@ -52,18 +48,12 @@
                             <label for="tel">Numéro de télephone* :</label>
                             <span></span>
                         </div>
-
-
-
                         <div class="styled-input">
                             <input type="text" id="address" placeholder="Rue, numéro, étage,..." formControlName="address">
                             <label  for="address">Adresse* :</label>
                             <span></span>
                         </div>
                         <div class="col-md-6 mb-3">
-
-
-
                             <div class="styled-input">
                                 <input type="text" id="city" placeholder="Ville" formControlName="city">
                                 <label  for="city">Ville* :</label>
